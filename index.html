@@ -32,6 +32,37 @@
 
 	<style>
 		#header:not(.sticky-header) #logo a { opacity: 0; pointer-events: none; }
+		.feature-box-border-vertical .feature-box { position: relative; }
+
+		.feature-box-border-vertical .feature-box:not(.noborder)::before,
+		.feature-box-border-vertical.border-hover-animate .feature-box:not(.noborder)::after {
+			content: "";
+			position: absolute;
+			top: calc(64px + 13px);
+			left: 59px;
+			width: 2px;
+			height: calc(100% - 90px);
+			background-color: #EEE;
+			z-index: 0;
+		}
+
+		.feature-box-border-vertical.border-hover-animate .feature-box:not(.noborder)::after {
+			background-color: #0F6458;
+			height: 0;
+			transition: height .3s ease-in-out;
+		}
+
+		.feature-box-border-vertical .feature-box:nth-child(1):not(.noborder)::before { background-color: #0F6458; }
+
+		.feature-box-border-vertical.border-hover-animate .feature-box:hover:not(.noborder)::after { height: calc(100% - 90px); }
+
+		.feature-box-border-vertical .fbox-icon i,
+		.feature-box-border-vertical .fbox-border.fbox-light .fbox-icon i {
+			line-height: 60px;
+			font-size: 24px;
+			z-index: 1;
+			text-align: center;
+		}
 	</style>
 
 </head>
@@ -597,7 +628,30 @@
 											<iframe width="560" height="315" src="https://www.youtube.com/embed/Acd5eDr1IiU" allowfullscreen></iframe>
 										</div>
 										<div class="entry-title">
-											<h2><a href="https://www.youtube.com/watch?v=Acd5eDr1IiU">【ORIGINAL】不容失敗的初戀</a></h2>
+											<h2><a href="https://www.youtube.com/watch?v=Acd5eDr1IiU">【ORIGINAL】不容失敗的初戀(清純版)</a></h2>
+										</div>
+										<div class="entry-meta">
+											<ul>
+												<!--<li><i class="uil uil-bookmark-full"></i>Composition, Arrangement, Mixing, Mastering</li>-->
+												<!--<li><a href="blog-single.html#comments"><i class="uil uil-comments-alt"></i> 13</a></li>-->
+												<li><a href="#"><i class="uil bi-person-circle"></i>虎子</a></li>
+												<li><i class="bi-music-note-beamed"></i>Composition, Arrangement, Mixing</li>
+												
+											</ul>
+										</div>
+										<div class="entry-content">
+											<p></p>
+											<!--<a href="blog-single.html" class="more-link">Read More</a>-->
+										</div>
+									</div>
+								</div>
+								<div class="entry col-md-4 col-sm-6 col-12">
+									<div class="grid-inner">
+										<div class="entry-image">
+											<iframe width="560" height="315" src="https://www.youtube.com/embed/K4DP0JNA1WQ" allowfullscreen></iframe>
+										</div>
+										<div class="entry-title">
+											<h2><a href="https://www.youtube.com/watch?v=K4DP0JNA1WQ">【ORIGINAL】不容失敗的初戀(鴨肉版)</a></h2>
 										</div>
 										<div class="entry-meta">
 											<ul>
@@ -923,6 +977,63 @@
 										<div class="entry-content">
 											<p></p>
 											<!--<a href="blog-single.html" class="more-link">Read More</a>-->
+										</div>
+									</div>
+								</div>
+								<div class="entry col-md-4 col-sm-6 col-12">
+									<div class="grid-inner">
+										<div class="entry-image">
+											<a href="https://viis.ntl.edu.tw/exhibition/cp/193"><img src="images/albums/daisy20.jpg" alt="數位有聲圖書館20"></a>
+										</div>
+										<div class="entry-title">
+											<h2><a href="https://viis.ntl.edu.tw/exhibition/cp/193">數位有聲圖書館20</a></h2>
+										</div>
+										<div class="entry-meta">
+											<ul>
+												<li><a href="#"><i class="uil bi-person-circle"></i>國立臺灣圖書館</a></li>
+												<li><i class="bi-music-note-beamed"></i>Recording, Producter, BGM</li>
+											</ul>
+										</div>
+										<div class="entry-content">
+											<p></p>
+										</div>
+									</div>
+								</div>
+								<div class="entry col-md-4 col-sm-6 col-12">
+									<div class="grid-inner">
+										<div class="entry-image">
+											<a href="https://viis.ntl.edu.tw/exhibition/cp/134"><img src="images/albums/daisy18.jpg" alt="數位有聲圖書館18"></a>
+										</div>
+										<div class="entry-title">
+											<h2><a href="https://viis.ntl.edu.tw/exhibition/cp/134">數位有聲圖書館18</a></h2>
+										</div>
+										<div class="entry-meta">
+											<ul>
+												<li><a href="#"><i class="uil bi-person-circle"></i>國立臺灣圖書館</a></li>
+												<li><i class="bi-music-note-beamed"></i>Recording, Producter, BGM</li>
+											</ul>
+										</div>
+										<div class="entry-content">
+											<p></p>
+										</div>
+									</div>
+								</div>
+								<div class="entry col-md-4 col-sm-6 col-12">
+									<div class="grid-inner">
+										<div class="entry-image">
+											<a href="https://viis.ntl.edu.tw/exhibition/cp/98"><img src="images/albums/daisy17.jpg" alt="數位有聲圖書館17"></a>
+										</div>
+										<div class="entry-title">
+											<h2><a href="https://viis.ntl.edu.tw/exhibition/cp/98">數位有聲圖書館17</a></h2>
+										</div>
+										<div class="entry-meta">
+											<ul>
+												<li><a href="#"><i class="uil bi-person-circle"></i>國立臺灣圖書館</a></li>
+												<li><i class="bi-music-note-beamed"></i>Recording, Producter, BGM</li>
+											</ul>
+										</div>
+										<div class="entry-content">
+											<p></p>
 										</div>
 									</div>
 								</div>
@@ -1439,6 +1550,80 @@
 
 
 			</div>
+			<div class="row feature-box-border-vertical border-hover-animate col-mb-50 justify-content-center align-items-center my-5">
+				<h2 class="text-center text-uppercase fw-light ls-3 font-body">找Hikari混音</h2>
+				<div class="col-md-6 feature-box fbox-dark">
+					<div class="fbox-icon bg-white">
+						<a href="#"><i>1</i></a>
+					</div>
+					<div class="fbox-content">
+						<h3 class="text-transform-none text-larger mb-2">請填寫表單確認需求</h3>
+						<p>根據混音形態不同，價格也有不同，大致上可以分為Vocal Mix、Multitrack Full Mix and SSL Full Mixing</p>
+						<li>[Vocal Mix] 僅有一軌卡拉帶加上Vocals，Vocals不限數量與分軌。目前贈送遠端/現場錄音。若可以來台北錄音室錄製，建議優先選擇現場錄製</li>
+						<li>[Multitracks Full Mix] 多軌道分軌混音，通常是原創曲或是重編曲之作品，不包括錄音</li>
+						<li>[SSL Full Mix] 使用強力錄音室SSL 4000系列進行硬體混音，可現場聽咪或是遠端聽咪</li>
+						<a href="#" class="button button-small button-dark button-rounded border-width-1 ms-0 mt-3">填寫表單<i class="uil uil-angle-right-b me-0"></i></a>
+					</div>
+				</div>
+
+				<div class="clear"></div>
+
+				<div class="col-md-6 feature-box fbox-border fbox-light fbox-effect">
+					<div class="fbox-icon bg-white">
+						<a href="#"><i>2</i></a>
+					</div>
+					<div class="fbox-content">
+						<h3 class="text-transform-none text-larger mb-2">準備檔案與錄音</h3>
+						<p>
+							<li>[Vocal Mix]請提供齊頭卡拉帶與Vocal錄音分軌(若由Hikari錄音則不需提供分軌)</li>
+							<li>[Multitracks Full Mix]請準備24bits, 48kHz的分軌檔案，檔案齊頭，可接受ProTools Session檔案</li>
+							<li>[SSL Full Mix]請準備24bits, 48kHz的分軌檔案，檔案齊頭，可接受ProTools Session檔案</li>
+						</p>
+					</div>
+				</div>
+
+				<div class="clear"></div>
+
+				<div class="col-md-6 feature-box fbox-border fbox-light fbox-effect">
+					<div class="fbox-icon bg-white">
+						<a href="#"><i>3</i></a>
+					</div>
+					<div class="fbox-content">
+						<h3 class="text-transform-none text-larger mb-2">聽咪方式</h3>
+						<p>
+							[線上非同步] 所有混音方案都可以提供DISCO連結聽取檔案並作修改。<br>
+							[線上同步] 使用Audiomovers軟體遠端高音質同步，當場修改，僅限Multitracks方案或是SSL方案<br>
+							[實體錄音室] 僅限SSL硬體混音方案，於強力錄音室現場聽咪<br>
+						</p>
+					</div>
+				</div>
+
+				<div class="clear"></div>
+
+				<div class="col-md-6 feature-box fbox-border fbox-light fbox-effect noborder">
+					<div class="fbox-icon bg-white">
+						<a href="#"><i>4</i></a>
+					</div>
+					<div class="fbox-content">
+						<h3 class="text-transform-none text-larger mb-2">檔案交付</h3>
+						<p>最終檔案將由DISCO網站交付MMM、MMA以及MMO三種檔案，提供MP3, Wavs, AIFF三種格式下載</p>
+					</div>
+				</div>
+				
+				<div class="clear"></div>
+				<!--
+				<div class="col-md-6 feature-box fbox-border fbox-light fbox-effect noborder">
+					<div class="fbox-icon bg-white">
+						<a href="#"><i>5</i></a>
+					</div>
+					<div class="fbox-content">
+						<h3 class="text-transform-none text-larger mb-2">24/7 Support</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, quae rerum dolores aperiam amet enim consequuntur maiores totam odit molestiae vel ut earum deleniti.</p>
+					</div>
+				</div>-->
+
+			</div>
+
 		</section><!-- #content end -->
 
 		<!-- Footer
