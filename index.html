@@ -83,7 +83,20 @@
 			/* object-position: center top; */
 			display: block; /* 去掉底部空隙 */
 		}
+		
 	</style>
+	<script>
+		Fancybox.bind("[data-fancybox]", {
+		// 如果想要關掉 toolbar、改尺寸等等都可在這裡設定
+		iframe: {
+			attr: {
+			allow:
+				"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share",
+			allowfullscreen: true
+			}
+		}
+		});
+  	</script>
 	<!-- Document Title
 	============================================= -->
 	<title>Hikari-Persional Website</title>
@@ -747,7 +760,7 @@
 											</a>
 										</div>
 										<div class="entry-title">
-											<h2><a data-fancybox href="https://www.twitch.tv/yuyu4vtuber/clip/TentativeNaiveTardigradeEleGiggle-0Cf0cPzFJCAKZnCA">【BGM】HATP OF THE STARLIT LAKE</a></h2>
+											<h2><a href="https://www.twitch.tv/yuyu4vtuber/clip/TentativeNaiveTardigradeEleGiggle-0Cf0cPzFJCAKZnCA">【BGM】HATP OF THE STARLIT LAKE</a></h2>
 										</div>
 										<div class="entry-meta">
 											<ul>
@@ -765,12 +778,12 @@
 								<div class="entry col-md-4 col-sm-6 col-12">
 									<div class="grid-inner">
 										<div class="entry-image">
-											<!--<a data-fancybox data-type="iframe" href="https://www.youtube.com/embed/X1wYgo6uNHk?autoplay=1&enablejsapi=1&origin=https://hikari-tsai.github.io">
+											<a data-fancybox data-type="iframe" class="fancybox-iframe" href="https://www.youtube.com/embed/X1wYgo6uNHk?autoplay=1&enablejsapi=1&origin=https://hikari-tsai.github.io">
 												<div class="aspect-ratio-box">
 													<img src="https://img.youtube.com/vi/X1wYgo6uNHk/hqdefault.jpg" width="640">
 												</div>
-											</a>-->
-											<iframe width="560" height="315" src="https://www.youtube.com/embed/X1wYgo6uNHk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+											</a>
+											<!--<iframe width="560" height="315" src="https://www.youtube.com/embed/X1wYgo6uNHk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>-->
 										</div>
 										<div class="entry-title">
 											<h2><a data-fancybox href="https://www.youtube.com/watch?v=X1wYgo6uNHk">【COVER】桜日和とタイムマシン</a></h2>
