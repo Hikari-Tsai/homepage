@@ -43,6 +43,47 @@
 	<link rel="stylesheet" href="css/custom.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
+	<!-- Fancybox 4 CDN -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" />
+	<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script>
+	<style>
+		.aspect-ratio-box {
+			position: relative;
+			width: 100%;
+			aspect-ratio: 16 / 9;
+			overflow: hidden;
+			border-radius: 8px; /* 可選：加圓角美化 */
+		}
+
+		.aspect-ratio-box img,
+		.aspect-ratio-box video {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			display: block;
+		}
+
+		.yt-thumb {
+			/* 1. 固定長寬比為 16:9 */
+			aspect-ratio: 16 / 9;
+			/* 2. 隱藏超出容器的部分 */
+			overflow: hidden;
+			/* 3. 可依需求設定寬度或高度 */
+			width: 100%;
+			/* max-width: 480px; 可以限制最大寬度 */
+			background: #000; /* 若圖片載入前需要底色 */
+		}
+
+		.yt-thumb img {
+			/* 讓圖片填滿容器，並裁切超出的部分 */
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			/* 如果想要裁切左右，可改為 object-position 調整對齊 */
+			/* object-position: center top; */
+			display: block; /* 去掉底部空隙 */
+		}
+	</style>
 	<!-- Document Title
 	============================================= -->
 	<title>Hikari-Persional Website</title>
@@ -642,10 +683,15 @@
 								<div class="entry col-md-4 col-sm-6 col-12">
 									<div class="grid-inner">
 										<div class="entry-image">
-											<iframe width="560" height="315" src="https://www.youtube.com/embed/Acd5eDr1IiU" allowfullscreen></iframe>
+											<a data-fancybox href="https://www.youtube.com/embed/Acd5eDr1IiU">
+												<div class="aspect-ratio-box">
+													<img src="https://img.youtube.com/vi/Acd5eDr1IiU/hqdefault.jpg" width="640">
+												</div>
+											</a>
+											<!--<iframe width="560" height="315" src="https://www.youtube.com/embed/Acd5eDr1IiU" allowfullscreen></iframe>-->
 										</div>
 										<div class="entry-title">
-											<h2><a href="https://www.youtube.com/watch?v=Acd5eDr1IiU">【ORIGINAL】不容失敗的初戀(清純版)</a></h2>
+											<h2><a data-fancybox href="https://www.youtube.com/watch?v=Acd5eDr1IiU">【ORIGINAL】不容失敗的初戀(清純版)</a></h2>
 										</div>
 										<div class="entry-meta">
 											<ul>
@@ -665,10 +711,15 @@
 								<div class="entry col-md-4 col-sm-6 col-12">
 									<div class="grid-inner">
 										<div class="entry-image">
-											<iframe width="560" height="315" src="https://www.youtube.com/embed/K4DP0JNA1WQ" allowfullscreen></iframe>
+											<a data-fancybox href="https://www.youtube.com/embed/K4DP0JNA1WQ">
+												<div class="aspect-ratio-box">
+													<img src="https://img.youtube.com/vi/K4DP0JNA1WQ/hqdefault.jpg" width="640">
+												</div>
+											</a>
+											<!--<iframe width="560" height="315" src="https://www.youtube.com/embed/K4DP0JNA1WQ" allowfullscreen></iframe>-->
 										</div>
 										<div class="entry-title">
-											<h2><a href="https://www.youtube.com/watch?v=K4DP0JNA1WQ">【ORIGINAL】不容失敗的初戀(鴨肉版)</a></h2>
+											<h2><a data-fancybox href="https://www.youtube.com/watch?v=K4DP0JNA1WQ">【ORIGINAL】不容失敗的初戀(鴨肉版)</a></h2>
 										</div>
 										<div class="entry-meta">
 											<ul>
@@ -688,10 +739,12 @@
 								<div class="entry col-md-4 col-sm-6 col-12">
 									<div class="grid-inner">
 										<div class="entry-image">
-											<!--<iframe src="https://clips.twitch.tv/embed?clip=TentativeNaiveTardigradeEleGiggle-0Cf0cPzFJCAKZnCA&parent=hikari-tsai.github.io" frameborder="0" allowfullscreen="true" scrolling="no" height="378" width="620" style="max-width:100%; aspect-ratio: 16:9 !important; display: block;"></iframe>-->
-											<video controls data-width="560" data-height="315">
-												<source src="one-page/images/videos/20250624_TentativeNaiveTardigradeEleGiggle-0Cf0cPzFJCAKZnCA_source.mp4" type="video/mp4">
-											</video>
+											<a data-fancybox href="one-page/images/videos/20250624_TentativeNaiveTardigradeEleGiggle-0Cf0cPzFJCAKZnCA_source.mp4">
+											<!--<a href="one-page/images/videos/20250624_TentativeNaiveTardigradeEleGiggle-0Cf0cPzFJCAKZnCA_source.mp4" data-lightbox="video">-->
+												<video data-width="560" data-height="315" class="aspect-ratio-box">
+													<source src="one-page/images/videos/20250624_TentativeNaiveTardigradeEleGiggle-0Cf0cPzFJCAKZnCA_source.mp4" type="video/mp4">
+												</video>
+											</a>
 										</div>
 										<div class="entry-title">
 											<h2><a href="https://www.twitch.tv/yuyu4vtuber/clip/TentativeNaiveTardigradeEleGiggle-0Cf0cPzFJCAKZnCA">【BGM】HATP OF THE STARLIT LAKE</a></h2>
@@ -712,11 +765,15 @@
 								<div class="entry col-md-4 col-sm-6 col-12">
 									<div class="grid-inner">
 										<div class="entry-image">
-											<!--<iframe width="560" height="315" src="https://www.youtube.com/embed/X1wYgo6uNHk" allowfullscreen></iframe>-->
-											<iframe width="560" height="315" src="https://www.youtube.com/embed/X1wYgo6uNHk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+											<a data-fancybox href="https://www.youtube.com/embed/X1wYgo6uNHk">
+												<div class="aspect-ratio-box">
+													<img src="https://img.youtube.com/vi/X1wYgo6uNHk/hqdefault.jpg" width="640">
+												</div>
+											</a>
+											<!--<iframe width="560" height="315" src="https://www.youtube.com/embed/X1wYgo6uNHk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>-->
 										</div>
 										<div class="entry-title">
-											<h2><a href="https://www.youtube.com/watch?v=X1wYgo6uNHk">【COVER】桜日和とタイムマシン</a></h2>
+											<h2><a data-fancybox href="https://www.youtube.com/watch?v=X1wYgo6uNHk">【COVER】桜日和とタイムマシン</a></h2>
 										</div>
 										<div class="entry-meta">
 											<ul>
