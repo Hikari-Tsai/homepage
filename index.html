@@ -99,6 +99,46 @@
 		}
 		});
   	</script>
+	<style>
+		/* works toggle bar styles — colors adjusted to #6C757D */
+		#works-toggle-bar { color: #6C757D; display:flex; gap:8px; flex-wrap:wrap; justify-content:center; margin:40px 0; }
+
+		#works-toggle-bar,
+		#works-toggle-bar * { color: #6C757D; }
+
+		#works-toggle-bar .toggle-btn{
+			padding:6px 12px;
+			border-radius:20px;
+			border:1px solid #ccc;
+			background:#fff;
+			cursor:pointer;
+			font-size:14px;
+			transition: background .18s ease, color .18s ease, border-color .18s ease, transform .12s ease;
+			color: #6C757D;
+		}
+
+		/* hover/active use teal background and white text for contrast */
+		#works-toggle-bar .toggle-btn:hover,
+		#works-toggle-bar .toggle-btn.active{
+			background:#1ABC9C;
+			color:#fff;
+			border-color:#1ABC9C;
+			transform: translateY(-2px);
+		}
+
+		#works-toggle-bar .clear-btn{
+			padding:6px 10px;
+			border-radius:6px;
+			border:1px solid #ddd;
+			background:#f8f8f8;
+			cursor:pointer;
+			color: #6C757D;
+		}
+
+		/* make icons inherit the text color */
+		#works-toggle-bar i { color: inherit; vertical-align: middle; }
+
+		</style>
 	<!-- Document Title
 	============================================= -->
 	<title>Hikari-Persional Website</title>
@@ -692,6 +732,8 @@
 					<div class="content-wrap">
 						<div class="container">
 							<h2 class="text-center text-uppercase fw-light ls-3 font-body">Recently Music Works</h2>
+							<div class="grid-filter-wrap justify-content-center">
+							<div id="works-toggle-bar" style="display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin:40px 0;"></div></div>
 							<!-- Posts
 							============================================= -->
 							<div id="posts" class="post-grid row grid-container gutter-40">
@@ -865,7 +907,7 @@
 												<!--<li><i class="uil uil-bookmark-full"></i>Composition, Arrangement, Mixing, Mastering</li>-->
 												<!--<li><a href="blog-single.html#comments"><i class="uil uil-comments-alt"></i> 13</a></li>-->
 												<li><a href="#"><i class="uil bi-person-circle"></i>余偉文&亞璐</a></li>
-												<li><i class="bi-music-note-beamed"></i>Re-arrangement, Vocal Recording, Vocal Mixing</li>
+												<li><i class="bi-music-note-beamed"></i>Arrangement, Vocal Recording, Vocal Mixing</li>
 											</ul>
 										</div>
 										<div class="entry-content">
@@ -941,7 +983,7 @@
 										<div class="entry-meta">
 											<ul>
 												<li><a href="#"><i class="uil bi-person-circle"></i>閻鈴</a></li>
-												<li><i class="bi-music-note-beamed"></i>Remixing and Remastering</li>
+												<li><i class="bi-music-note-beamed"></i>Vocal Mixing</li>
 											</ul>
 										</div>
 										<div class="entry-content">
@@ -1271,7 +1313,7 @@
 										<div class="entry-meta">
 											<ul>
 												<li><a href="#"><i class="uil bi-person-circle"></i>魷魷</a></li>
-												<li><i class="bi-music-note-beamed"></i>Composition(BGM)</li>
+												<li><i class="bi-music-note-beamed"></i>Composition, BGM</li>
 												
 											</ul>
 										</div>
@@ -1295,7 +1337,7 @@
 										<div class="entry-meta">
 											<ul>
 												<li><a href="#"><i class="uil bi-person-circle"></i>小光</a></li>
-												<li><i class="bi-music-note-beamed"></i>Composition(BGM)</li>
+												<li><i class="bi-music-note-beamed"></i>Composition, BGM</li>
 												
 											</ul>
 										</div>
@@ -1365,7 +1407,7 @@
 										<div class="entry-meta">
 											<ul>
 												<li><a href="#"><i class="uil bi-person-circle"></i>宋德鶴</a></li>
-												<li><i class="bi-music-note-beamed"></i>Vocal Tracking</li>
+												<li><i class="bi-music-note-beamed"></i>Vocal Recording</li>
 											</ul>
 										</div>
 										<div class="entry-content">
@@ -1521,7 +1563,7 @@
 										<div class="entry-meta">
 											<ul>
 												<li><a href="#"><i class="uil bi-person-circle"></i>宋德鶴</a></li>
-												<li><i class="bi-music-note-beamed"></i>Vocal Tracking</li>
+												<li><i class="bi-music-note-beamed"></i>Vocal Recording</li>
 											</ul>
 										</div>
 										<div class="entry-content">
@@ -1541,7 +1583,7 @@
 										<div class="entry-meta">
 											<ul>
 												<li><a href="#"><i class="uil bi-person-circle"></i>宋德鶴</a></li>
-												<li><i class="bi-music-note-beamed"></i>Vocal Tracking</li>
+												<li><i class="bi-music-note-beamed"></i>Vocal Recording</li>
 											</ul>
 										</div>
 										<div class="entry-content">
@@ -1561,7 +1603,7 @@
 										<div class="entry-meta">
 											<ul>
 												<li><a href="#"><i class="uil bi-person-circle"></i>宋德鶴</a></li>
-												<li><i class="bi-music-note-beamed"></i>Vocal Tracking</li>
+												<li><i class="bi-music-note-beamed"></i>Vocal Recording</li>
 											</ul>
 										</div>
 										<div class="entry-content">
@@ -1926,7 +1968,7 @@
 												<!--<li><i class="uil uil-bookmark-full"></i>Composition, Arrangement, Mixing, Mastering</li>-->
 												<!--<li><a href="blog-single.html#comments"><i class="uil uil-comments-alt"></i> 13</a></li>-->
 												<li><a href="#"><i class="uil bi-person-circle"></i>公共電視</a></li>
-												<li><i class="bi-music-note-beamed"></i>音效(SFX)、配樂(BGM)、擬音(Foley)</li>
+												<li><i class="bi-music-note-beamed"></i>SFX, BGM, Foley</li>
 											</ul>
 										</div>
 										<div class="entry-content">
@@ -1955,7 +1997,7 @@
 												<!--<li><i class="uil uil-bookmark-full"></i>Composition, Arrangement, Mixing, Mastering</li>-->
 												<!--<li><a href="blog-single.html#comments"><i class="uil uil-comments-alt"></i> 13</a></li>-->
 												<li><a href="#"><i class="uil bi-person-circle"></i>唐吉軻德工作室</a></li>
-												<li><i class="bi-music-note-beamed"></i>音效(SFX)、配樂(BGM)、擬音(Foley)</li>
+												<li><i class="bi-music-note-beamed"></i>SFX, BGM, Foley</li>
 											</ul>
 										</div>
 										<div class="entry-content">
@@ -1975,7 +2017,7 @@
 										<div class="entry-meta">
 											<ul>
 												<li><a href="#"><i class="uil bi-person-circle"></i>駁二</a></li>
-												<li><i class="bi-music-note-beamed"></i>Arrangement, Recording, Mixing, Producter</li>
+												<li><i class="bi-music-note-beamed"></i>Arrangement, Recording, Full Mixing, Producter</li>
 											</ul>
 										</div>
 										<div class="entry-content">
@@ -2137,7 +2179,7 @@
 										<div class="entry-meta">
 											<ul>
 												<li><a href="#"><i class="uil bi-person-circle"></i>蘇育霆</a></li>
-												<li><i class="bi-music-note-beamed"></i>Recording, Mixing</li>
+												<li><i class="bi-music-note-beamed"></i>Recording, Full Mixing</li>
 											</ul>
 										</div>
 										<div class="entry-content">
@@ -2157,7 +2199,7 @@
 										<div class="entry-meta">
 											<ul>
 												<li><a href="#"><i class="uil bi-person-circle"></i>文藝復興</a></li>
-												<li><i class="bi-music-note-beamed"></i>Vocal Tracking, Full Mixing and Mastering</li>
+												<li><i class="bi-music-note-beamed"></i>Vocal Recording, Full Mixing, Mastering</li>
 											</ul>
 										</div>
 										<div class="entry-content">
@@ -2176,7 +2218,7 @@
 										<div class="entry-meta">
 											<ul>
 												<li><a href="#"><i class="uil bi-person-circle"></i>黃小玫</a></li>
-												<li><i class="bi-music-note-beamed"></i>Full Mixing and Mastering</li>
+												<li><i class="bi-music-note-beamed"></i>Full Mixing, Mastering</li>
 											</ul>
 										</div>
 										<div class="entry-content">
@@ -2195,7 +2237,7 @@
 										<div class="entry-meta">
 											<ul>
 												<li><a href="#"><i class="uil bi-person-circle"></i>群星</a></li>
-												<li><i class="bi-music-note-beamed"></i>Arrangement, Recording, Mixing</li>
+												<li><i class="bi-music-note-beamed"></i>Arrangement, Recording, Full Mixing</li>
 											</ul>
 										</div>
 										<div class="entry-content">
@@ -3203,6 +3245,143 @@
 	============================================= -->
 	<script src="js/plugins.min.js"></script>
 	<script src="js/functions.bundle.js"></script>
+	<script>
+		document.addEventListener('DOMContentLoaded', function(){
+			const posts = document.getElementById('posts');
+			if(!posts) return;
+			const entries = () => Array.from(posts.querySelectorAll('.entry'));
+			const tagSet = new Set();
+
+			// parse tags from one entry (lowercase)
+			function parseTags(el){
+				const icon = el.querySelector('i.bi-music-note-beamed');
+				const li = icon ? icon.closest('li') : null;
+				if(!li) return [];
+				const clone = li.cloneNode(true);
+				clone.querySelectorAll('i').forEach(n=>n.remove());
+				const text = (clone.textContent || '').trim();
+				if(!text) return [];
+				return text.split(/[,\u3001\/\|\uFF0C;；]+/).map(s=>s.trim().toLowerCase()).filter(Boolean);
+			}
+
+			// init tags
+			entries().forEach(el=>{
+				const tags = parseTags(el);
+				el._tags = tags;
+				tags.forEach(t=>tagSet.add(t));
+			});
+
+			const bar = document.getElementById('works-toggle-bar');
+			if(!bar || tagSet.size === 0) return;
+
+			// build buttons
+			const tags = Array.from(tagSet).sort((a,b)=> a.localeCompare(b,'zh-Hant'));
+			tags.forEach(tag=>{
+				const btn = document.createElement('button');
+				btn.type = 'button';
+				btn.className = 'toggle-btn';
+				btn.dataset.tag = tag;
+				btn.textContent = tag;
+				bar.appendChild(btn);
+			});
+			const clear = document.createElement('button');
+			clear.type = 'button';
+			clear.className = 'clear-btn';
+			clear.innerHTML = ' <i class="uil uil-sync"></i>';
+			clear.setAttribute('aria-label', 'Clear filters');
+			//clear.textContent = 'Clear';
+			bar.appendChild(clear);
+
+			// attempt to relayout common layout libraries, fallback to resize
+			function relayout(){
+				// jQuery Isotope
+				if(window.jQuery && typeof jQuery.fn.isotope === 'function'){
+					try { jQuery('#posts').isotope('layout'); return; } catch(e){}
+				}
+				// global iso instance (you may set window.iso when init)
+				if(window.iso && typeof window.iso.layout === 'function'){ try{ window.iso.layout(); return;}catch(e){} }
+				// jQuery Masonry
+				if(window.jQuery && typeof jQuery.fn.masonry === 'function'){
+					try { jQuery('#posts').masonry('layout'); return; } catch(e){}
+				}
+				// Masonry instance stored on element
+				if(posts._masonry && typeof posts._masonry.layout === 'function'){ try{ posts._masonry.layout(); return;}catch(e){} }
+				if(posts.masonry && typeof posts.masonry.layout === 'function'){ try{ posts.masonry.layout(); return;}catch(e){} }
+				// fallback: trigger resize to let other scripts recalc
+				setTimeout(()=> window.dispatchEvent(new Event('resize')), 50);
+			}
+
+			// apply filter and relayout
+			function applyFilter(){
+				const active = Array.from(bar.querySelectorAll('.toggle-btn.active')).map(b=>b.dataset.tag);
+				const all = entries();
+				if(active.length === 0){
+					all.forEach(e=> e.style.display = '');
+					relayout();
+					return;
+				}
+				all.forEach(e=>{
+					const tags = e._tags || parseTags(e);
+					const has = tags.some(t => active.includes(t));
+					e.style.display = has ? '' : 'none';
+				});
+				relayout();
+			}
+
+			// delegate clicks
+			bar.addEventListener('click', function(e){
+				const btn = e.target.closest('button.toggle-btn');
+				if(btn){
+					btn.classList.toggle('active');
+					applyFilter();
+					return;
+				}
+				if(e.target.closest('button.clear-btn')){
+					bar.querySelectorAll('.toggle-btn.active').forEach(b=>b.classList.remove('active'));
+					applyFilter();
+				}
+			});
+
+			// in case some other script injects or modifies posts, observe and rebuild tags/buttons
+			const mo = new MutationObserver((mutations)=>{
+				let need = false;
+				for(const m of mutations){
+					if(m.type === 'childList' && (m.addedNodes.length || m.removedNodes.length)){ need = true; break; }
+				}
+				if(!need) return;
+				// rebuild tagSet and buttons while preserving active selection
+				const activeNow = new Set(Array.from(bar.querySelectorAll('.toggle-btn.active')).map(b=>b.dataset.tag));
+				tagSet.clear();
+				entries().forEach(el=>{
+					const tags = parseTags(el);
+					el._tags = tags;
+					tags.forEach(t=>tagSet.add(t));
+				});
+				// rebuild buttons
+				bar.innerHTML = '';
+				const newTags = Array.from(tagSet).sort((a,b)=> a.localeCompare(b,'zh-Hant'));
+				newTags.forEach(tag=>{
+					const b = document.createElement('button');
+					b.type = 'button';
+					b.className = 'toggle-btn';
+					b.dataset.tag = tag;
+					b.textContent = tag;
+					if(activeNow.has(tag)) b.classList.add('active');
+					bar.appendChild(b);
+				});
+				const c = document.createElement('button');
+				c.type = 'button'; c.className = 'clear-btn'; c.textContent = 'Clear';
+				bar.appendChild(c);
+				applyFilter();
+			});
+
+			mo.observe(posts, { childList: true, subtree: false });
+
+			// initial layout (in case layout lib already ran)
+			relayout();
+
+		});
+	</script>
 
 </body>
 </html>
