@@ -100,45 +100,46 @@
 		});
   	</script>
 	<style>
-		/* works toggle bar styles — colors adjusted to #6C757D */
-		#works-toggle-bar { color: #6C757D; display:flex; gap:8px; flex-wrap:wrap; justify-content:center; margin:40px 0; }
-
-		#works-toggle-bar,
-		#works-toggle-bar * { color: #6C757D; }
-
-		#works-toggle-bar .toggle-btn{
-			padding:6px 12px;
-			border-radius:20px;
-			border:1px solid #ccc;
-			background:#fff;
-			cursor:pointer;
-			font-size:14px;
-			transition: background .18s ease, color .18s ease, border-color .18s ease, transform .12s ease;
-			color: #6C757D;
+		/* dropdown-filter */
+		#dropdown-filter .button {
+			min-width: 170px;
+			background-color: var(--bs-gray-100);
+			text-align: center;
 		}
 
-		/* hover/active use teal background and white text for contrast */
-		#works-toggle-bar .toggle-btn:hover,
-		#works-toggle-bar .toggle-btn.active{
-			background:#1ABC9C;
-			color:#fff;
-			border-color:#1ABC9C;
-			transform: translateY(-2px);
+		#dropdown-filter .dropdown-menu {
+			width: 100%;
 		}
 
-		#works-toggle-bar .clear-btn{
-			padding:6px 10px;
-			border-radius:6px;
-			border:1px solid #ddd;
-			background:#f8f8f8;
-			cursor:pointer;
-			color: #6C757D;
+		#dropdown-filter .dropdown-item {
+			padding: 0 !important;
+			background-color: inherit !important;
+			color:#111;
 		}
 
-		/* make icons inherit the text color */
-		#works-toggle-bar i { color: inherit; vertical-align: middle; }
+		#dropdown-filter .dropdown-item.active,
+		#dropdown-filter .dropdown-item:active,
+		#dropdown-filter .dropdown-item:hover {
+			background-color: var(--bs-gray-200) !important;
+		}
 
-		</style>
+		#dropdown-filter .dropdown-item span {
+			display: block;
+			padding: 10px 20px;
+			border-bottom: 1px solid var(--bs-gray-200);
+			font-size: .925rem;
+			text-align: center;
+		}
+
+		#dropdown-filter .dropdown-toggle::after {
+			content: "\F282";
+			font-family: "bootstrap-icons";
+			border: 0;
+			vertical-align: middle;
+			margin: 0 0 0 6px;
+		}
+
+	</style>
 	<!-- Document Title
 	============================================= -->
 	<title>Hikari-Persional Website</title>
@@ -578,7 +579,7 @@
 											<a href="#"><i class="icon-et-lightbulb op-gradient-icon"></i></a>
 										</div>
 										<div class="fbox-content fbox-content-sm">
-											<h3>Compose</h3>
+											<h3>Composition</h3>
 										</div>
 									</div>
 								</div>
@@ -732,12 +733,38 @@
 					<div class="content-wrap">
 						<div class="container">
 							<h2 class="text-center text-uppercase fw-light ls-3 font-body">Recently Music Works</h2>
-							<div class="grid-filter-wrap justify-content-center">
-							<div id="works-toggle-bar" style="display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin:40px 0;"></div></div>
+							<!--<div class="grid-filter-wrap justify-content-center">
+								<div id="works-toggle-bar" style="display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin:40px 0;"></div>
+							</div>-->
+							<div class="grid-filter-wrap justify-content-center mb-5">
+								<div id="dropdown-filter" class="dropdown border-0">
+									<a id="grid-filter-btn" class="button m-0 bg-color text-white dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;作品分類 (ALL)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+									</a>
+
+									<ul class="dropdown-menu custom-filter py-0 border-default rounded-0" data-container="#posts">
+										<li><a href="#" class="dropdown-item" data-filter="*"><span>All</span></a></li>
+										<li><a href="#" class="dropdown-item" data-filter=".vocal-recording"><span>Vocal Recording</span></a></li>
+										<li><a href="#" class="dropdown-item" data-filter=".vocal-recording-remote"><span>Vocal Recording(Remote)</span></a></li>
+										<li><a href="#" class="dropdown-item" data-filter=".vocal-mixing"><span>Vocal Mixing</span></a></li>
+										<li><a href="#" class="dropdown-item" data-filter=".full-mixing"><span>Full Mixing</span></a></li>
+										<li><a href="#" class="dropdown-item" data-filter="*"><span>---------------------------</span></a></li>
+										<li><a href="#" class="dropdown-item" data-filter=".arrange"><span>Arrangement</span></a></li>
+										<li><a href="#" class="dropdown-item" data-filter=".compose"><span>Composition</span></a></li>
+										<li><a href="#" class="dropdown-item" data-filter=".bgm"><span>BGM</span></a></li>
+										<li><a href="#" class="dropdown-item" data-filter=".sfx"><span>SFX</span></a></li>
+										<li><a href="#" class="dropdown-item" data-filter=".foley"><span>Foley</span></a></li>
+										<li><a href="#" class="dropdown-item" data-filter=".synthv-tune"><span>SynthV Tune</span></a></li>
+										<li><a href="#" class="dropdown-item" data-filter=".mockup"><span>MIDI Mockup</span></a></li>
+										<li><a href="#" class="dropdown-item" data-filter=".mastering"><span>Mastering</span></a></li>
+									</ul>
+								</div>
+
+							</div>
 							<!-- Posts
 							============================================= -->
 							<div id="posts" class="post-grid row grid-container gutter-40">
-								<div class="entry col-md-4 col-sm-6 col-12">
+								<div class="entry col-md-4 col-sm-6 col-12 arrange compose">
 									<div class="grid-inner">
 										<div class="entry-image">
 											<iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/51w3oL6GHzp27LFNYv9plw?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
@@ -747,10 +774,8 @@
 										</div>
 										<div class="entry-meta">
 											<ul>
-												<!--<li><i class="uil uil-bookmark-full"></i>Composition, Arrangement, Mixing, Mastering</li>-->
-												<!--<li><a href="blog-single.html#comments"><i class="uil uil-comments-alt"></i> 13</a></li>-->
 												<li><a href="#"><i class="uil bi-person-circle"></i>Hikari</a></li>
-												<li><i class="bi-music-note-beamed"></i>Composition, Arrangement</li>
+												<li><i class="bi-music-note-beamed"></i>Composition, Arrangement, Rough Mixing</li>
 												
 											</ul>
 										</div>
@@ -760,7 +785,7 @@
 										</div>
 									</div>
 								</div>
-								<div class="entry col-md-4 col-sm-6 col-12">
+								<div class="entry col-md-4 col-sm-6 col-12 full-mixing compose arrange">
 									<div class="grid-inner">
 										<div class="entry-image">
 											<a data-fancybox href="https://www.youtube.com/embed/ncmTezp_VVE">
@@ -784,7 +809,7 @@
 										</div>
 									</div>
 								</div>
-								<div class="entry col-md-4 col-sm-6 col-12">
+								<div class="entry col-md-4 col-sm-6 col-12 arrange compose full-mixing">
 									<div class="grid-inner">
 										<div class="entry-image">
 											<a data-fancybox href="https://www.youtube.com/embed/Acd5eDr1IiU">
@@ -812,7 +837,7 @@
 										</div>
 									</div>
 								</div>
-								<div class="entry col-md-4 col-sm-6 col-12">
+								<div class="entry col-md-4 col-sm-6 col-12 full-mixing arrange compose">
 									<div class="grid-inner">
 										<div class="entry-image">
 											<a data-fancybox href="https://www.youtube.com/embed/K4DP0JNA1WQ">
@@ -840,7 +865,7 @@
 										</div>
 									</div>
 								</div>
-								<div class="entry col-md-4 col-sm-6 col-12">
+								<div class="entry col-md-4 col-sm-6 col-12 vocal-recording vocal-mixing">
 									<div class="grid-inner">
 										<div class="entry-image">
 											<a data-fancybox data-type="iframe" class="fancybox" href="https://www.youtube.com/embed/eew7QfOF4R0">
@@ -863,14 +888,9 @@
 										</div>
 									</div>
 								</div>
-								<div class="entry col-md-4 col-sm-6 col-12">
+								<div class="entry col-md-4 col-sm-6 col-12 vocal-recording-remote vocal-mixing">
 									<div class="grid-inner">
 										<div class="entry-image">
-											<!--<a data-fancybox data-type="iframe" class="fancybox" href="https://www.youtube.com/embed/eew7QfOF4R0">
-												<div class="aspect-ratio-box">
-													<img src="https://img.youtube.com/vi/eew7QfOF4R0/hqdefault.jpg" width="640">
-												</div>
-											</a>-->
 											<blockquote data-type="iframe" class="twitter-tweet" data-media-max-width="560"><p lang="zh" dir="ltr"><a href="https://twitter.com/hashtag/%E5%A6%AE%E9%99%AA%E8%9C%9C%E5%94%B1?src=hash&amp;ref_src=twsrc%5Etfw">#妮陪蜜唱</a> <a href="https://twitter.com/hashtag/%E5%A6%AE%E5%80%91%E5%BF%AB%E5%87%BA%E9%81%93?src=hash&amp;ref_src=twsrc%5Etfw">#妮們快出道</a> <br>血包們中午奈安!<br>嘗試和蜜提妮雅合唱了MAGIA🦇✨<br>謝謝小光老師幫我做微調🥺<a href="https://twitter.com/hikari_tsai?ref_src=twsrc%5Etfw">@hikari_tsai</a> <br><br>MAGIA是我入坑魔法少女小圓超級喜歡的一首曲子之一<br>衝著情懷跟著一起合唱了✨<br>謝謝蜜提妮亞辦這個合唱小活動嘿嘿🩷✨<br><br>👉活動情報來源在這裡：<a href="https://t.co/TkncKJeQ8S">https://t.co/TkncKJeQ8S</a> <a href="https://t.co/zjbeGU7Xwq">pic.twitter.com/zjbeGU7Xwq</a></p>&mdash; 宮森えりな 🦇吸血鬼Vtuber 🧛‍♀️ (@Elina_Miyamori) <a href="https://twitter.com/Elina_Miyamori/status/1986657870872780879?ref_src=twsrc%5Etfw">November 7, 2025</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 										</div>
 										<div class="entry-title">
@@ -887,7 +907,7 @@
 										</div>
 									</div>
 								</div>
-								<div class="entry col-md-4 col-sm-6 col-12">
+								<div class="entry col-md-4 col-sm-6 col-12 vocal-recording vocal-mixing arrange">
 									<div class="grid-inner">
 										<div class="entry-image">
 											<a data-fancybox data-type="iframe" class="fancybox" href="https://www.youtube.com/embed/yqw78x9d1oo">
@@ -895,17 +915,12 @@
 													<img src="https://img.youtube.com/vi/yqw78x9d1oo/hqdefault.jpg" width="640">
 												</div>
 											</a>
-											
-											<!--<iframe width="560" height="315" src="https://www.youtube.com/embed/kEyEfpmXwqM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>-->
-											
 										</div>
 										<div class="entry-title">
 											<h2><a data-fancybox href="https://www.youtube.com/watch?v=yqw78x9d1oo">【COVER】沒出息</a></h2>
 										</div>
 										<div class="entry-meta">
 											<ul>
-												<!--<li><i class="uil uil-bookmark-full"></i>Composition, Arrangement, Mixing, Mastering</li>-->
-												<!--<li><a href="blog-single.html#comments"><i class="uil uil-comments-alt"></i> 13</a></li>-->
 												<li><a href="#"><i class="uil bi-person-circle"></i>余偉文&亞璐</a></li>
 												<li><i class="bi-music-note-beamed"></i>Arrangement, Vocal Recording, Vocal Mixing</li>
 											</ul>
@@ -916,7 +931,7 @@
 										</div>
 									</div>
 								</div>
-								<div class="entry col-md-4 col-sm-6 col-12">
+								<div class="entry col-md-4 col-sm-6 col-12 vocal-recording vocal-mixing">
 									<div class="grid-inner">
 										<div class="entry-image">
 											<a data-fancybox data-type="iframe" class="fancybox" href="https://www.youtube.com/embed/09UQ5dcvaGk">
@@ -924,17 +939,12 @@
 													<img src="https://img.youtube.com/vi/09UQ5dcvaGk/hqdefault.jpg" width="640">
 												</div>
 											</a>
-											
-											<!--<iframe width="560" height="315" src="https://www.youtube.com/embed/kEyEfpmXwqM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>-->
-											
 										</div>
 										<div class="entry-title">
 											<h2><a data-fancybox href="https://www.youtube.com/watch?v=09UQ5dcvaGk">【COVER】真的傻</a></h2>
 										</div>
 										<div class="entry-meta">
 											<ul>
-												<!--<li><i class="uil uil-bookmark-full"></i>Composition, Arrangement, Mixing, Mastering</li>-->
-												<!--<li><a href="blog-single.html#comments"><i class="uil uil-comments-alt"></i> 13</a></li>-->
 												<li><a href="#"><i class="uil bi-person-circle"></i>亞璐</a></li>
 												<li><i class="bi-music-note-beamed"></i>Vocal Recording, Vocal Mixing</li>
 											</ul>
@@ -945,7 +955,7 @@
 										</div>
 									</div>
 								</div>
-								<div class="entry col-md-4 col-sm-6 col-12">
+								<div class="entry col-md-4 col-sm-6 col-12 vocal-recording-remote vocal-mixing">
 									<div class="grid-inner">
 										<div class="entry-image">
 											<a data-fancybox data-type="iframe" class="fancybox" href="https://www.youtube.com/embed/mf2GIhukSwk">
@@ -968,7 +978,7 @@
 										</div>
 									</div>
 								</div>
-								<div class="entry col-md-4 col-sm-6 col-12">
+								<div class="entry col-md-4 col-sm-6 col-12 vocal-mixing">
 									<div class="grid-inner">
 										<div class="entry-image">
 											<a data-fancybox data-type="iframe" class="fancybox" href="https://www.youtube.com/embed/01YCt3oBlTk">
@@ -983,7 +993,7 @@
 										<div class="entry-meta">
 											<ul>
 												<li><a href="#"><i class="uil bi-person-circle"></i>閻鈴</a></li>
-												<li><i class="bi-music-note-beamed"></i>Vocal Mixing</li>
+												<li><i class="bi-music-note-beamed"></i>Vocal Remixing</li>
 											</ul>
 										</div>
 										<div class="entry-content">
@@ -991,7 +1001,7 @@
 										</div>
 									</div>
 								</div>
-								<div class="entry col-md-4 col-sm-6 col-12">
+								<div class="entry col-md-4 col-sm-6 col-12 vocal-recording vocal-mixing">
 									<div class="grid-inner">
 										<div class="entry-image">
 											<a data-fancybox data-type="iframe" class="fancybox" href="https://www.youtube.com/embed/6HznubWLeNo">
@@ -1014,7 +1024,7 @@
 										</div>
 									</div>
 								</div>
-								<div class="entry col-md-4 col-sm-6 col-12">
+								<div class="entry col-md-4 col-sm-6 col-12 vocal-recording">
 									<div class="grid-inner">
 										<div class="entry-image">
 											<a data-fancybox data-type="iframe" class="fancybox" href="https://www.youtube.com/embed/52g1zsI_niE">
@@ -1033,11 +1043,11 @@
 											</ul>
 										</div>
 										<div class="entry-content">
-											<p>Ensemble Music Studio，Austrian Audio OC818 + SSL BIG SIX</p>
+											<p>Ensemble Music Studio，Austrian Audio OC818 + SSL BIG SIX，混音師為皮卡老師（歡迎委託）</p>
 										</div>
 									</div>
 								</div>
-								<div class="entry col-md-4 col-sm-6 col-12">
+								<div class="entry col-md-4 col-sm-6 col-12 vocal-mixing">
 									<div class="grid-inner">
 										<div class="entry-image">
 											<a data-fancybox data-type="iframe" class="fancybox" href="https://www.youtube.com/embed/1Z6pQbbF6ns">
@@ -1065,7 +1075,7 @@
 										</div>
 									</div>
 								</div>
-								<div class="entry col-md-4 col-sm-6 col-12">
+								<div class="entry col-md-4 col-sm-6 col-12 vocal-recording">
 									<div class="grid-inner">
 										<div class="entry-image">
 											<a data-fancybox data-type="iframe" class="fancybox" href="https://www.youtube.com/embed/d_d8o8zLcWc">
@@ -1084,11 +1094,11 @@
 											</ul>
 										</div>
 										<div class="entry-content">
-											<p>Ensemble Music Studio，Austrian Audio OC818 + SSL BIG SIX</p>
+											<p>Ensemble Music Studio，Austrian Audio OC818 + SSL BIG SIX，混音師為皮卡老師（歡迎委託）</p>
 										</div>
 									</div>
 								</div>
-								<div class="entry col-md-4 col-sm-6 col-12">
+								<div class="entry col-md-4 col-sm-6 col-12 vocal-mixing">
 									<div class="grid-inner">
 										<div class="entry-image">
 											<a data-fancybox data-type="iframe" class="fancybox" href="https://www.youtube.com/embed/EpXxEXIfQYI">
@@ -1111,7 +1121,7 @@
 										</div>
 									</div>
 								</div>
-								<div class="entry col-md-4 col-sm-6 col-12">
+								<div class="entry col-md-4 col-sm-6 col-12 vocal-recording vocal-mixing">
 									<div class="grid-inner">
 										<div class="entry-image">
 											<a data-fancybox data-type="iframe" class="fancybox" href="https://www.youtube.com/embed/lkeQlX36XQA">
@@ -1134,7 +1144,7 @@
 										</div>
 									</div>
 								</div>
-								<div class="entry col-md-4 col-sm-6 col-12">
+								<div class="entry col-md-4 col-sm-6 col-12 vocal-recording vocal-mixing">
 									<div class="grid-inner">
 										<div class="entry-image">
 											<a data-fancybox data-type="iframe" class="fancybox" href="https://www.youtube.com/embed/h9vmS9BgROY">
@@ -1157,7 +1167,7 @@
 										</div>
 									</div>
 								</div>
-								<div class="entry col-md-4 col-sm-6 col-12">
+								<div class="entry col-md-4 col-sm-6 col-12 vocal-recording-remote vocal-mixing">
 									<div class="grid-inner">
 										<div class="entry-image">
 											<a data-fancybox data-type="iframe" class="fancybox" href="https://www.youtube.com/embed/xndibZT6klc">
@@ -1180,7 +1190,7 @@
 										</div>
 									</div>
 								</div>
-								<div class="entry col-md-4 col-sm-6 col-12">
+								<div class="entry col-md-4 col-sm-6 col-12 vocal-recording vocal-mixing">
 									<div class="grid-inner">
 										<div class="entry-image">
 											<a data-fancybox data-type="iframe" class="fancybox" href="https://www.youtube.com/embed/qo-J_jehnvM">
@@ -1203,7 +1213,7 @@
 										</div>
 									</div>
 								</div>
-								<div class="entry col-md-4 col-sm-6 col-12">
+								<div class="entry col-md-4 col-sm-6 col-12 vocal-recording vocal-mixing">
 									<div class="grid-inner">
 										<div class="entry-image">
 											<a data-fancybox data-type="iframe" class="fancybox" href="https://www.youtube.com/embed/H72V83l5xls">
@@ -1227,7 +1237,7 @@
 										</div>
 									</div>
 								</div>
-								<div class="entry col-md-4 col-sm-6 col-12">
+								<div class="entry col-md-4 col-sm-6 col-12 vocal-recording vocal-mixing">
 									<div class="grid-inner">
 										<div class="entry-image">
 											<a data-fancybox data-type="iframe" class="fancybox" href="https://www.youtube.com/embed/6hlDewPWdvE">
@@ -1251,7 +1261,7 @@
 										</div>
 									</div>
 								</div>
-								<div class="entry col-md-4 col-sm-6 col-12">
+								<div class="entry col-md-4 col-sm-6 col-12 vocal-mixing">
 									<div class="grid-inner">
 										<div class="entry-image">
 											<a data-fancybox data-type="iframe" class="fancybox" href="https://www.youtube.com/embed/JhQOE7O64cQ">
@@ -1274,7 +1284,7 @@
 										</div>
 									</div>
 								</div>
-								<div class="entry col-md-4 col-sm-6 col-12">
+								<div class="entry col-md-4 col-sm-6 col-12 vocal-recording vocal-mixing">
 									<div class="grid-inner">
 										<div class="entry-image">
 											<a data-fancybox data-type="iframe" class="fancybox" href="https://www.youtube.com/embed/r4_zk1j1ZSc">
@@ -1297,7 +1307,7 @@
 										</div>
 									</div>
 								</div>
-								<div class="entry col-md-4 col-sm-6 col-12">
+								<div class="entry col-md-4 col-sm-6 col-12 compose bgm">
 									<div class="grid-inner">
 										<div class="entry-image">
 											<a data-fancybox href="one-page/images/videos/20250624_TentativeNaiveTardigradeEleGiggle-0Cf0cPzFJCAKZnCA_source.mp4">
@@ -1323,7 +1333,7 @@
 										</div>
 									</div>
 								</div>
-								<div class="entry col-md-4 col-sm-6 col-12">
+								<div class="entry col-md-4 col-sm-6 col-12 compose bgm">
 									<div class="grid-inner">
 										<div class="entry-image">
 											<a data-fancybox href="one-page/images/videos/HikariLoading.mp4">
@@ -1347,7 +1357,7 @@
 										</div>
 									</div>
 								</div>
-								<div class="entry col-md-4 col-sm-6 col-12">
+								<div class="entry col-md-4 col-sm-6 col-12 full-mixing">
 									<div class="grid-inner">
 										<div class="entry-image">
 											<iframe id="disco-track-162397588" name="disco-track-162397588" allowfullscreen frameborder="0" class="disco-embed" src="https://hmusic.disco.ac/e/t/162397588?download=true&s=euKBOIKLCSQdTRaN4iF6c_Bs_Kc%3AiNzTh8eC&artwork=true&color=%2332B57C&theme=white" width="480" height="235"></iframe>
@@ -1369,7 +1379,7 @@
 										</div>
 									</div>
 								</div>
-								<div class="entry col-md-4 col-sm-6 col-12">
+								<div class="entry col-md-4 col-sm-6 col-12 vocal-mixing vocal-recording">
 									<div class="grid-inner">
 										<div class="entry-image">
 											<a data-fancybox data-type="iframe" class="fancybox" href="https://www.youtube.com/embed/X1wYgo6uNHk">
@@ -1384,8 +1394,6 @@
 										</div>
 										<div class="entry-meta">
 											<ul>
-												<!--<li><i class="uil uil-bookmark-full"></i>Composition, Arrangement, Mixing, Mastering</li>-->
-												<!--<li><a href="blog-single.html#comments"><i class="uil uil-comments-alt"></i> 13</a></li>-->
 												<li><a href="#"><i class="uil bi-person-circle"></i>天櫻咲樂</a></li>
 												<li><i class="bi-music-note-beamed"></i>Vocal Recording, Vocal Mixing</li>
 											</ul>
@@ -1396,7 +1404,7 @@
 										</div>
 									</div>
 								</div>
-								<div class="entry col-md-4 col-sm-6 col-12">
+								<div class="entry col-md-4 col-sm-6 col-12 vocal-recording">
 									<div class="grid-inner">
 										<div class="entry-image">
 											<iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/album/2vw9lZRZ6AlBy7i0OyZ2ow?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
@@ -1415,7 +1423,7 @@
 										</div>
 									</div>
 								</div>
-								<div class="entry col-md-4 col-sm-6 col-12">
+								<div class="entry col-md-4 col-sm-6 col-12 vocal-mixing">
 									<div class="grid-inner">
 										<div class="entry-image">
 											<a data-fancybox data-type="iframe" class="fancybox" href="https://www.youtube.com/embed/p_H9wz1tfBU">
@@ -1443,7 +1451,7 @@
 										</div>
 									</div>
 								</div>
-								<div class="entry col-md-4 col-sm-6 col-12">
+								<div class="entry col-md-4 col-sm-6 col-12 full-mixing vocal-recording-remote">
 									<div class="grid-inner">
 										<div class="entry-image">
 											<a data-fancybox data-type="iframe" class="fancybox" href="https://www.youtube.com/embed/Dy--H5C-w8I">
@@ -1467,7 +1475,7 @@
 										</div>
 									</div>
 								</div>
-								<div class="entry col-md-4 col-sm-6 col-12">
+								<div class="entry col-md-4 col-sm-6 col-12 vocal-mixing">
 									<div class="grid-inner">
 										<div class="entry-image">
 											<a data-fancybox data-type="iframe" class="fancybox" href="https://www.youtube.com/embed/LT2pQUP4DTA">
@@ -1484,19 +1492,16 @@
 										</div>
 										<div class="entry-meta">
 											<ul>
-												<!--<li><i class="uil uil-bookmark-full"></i>Composition, Arrangement, Mixing, Mastering</li>-->
-												<!--<li><a href="blog-single.html#comments"><i class="uil uil-comments-alt"></i> 13</a></li>-->
 												<li><a href="#"><i class="uil bi-person-circle"></i>瓦西瓦瓦Vaswawa</a></li>
 												<li><i class="bi-music-note-beamed"></i>Vocal Mixing</li>
 											</ul>
 										</div>
 										<div class="entry-content">
 											<p></p>
-											<!--<a href="blog-single.html" class="more-link">Read More</a>-->
 										</div>
 									</div>
 								</div>
-								<div class="entry col-md-4 col-sm-6 col-12">
+								<div class="entry col-md-4 col-sm-6 col-12 vocal-mixing">
 									<div class="grid-inner">
 										<div class="entry-image">
 											<a data-fancybox data-type="iframe" class="fancybox" href="https://www.youtube.com/embed/t-IkJvzUQPA">
@@ -1504,27 +1509,22 @@
 													<img src="https://img.youtube.com/vi/t-IkJvzUQPA/hqdefault.jpg" width="640">
 												</div>
 											</a>
-											<!--<iframe width="560" height="315" src="https://www.youtube.com/embed/t-IkJvzUQPA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>-->
-											
 										</div>
 										<div class="entry-title">
 											<h2><a data-fancybox href="https://www.youtube.com/watch?v=t-IkJvzUQPA">【COVER】TOMBOY</a></h2>
 										</div>
 										<div class="entry-meta">
 											<ul>
-												<!--<li><i class="uil uil-bookmark-full"></i>Composition, Arrangement, Mixing, Mastering</li>-->
-												<!--<li><a href="blog-single.html#comments"><i class="uil uil-comments-alt"></i> 13</a></li>-->
 												<li><a href="#"><i class="uil bi-person-circle"></i>雪迎</a></li>
 												<li><i class="bi-music-note-beamed"></i>Vocal Mixing</li>
 											</ul>
 										</div>
 										<div class="entry-content">
 											<p></p>Audient EVO4 + SHURE SM7B
-											<!--<a href="blog-single.html" class="more-link">Read More</a>-->
 										</div>
 									</div>
 								</div>
-								<div class="entry col-md-4 col-sm-6 col-12">
+								<div class="entry col-md-4 col-sm-6 col-12 vocal-mixing">
 									<div class="grid-inner">
 										<div class="entry-image">
 											<a data-fancybox data-type="iframe" class="fancybox" href="https://www.youtube.com/embed/x22ULB2H2EM">
@@ -1532,16 +1532,12 @@
 													<img src="https://img.youtube.com/vi/x22ULB2H2EM/hqdefault.jpg" width="640">
 												</div>
 											</a>
-											<!--<iframe width="560" height="315" src="https://www.youtube.com/embed/t-IkJvzUQPA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>-->
-											
 										</div>
 										<div class="entry-title">
 											<h2><a data-fancybox href="https://www.youtube.com/watch?v=x22ULB2H2EM">【COVER】無樂不作</a></h2>
 										</div>
 										<div class="entry-meta">
 											<ul>
-												<!--<li><i class="uil uil-bookmark-full"></i>Composition, Arrangement, Mixing, Mastering</li>-->
-												<!--<li><a href="blog-single.html#comments"><i class="uil uil-comments-alt"></i> 13</a></li>-->
 												<li><a href="#"><i class="uil bi-person-circle"></i>Horsker 霍矢敋</a></li>
 												<li><i class="bi-music-note-beamed"></i>Vocal Mixing</li>
 											</ul>
@@ -1552,7 +1548,7 @@
 										</div>
 									</div>
 								</div>
-								<div class="entry col-md-4 col-sm-6 col-12">
+								<div class="entry col-md-4 col-sm-6 col-12 vocal-recording">
 									<div class="grid-inner">
 										<div class="entry-image">
 											<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/4IdPBhbIVOjbYF96uvsmPK?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
@@ -1571,7 +1567,7 @@
 										</div>
 									</div>
 								</div>
-								<div class="entry col-md-4 col-sm-6 col-12">
+								<div class="entry col-md-4 col-sm-6 col-12 vocal-recording">
 									<div class="grid-inner">
 										<div class="entry-image">
 											<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/5wPSDvBFCJa7vGUy0dw92V?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
@@ -1591,7 +1587,7 @@
 										</div>
 									</div>
 								</div>
-								<div class="entry col-md-4 col-sm-6 col-12">
+								<div class="entry col-md-4 col-sm-6 col-12 vocal-recording">
 									<div class="grid-inner">
 										<div class="entry-image">
 											<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/0JHjA5R4aBfcrnYZnb2YMU?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
@@ -1611,7 +1607,7 @@
 										</div>
 									</div>
 								</div>
-								<div class="entry col-md-4 col-sm-6 col-12">
+								<div class="entry col-md-4 col-sm-6 col-12 vocal-mixing">
 									<div class="grid-inner">
 										<div class="entry-image">
 											<a data-fancybox data-type="iframe" class="fancybox" href="https://www.youtube.com/embed/DwHGtHpe-Xg">
@@ -1636,7 +1632,7 @@
 										</div>
 									</div>
 								</div>
-								<div class="entry col-md-4 col-sm-6 col-12">
+								<div class="entry col-md-4 col-sm-6 col-12 vocal-recording-remote vocal-mixing">
 									<div class="grid-inner">
 										<div class="entry-image">
 											<a data-fancybox data-type="iframe" class="fancybox" href="https://www.youtube.com/embed/vytWhQUWboM">
@@ -1651,19 +1647,16 @@
 										</div>
 										<div class="entry-meta">
 											<ul>
-												<!--<li><i class="uil uil-bookmark-full"></i>Composition, Arrangement, Mixing, Mastering</li>-->
-												<!--<li><a href="blog-single.html#comments"><i class="uil uil-comments-alt"></i> 13</a></li>-->
 												<li><a href="#"><i class="uil bi-person-circle"></i>宮森えりな </a></li>
 												<li><i class="bi-music-note-beamed"></i>Vocal Recording(Remote), Vocal Mixing</li>
 											</ul>
 										</div>
 										<div class="entry-content">
 											<p></p>
-											<!--<a href="blog-single.html" class="more-link">Read More</a>-->
 										</div>
 									</div>
 								</div>
-								<div class="entry col-md-4 col-sm-6 col-12">
+								<div class="entry col-md-4 col-sm-6 col-12 full-mixing recording arrange">
 									<div class="grid-inner">
 										<div class="entry-image">
 											<a data-fancybox data-type="iframe" class="fancybox" href="https://www.youtube.com/embed/6VkkfUlDgic">
@@ -1679,7 +1672,7 @@
 										<div class="entry-meta">
 											<ul>
 												<li><a href="#"><i class="uil bi-person-circle"></i>Hikari, 毛大福</a></li>
-												<li><i class="bi-music-note-beamed"></i>Arrangement, Recording,Full Mixing</li>
+												<li><i class="bi-music-note-beamed"></i>Re-Arrangement, Recording, Full Mixing</li>
 											</ul>
 										</div>
 										<div class="entry-content">
@@ -1688,7 +1681,7 @@
 										</div>
 									</div>
 								</div>
-								<div class="entry col-md-4 col-sm-6 col-12">
+								<div class="entry col-md-4 col-sm-6 col-12 vocal-mixing">
 									<div class="grid-inner">
 										<div class="entry-image">
 											<a data-fancybox data-type="iframe" class="fancybox" href="https://www.youtube.com/embed/Z4rZOLibiKo">
@@ -1705,19 +1698,16 @@
 										</div>
 										<div class="entry-meta">
 											<ul>
-												<!--<li><i class="uil uil-bookmark-full"></i>Composition, Arrangement, Mixing, Mastering</li>-->
-												<!--<li><a href="blog-single.html#comments"><i class="uil uil-comments-alt"></i> 13</a></li>-->
 												<li><a href="#"><i class="uil bi-person-circle"></i>魷魷</a></li>
 												<li><i class="bi-music-note-beamed"></i>Vocal Mixing</li>
 											</ul>
 										</div>
 										<div class="entry-content">
 											<p>宅錄，RME Babyface Pro + SHURE MV7</p>
-											<!--<a href="blog-single.html" class="more-link">Read More</a>-->
 										</div>
 									</div>
 								</div>
-								<div class="entry col-md-4 col-sm-6 col-12">
+								<div class="entry col-md-4 col-sm-6 col-12 vocal-mixing">
 									<div class="grid-inner">
 										<div class="entry-image">
 											<a data-fancybox data-type="iframe" class="fancybox" href="https://www.youtube.com/embed/WFRQokea3CU">
@@ -1725,28 +1715,22 @@
 													<img src="https://img.youtube.com/vi/WFRQokea3CU/hqdefault.jpg" width="640">
 												</div>
 											</a>
-											
-											<!--<iframe width="560" height="315" src="https://www.youtube.com/embed/WFRQokea3CU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>-->
-											
 										</div>
 										<div class="entry-title">
 											<h2><a data-fancybox href="https://www.youtube.com/watch?v=WFRQokea3CU">【COVER】愛💛スクリ～ム！</a></h2>
 										</div>
 										<div class="entry-meta">
 											<ul>
-												<!--<li><i class="uil uil-bookmark-full"></i>Composition, Arrangement, Mixing, Mastering</li>-->
-												<!--<li><a href="blog-single.html#comments"><i class="uil uil-comments-alt"></i> 13</a></li>-->
 												<li><a href="#"><i class="uil bi-person-circle"></i>魷魷</a></li>
 												<li><i class="bi-music-note-beamed"></i>Vocal Mixing</li>
 											</ul>
 										</div>
 										<div class="entry-content">
 											<p>宅錄，RME Babyface Pro + SHURE MV7</p>
-											<!--<a href="blog-single.html" class="more-link">Read More</a>-->
 										</div>
 									</div>
 								</div>
-								<div class="entry col-md-4 col-sm-6 col-12">
+								<div class="entry col-md-4 col-sm-6 col-12 vocal-recording-remote vocal-mixing">
 									<div class="grid-inner">
 										<div class="entry-image">
 											<a data-fancybox data-type="iframe" class="fancybox" href="https://www.youtube.com/embed/C0KRQ3ka0fA">
@@ -1754,28 +1738,22 @@
 													<img src="https://img.youtube.com/vi/C0KRQ3ka0fA/hqdefault.jpg" width="640">
 												</div>
 											</a>
-											
-											<!--<iframe width="560" height="315" src="https://www.youtube.com/embed/C0KRQ3ka0fA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>-->
-											
 										</div>
 										<div class="entry-title">
 											<h2><a data-fancybox href="https://www.youtube.com/watch?v=C0KRQ3ka0fA">【COVER】愛💛スクリ～ム！</a></h2>
 										</div>
 										<div class="entry-meta">
 											<ul>
-												<!--<li><i class="uil uil-bookmark-full"></i>Composition, Arrangement, Mixing, Mastering</li>-->
-												<!--<li><a href="blog-single.html#comments"><i class="uil uil-comments-alt"></i> 13</a></li>-->
 												<li><a href="#"><i class="uil bi-person-circle"></i>宮森えりな</a></li>
 												<li><i class="bi-music-note-beamed"></i>Vocal Recording(Remote), Vocal Mixing</li>
 											</ul>
 										</div>
 										<div class="entry-content">
 											<p></p>
-											<!--<a href="blog-single.html" class="more-link">Read More</a>-->
 										</div>
 									</div>
 								</div>
-								<div class="entry col-md-4 col-sm-6 col-12">
+								<div class="entry col-md-4 col-sm-6 col-12 recording">
 									<div class="grid-inner">
 										<div class="entry-image">
 											<a data-fancybox data-type="iframe" class="fancybox" href="https://www.youtube.com/embed/kEyEfpmXwqM">
@@ -1783,28 +1761,22 @@
 													<img src="https://img.youtube.com/vi/kEyEfpmXwqM/hqdefault.jpg" width="640">
 												</div>
 											</a>
-											
-											<!--<iframe width="560" height="315" src="https://www.youtube.com/embed/kEyEfpmXwqM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>-->
-											
 										</div>
 										<div class="entry-title">
 											<h2><a data-fancybox href="https://www.youtube.com/watch?v=v8pRt9eNEfs">【COVER】真的傻</a></h2>
 										</div>
 										<div class="entry-meta">
 											<ul>
-												<!--<li><i class="uil uil-bookmark-full"></i>Composition, Arrangement, Mixing, Mastering</li>-->
-												<!--<li><a href="blog-single.html#comments"><i class="uil uil-comments-alt"></i> 13</a></li>-->
 												<li><a href="#"><i class="uil bi-person-circle"></i>亞璐</a></li>
 												<li><i class="bi-music-note-beamed"></i>Live Recording</li>
 											</ul>
 										</div>
 										<div class="entry-content">
 											<p>大禾音樂錄音室</p>
-											<!--<a href="blog-single.html" class="more-link">Read More</a>-->
 										</div>
 									</div>
 								</div>
-								<div class="entry col-md-4 col-sm-6 col-12">
+								<div class="entry col-md-4 col-sm-6 col-12 vocal-recording vocal-mixing">
 									<div class="grid-inner">
 										<div class="entry-image">
 											<a data-fancybox data-type="iframe" class="fancybox" href="https://www.youtube.com/embed/v8pRt9eNEfs">
@@ -1812,15 +1784,12 @@
 													<img src="https://img.youtube.com/vi/v8pRt9eNEfs/hqdefault.jpg" width="640">
 												</div>
 											</a>
-											<!--<iframe width="560" height="315" src="https://www.youtube.com/embed/v8pRt9eNEfs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>-->
 										</div>
 										<div class="entry-title">
 											<h2><a data-fancybox href="https://www.youtube.com/watch?v=v8pRt9eNEfs">【COVER】月牙灣</a></h2>
 										</div>
 										<div class="entry-meta">
 											<ul>
-												<!--<li><i class="uil uil-bookmark-full"></i>Composition, Arrangement, Mixing, Mastering</li>-->
-												<!--<li><a href="blog-single.html#comments"><i class="uil uil-comments-alt"></i> 13</a></li>-->
 												<li><a href="#"><i class="uil bi-person-circle"></i>望夜</a></li>
 												<li><i class="bi-music-note-beamed"></i>Vocal Recording, Vocal Mixing</li>
 											</ul>
@@ -1828,11 +1797,10 @@
 										<div class="entry-content">
 											<p></p>
 											Ensemble Music Studio，Austrian Audio OC818 + SSL BIG SIX
-											<!--<a href="blog-single.html" class="more-link">Read More</a>-->
 										</div>
 									</div>
 								</div>
-								<div class="entry col-md-4 col-sm-6 col-12">
+								<div class="entry col-md-4 col-sm-6 col-12 vocal-mixing">
 									<div class="grid-inner">
 										<div class="entry-image">
 											<a data-fancybox data-type="iframe" class="fancybox" href="https://www.youtube.com/embed/bTiXlO5L7PE">
@@ -1840,17 +1808,12 @@
 													<img src="https://img.youtube.com/vi/bTiXlO5L7PE/hqdefault.jpg" width="640">
 												</div>
 											</a>
-											
-											<!--<iframe width="560" height="315" src="https://www.youtube.com/embed/bTiXlO5L7PE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>-->
-											
 										</div>
 										<div class="entry-title">
 											<h2><a data-fancybox href="https://www.youtube.com/watch?v=bTiXlO5L7PE">【COVER】踊</a></h2>
 										</div>
 										<div class="entry-meta">
 											<ul>
-												<!--<li><i class="uil uil-bookmark-full"></i>Composition, Arrangement, Mixing, Mastering</li>-->
-												<!--<li><a href="blog-single.html#comments"><i class="uil uil-comments-alt"></i> 13</a></li>-->
 												<li><a href="#"><i class="uil bi-person-circle"></i>雪迎</a></li>
 												<li><i class="bi-music-note-beamed"></i>Vocal Mixing</li>
 											</ul>
@@ -1861,7 +1824,7 @@
 										</div>
 									</div>
 								</div>
-								<div class="entry col-md-4 col-sm-6 col-12">
+								<div class="entry col-md-4 col-sm-6 col-12 vocal-recording vocal-mixing">
 									<div class="grid-inner">
 										<div class="entry-image">
 											<a data-fancybox data-type="iframe" class="fancybox" href="https://www.youtube.com/embed/6bzrJANIl4k">
@@ -1869,15 +1832,12 @@
 													<img src="https://img.youtube.com/vi/6bzrJANIl4k/hqdefault.jpg" width="640">
 												</div>
 											</a>
-											<!--<iframe width="560" height="315" src="https://www.youtube.com/embed/6bzrJANIl4k" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>-->
 										</div>
 										<div class="entry-title">
 											<h2><a data-fancybox href="https://www.youtube.com/watch?v=6bzrJANIl4k">【COVER】アイドル</a></h2>
 										</div>
 										<div class="entry-meta">
 											<ul>
-												<!--<li><i class="uil uil-bookmark-full"></i>Composition, Arrangement, Mixing, Mastering</li>-->
-												<!--<li><a href="blog-single.html#comments"><i class="uil uil-comments-alt"></i> 13</a></li>-->
 												<li><a href="#"><i class="uil bi-person-circle"></i>艾因莉思</a></li>
 												<li><i class="bi-music-note-beamed"></i>Vocal Recording, Vocal Mixing</li>
 											</ul>
@@ -1885,11 +1845,10 @@
 										<div class="entry-content">
 											<p></p>
 											Ensemble Music Studio，Austrian Audio OC818 + SSL BIG SIX
-											<!--<a href="blog-single.html" class="more-link">Read More</a>-->
 										</div>
 									</div>
 								</div>
-								<div class="entry col-md-4 col-sm-6 col-12">
+								<div class="entry col-md-4 col-sm-6 col-12 vocal-mixing synthv-tune">
 									<div class="grid-inner">
 										<div class="entry-image">
 											<a data-fancybox data-type="iframe" class="fancybox" href="https://www.youtube.com/embed/Qs5TL7aBrOg">
@@ -1897,28 +1856,22 @@
 													<img src="https://img.youtube.com/vi/Qs5TL7aBrOg/hqdefault.jpg" width="640">
 												</div>
 											</a>
-											
-											<!--<iframe width="560" height="315" src="https://www.youtube.com/embed/Qs5TL7aBrOg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>-->
-											
 										</div>
 										<div class="entry-title">
 											<h2><a data-fancybox href="https://www.youtube.com/watch?v=Qs5TL7aBrOg">【SynthV歌声合成】人魚の歌</a></h2>
 										</div>
 										<div class="entry-meta">
 											<ul>
-												<!--<li><i class="uil uil-bookmark-full"></i>Composition, Arrangement, Mixing, Mastering</li>-->
-												<!--<li><a href="blog-single.html#comments"><i class="uil uil-comments-alt"></i> 13</a></li>-->
 												<li><a href="#"><i class="uil bi-person-circle"></i>夏語遙</a></li>
 												<li><i class="bi-music-note-beamed"></i>SynthV Tune, Vocal Mixing</li>
 											</ul>
 										</div>
 										<div class="entry-content">
 											<p></p>
-											<!--<a href="blog-single.html" class="more-link">Read More</a>-->
 										</div>
 									</div>
 								</div>
-								<div class="entry col-md-4 col-sm-6 col-12">
+								<div class="entry col-md-4 col-sm-6 col-12 vocal-recording vocal-mixing">
 									<div class="grid-inner">
 										<div class="entry-image">
 											<a data-fancybox data-type="iframe" class="fancybox" href="https://www.youtube.com/embed/rB-mmZGemdM">
@@ -1927,16 +1880,12 @@
 												</div>
 											</a>
 											
-											<!--<iframe width="560" height="315" src="https://www.youtube.com/embed/rB-mmZGemdM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>-->
-											
 										</div>
 										<div class="entry-title">
 											<h2><a data-fancybox href="https://www.youtube.com/watch?v=rB-mmZGemdM">【COVER】大魚</a></h2>
 										</div>
 										<div class="entry-meta">
 											<ul>
-												<!--<li><i class="uil uil-bookmark-full"></i>Composition, Arrangement, Mixing, Mastering</li>-->
-												<!--<li><a href="blog-single.html#comments"><i class="uil uil-comments-alt"></i> 13</a></li>-->
 												<li><a href="#"><i class="uil bi-person-circle"></i>家家</a></li>
 												<li><i class="bi-music-note-beamed"></i>Vocal Recording, Vocal Mixing</li>
 											</ul>
@@ -1944,11 +1893,10 @@
 										<div class="entry-content">
 											<p></p>
 											Ensemble Music Studio，Austrian Audio OC818 + SSL BIG SIX
-											<!--<a href="blog-single.html" class="more-link">Read More</a>-->
 										</div>
 									</div>
 								</div>
-								<div class="entry col-md-4 col-sm-6 col-12">
+								<div class="entry col-md-4 col-sm-6 col-12 sfx bgm foley">
 									<div class="grid-inner">
 										<div class="entry-image">
 											<a data-fancybox data-type="iframe" class="fancybox" href="https://www.youtube.com/embed/UzgZi0mDEv8">
@@ -1965,8 +1913,6 @@
 										</div>
 										<div class="entry-meta">
 											<ul>
-												<!--<li><i class="uil uil-bookmark-full"></i>Composition, Arrangement, Mixing, Mastering</li>-->
-												<!--<li><a href="blog-single.html#comments"><i class="uil uil-comments-alt"></i> 13</a></li>-->
 												<li><a href="#"><i class="uil bi-person-circle"></i>公共電視</a></li>
 												<li><i class="bi-music-note-beamed"></i>SFX, BGM, Foley</li>
 											</ul>
@@ -1977,7 +1923,7 @@
 										</div>
 									</div>
 								</div>
-								<div class="entry col-md-4 col-sm-6 col-12">
+								<div class="entry col-md-4 col-sm-6 col-12 sfx bgm foley">
 									<div class="grid-inner">
 										<div class="entry-image">
 											<a data-fancybox data-type="iframe" class="fancybox" href="https://www.youtube.com/embed/C-Mo1pvOXFg">
@@ -1994,8 +1940,6 @@
 										</div>
 										<div class="entry-meta">
 											<ul>
-												<!--<li><i class="uil uil-bookmark-full"></i>Composition, Arrangement, Mixing, Mastering</li>-->
-												<!--<li><a href="blog-single.html#comments"><i class="uil uil-comments-alt"></i> 13</a></li>-->
 												<li><a href="#"><i class="uil bi-person-circle"></i>唐吉軻德工作室</a></li>
 												<li><i class="bi-music-note-beamed"></i>SFX, BGM, Foley</li>
 											</ul>
@@ -2006,7 +1950,7 @@
 										</div>
 									</div>
 								</div>
-								<div class="entry col-md-4 col-sm-6 col-12">
+								<div class="entry col-md-4 col-sm-6 col-12 full-mixing arrange recording">
 									<div class="grid-inner">
 										<div class="entry-image">
 											<a href="https://pier2.org/exhibition/info/108/"><img src="https://pier2.org/upload/event/IYEHHWCR208407.jpg" alt="鬼画連篇：臺灣動漫恐懼體驗展"></a>
@@ -2017,7 +1961,7 @@
 										<div class="entry-meta">
 											<ul>
 												<li><a href="#"><i class="uil bi-person-circle"></i>駁二</a></li>
-												<li><i class="bi-music-note-beamed"></i>Arrangement, Recording, Full Mixing, Producter</li>
+												<li><i class="bi-music-note-beamed"></i>Arrangement, Recording, Full Mixing</li>
 											</ul>
 										</div>
 										<div class="entry-content">
@@ -2025,7 +1969,7 @@
 										</div>
 									</div>
 								</div>
-								<div class="entry col-md-4 col-sm-6 col-12">
+								<div class="entry col-md-4 col-sm-6 col-12 full-mixing">
 									<div class="grid-inner">
 										<div class="entry-image">
 											<a href="https://www.facebook.com/takehideshamisen"><img src="https://hahow-production.imgix.net/64a3fd730e7192dcd4280262?w=340&sat=0&auto=format&s=cfa7bd6b9d996ae6e0734ff5d3bb6dda" alt="赤胴"></a>
@@ -2044,7 +1988,7 @@
 										</div>
 									</div>
 								</div>
-								<div class="entry col-md-4 col-sm-6 col-12">
+								<div class="entry col-md-4 col-sm-6 col-12 full-mixing mockup">
 									<div class="grid-inner">
 										<div class="entry-image">
 											<a href="https://www.facebook.com/SprestoFanPage"><img src="images/albums/spresto.jpg" alt="Spresto 馳云章樂團"></a>
@@ -2063,7 +2007,7 @@
 										</div>
 									</div>
 								</div>
-								<div class="entry col-md-4 col-sm-6 col-12">
+								<div class="entry col-md-4 col-sm-6 col-12 recording bgm producter">
 									<div class="grid-inner">
 										<div class="entry-image">
 											<a href="https://viis.ntl.edu.tw/exhibition/cp/193"><img src="images/albums/daisy20.jpg" alt="數位有聲圖書館20"></a>
@@ -2082,7 +2026,7 @@
 										</div>
 									</div>
 								</div>
-								<div class="entry col-md-4 col-sm-6 col-12">
+								<div class="entry col-md-4 col-sm-6 col-12 recording bgm producter">
 									<div class="grid-inner">
 										<div class="entry-image">
 											<a href="https://viis.ntl.edu.tw/exhibition/cp/134"><img src="images/albums/daisy18.jpg" alt="數位有聲圖書館18"></a>
@@ -2101,7 +2045,7 @@
 										</div>
 									</div>
 								</div>
-								<div class="entry col-md-4 col-sm-6 col-12">
+								<div class="entry col-md-4 col-sm-6 col-12 recording bgm producter">
 									<div class="grid-inner">
 										<div class="entry-image">
 											<a href="https://viis.ntl.edu.tw/exhibition/cp/98"><img src="images/albums/daisy17.jpg" alt="數位有聲圖書館17"></a>
@@ -2120,7 +2064,7 @@
 										</div>
 									</div>
 								</div>
-								<div class="entry col-md-4 col-sm-6 col-12">
+								<div class="entry col-md-4 col-sm-6 col-12 recording bgm producter">
 									<div class="grid-inner">
 										<div class="entry-image">
 											<a href="https://viis.ntl.edu.tw/exhibition/cp/106" class="entry-link" target="_blank">
@@ -2136,7 +2080,7 @@
 										</div>
 									</div>
 								</div>
-								<div class="entry col-md-4 col-sm-6 col-12">
+								<div class="entry col-md-4 col-sm-6 col-12 recording bgm producter">
 									<div class="grid-inner">
 										<div class="entry-image">
 											<a href="https://viis.ntl.edu.tw/exhibition/cp/164" class="entry-link" target="_blank">
@@ -2152,7 +2096,7 @@
 										</div>
 									</div>
 								</div>
-								<div class="entry col-md-4 col-sm-6 col-12">
+								<div class="entry col-md-4 col-sm-6 col-12 recording bgm producter">
 									<div class="grid-inner">
 										<div class="entry-image">
 											<a href="https://viis.ntl.edu.tw/exhibition/cp/188" class="entry-link" target="_blank">
@@ -2168,7 +2112,7 @@
 										</div>
 									</div>
 								</div>
-								<div class="entry col-md-4 col-sm-6 col-12">
+								<div class="entry col-md-4 col-sm-6 col-12 full-mixing recording">
 									<div class="grid-inner">
 										<div class="entry-image">
 											<iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/3FxZjYkyTgBgjraFAEdBv4?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
@@ -2188,7 +2132,7 @@
 										</div>
 									</div>
 								</div>
-								<div class="entry col-md-4 col-sm-6 col-12">
+								<div class="entry col-md-4 col-sm-6 col-12 full-mixing vocal-recording arrange mastering">
 									<div class="grid-inner">
 										<div class="entry-image">
 											<iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/album/6uD0tS3BK6ITmkp165f9FS?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
@@ -2199,7 +2143,7 @@
 										<div class="entry-meta">
 											<ul>
 												<li><a href="#"><i class="uil bi-person-circle"></i>文藝復興</a></li>
-												<li><i class="bi-music-note-beamed"></i>Vocal Recording, Full Mixing, Mastering</li>
+												<li><i class="bi-music-note-beamed"></i>Vocal Recording, Full Mixing, Arrangement, Mastering</li>
 											</ul>
 										</div>
 										<div class="entry-content">
@@ -2207,7 +2151,7 @@
 										</div>
 									</div>
 								</div>
-								<div class="entry col-md-4 col-sm-6 col-12">
+								<div class="entry col-md-4 col-sm-6 col-12 full-mixing">
 									<div class="grid-inner">
 										<div class="entry-image">
 											<iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/track/0YHuL5fBOWZeFkxFuVNaOR?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
@@ -2218,7 +2162,7 @@
 										<div class="entry-meta">
 											<ul>
 												<li><a href="#"><i class="uil bi-person-circle"></i>黃小玫</a></li>
-												<li><i class="bi-music-note-beamed"></i>Full Mixing, Mastering</li>
+												<li><i class="bi-music-note-beamed"></i>Full Mixing</li>
 											</ul>
 										</div>
 										<div class="entry-content">
@@ -2226,7 +2170,7 @@
 										</div>
 									</div>
 								</div>
-								<div class="entry col-md-4 col-sm-6 col-12">
+								<div class="entry col-md-4 col-sm-6 col-12 full-mixing arrange recording mastering">
 									<div class="grid-inner">
 										<div class="entry-image">
 											<iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/4Y9TQL2WBUM7SmcV4BxeOT?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
@@ -2237,7 +2181,7 @@
 										<div class="entry-meta">
 											<ul>
 												<li><a href="#"><i class="uil bi-person-circle"></i>群星</a></li>
-												<li><i class="bi-music-note-beamed"></i>Arrangement, Recording, Full Mixing</li>
+												<li><i class="bi-music-note-beamed"></i>Arrangement, Recording, Full Mixing, Mastering</li>
 											</ul>
 										</div>
 										<div class="entry-content">
@@ -2247,243 +2191,6 @@
 									</div>
 								</div>
 							
-								<!--
-								
-								<div class="entry col-md-4 col-sm-6 col-12">
-									<div class="grid-inner">
-										<div class="entry-image">
-											<a href="images/blog/full/17.jpg" data-lightbox="image"><img src="images/blog/small/17.jpg" alt="Standard Post with Image"></a>
-										</div>
-										<div class="entry-title">
-											<h2><a href="blog-single.html">This is a Standard post with a Preview Image</a></h2>
-										</div>
-										<div class="entry-meta">
-											<ul>
-												<li><i class="uil uil-schedule"></i> 10th Feb 2021</li>
-												<li><a href="blog-single.html#comments"><i class="uil uil-comments-alt"></i> 13</a></li>
-												<li><a href="#"><i class="uil uil-camera"></i></a></li>
-											</ul>
-										</div>
-										<div class="entry-content">
-											<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, asperiores quod est tenetur in. Eligendi, deserunt, blanditiis est quisquam doloribus.</p>
-											<a href="blog-single.html" class="more-link">Read More</a>
-										</div>
-									</div>
-								</div>
-		
-								   <div class="entry col-md-4 col-sm-6 col-12">
-									   <div class="grid-inner">
-										<div class="entry-image">
-											<iframe src="https://player.vimeo.com/video/87701971" width="500" height="281" allow="autoplay; fullscreen" allowfullscreen></iframe>
-										</div>
-										<div class="entry-title">
-											<h2><a href="blog-single-full.html">This is a Standard post with an Embedded Video</a></h2>
-										</div>
-										<div class="entry-meta">
-											<ul>
-												<li><i class="uil uil-schedule"></i> 16th Feb 2021</li>
-												<li><a href="blog-single-full.html#comments"><i class="uil uil-comments-alt"></i> 19</a></li>
-												<li><a href="#"><i class="uil uil-film"></i></a></li>
-											</ul>
-										</div>
-										<div class="entry-content">
-											<p>Asperiores, tenetur, blanditiis, quaerat odit ex exercitationem pariatur quibusdam veritatis quisquam laboriosam esse beatae hic perferendis velit deserunt!</p>
-											<a href="blog-single-full.html" class="more-link">Read More</a>
-										</div>
-									</div>
-								</div>
-		
-								<div class="entry col-md-4 col-sm-6 col-12">
-									<div class="grid-inner">
-										<div class="entry-image">
-											<div class="fslider" data-arrows="false" data-lightbox="gallery">
-												<div class="flexslider">
-													<div class="slider-wrap">
-														<div class="slide"><a href="images/blog/full/10.jpg" data-lightbox="gallery-item"><img src="images/blog/masonry/10.jpg" alt="Standard Post with Gallery"></a></div>
-														<div class="slide"><a href="images/blog/full/20.jpg" data-lightbox="gallery-item"><img src="images/blog/masonry/20.jpg" alt="Standard Post with Gallery"></a></div>
-														<div class="slide"><a href="images/blog/full/21.jpg" data-lightbox="gallery-item"><img src="images/blog/masonry/21.jpg" alt="Standard Post with Gallery"></a></div>
-													</div>
-												</div>
-											</div>
-										</div>
-										<div class="entry-title">
-											<h2><a href="blog-single-small.html">This is a Standard post with a Slider Gallery</a></h2>
-										</div>
-										<div class="entry-meta">
-											<ul>
-												<li><i class="uil uil-schedule"></i> 24th Feb 2021</li>
-												<li><a href="blog-single-small.html#comments"><i class="uil uil-comments-alt"></i> 21</a></li>
-												<li><a href="#"><i class="uil uil-images"></i></a></li>
-											</ul>
-										</div>
-										<div class="entry-content">
-											<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione, voluptatem, dolorem animi nisi autem blanditiis enim culpa reiciendis et explicabo tenetur!</p>
-											<a href="blog-single-small.html" class="more-link">Read More</a>
-										</div>
-									</div>
-								</div>
-		
-								<div class="entry col-md-4 col-sm-6 col-12">
-									<div class="grid-inner">
-										<div class="entry-image">
-											<blockquote>
-												<p>"When you are courting a nice girl an hour seems like a second. When you sit on a red-hot cinder a second seems like an hour. That's relativity."</p>
-												<footer>Albert Einstein</footer>
-											</blockquote>
-										</div>
-										<div class="entry-meta">
-											<ul>
-												<li><i class="uil uil-schedule"></i> 3rd Mar 2021</li>
-												<li><a href="blog-single.html#comments"><i class="uil uil-comments-alt"></i> 23</a></li>
-												<li><a href="#"><i class="bi-quote"></i></a></li>
-											</ul>
-										</div>
-									</div>
-								</div>
-		
-								<div class="entry col-md-4 col-sm-6 col-12">
-									<div class="grid-inner">
-										<div class="entry-image">
-											<div class="masonry-thumbs grid-container row row-cols-4" data-big="3" data-lightbox="gallery">
-												<a class="grid-item" href="images/blog/full/2.jpg" data-lightbox="gallery-item"><img src="images/blog/small/2.jpg" alt="Image"></a>
-												<a class="grid-item" href="images/blog/full/3.jpg" data-lightbox="gallery-item"><img src="images/blog/small/3.jpg" alt="Image"></a>
-												<a class="grid-item" href="images/blog/full/6-1.jpg" data-lightbox="gallery-item"><img src="images/blog/small/6-1.jpg" alt="Image"></a>
-												<a class="grid-item" href="images/blog/full/6-2.jpg" data-lightbox="gallery-item"><img src="images/blog/small/6-2.jpg" alt="Image"></a>
-												<a class="grid-item" href="images/blog/full/12.jpg" data-lightbox="gallery-item"><img src="images/blog/small/12.jpg" alt="Image"></a>
-												<a class="grid-item" href="images/blog/full/12-1.jpg" data-lightbox="gallery-item"><img src="images/blog/small/12-1.jpg" alt="Image"></a>
-												<a class="grid-item" href="images/blog/full/13.jpg" data-lightbox="gallery-item"><img src="images/blog/small/13.jpg" alt="Image"></a>
-												<a class="grid-item" href="images/blog/full/18.jpg" data-lightbox="gallery-item"><img src="images/blog/small/18.jpg" alt="Image"></a>
-												<a class="grid-item" href="images/blog/full/19.jpg" data-lightbox="gallery-item"><img src="images/blog/small/19.jpg" alt="Image"></a>
-											</div>
-										</div>
-										<div class="entry-title">
-											<h2><a href="blog-single.html">This is a Standard post with Masonry Thumbs Gallery</a></h2>
-										</div>
-										<div class="entry-meta">
-											<ul>
-												<li><i class="uil uil-schedule"></i> 3rd Mar 2021</li>
-												<li><a href="blog-single.html#comments"><i class="uil uil-comments-alt"></i> 21</a></li>
-												<li><a href="#"><i class="uil uil-images"></i></a></li>
-											</ul>
-										</div>
-										<div class="entry-content">
-											<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione, voluptatem, dolorem animi nisi autem blanditiis enim culpa reiciendis et explicabo!</p>
-											<a href="blog-single.html" class="more-link">Read More</a>
-										</div>
-									</div>
-								</div>
-		
-								<div class="entry col-md-4 col-sm-6 col-12">
-									<div class="grid-inner">
-										<div class="entry-image">
-											<a href="https://themeforest.net" class="entry-link" target="_blank">
-												Themeforest.net
-												<span>- https://themeforest.net</span>
-											</a>
-										</div>
-										<div class="entry-meta">
-											<ul>
-												<li><i class="uil uil-schedule"></i> 17th Mar 2021</li>
-												<li><a href="blog-single.html#comments"><i class="uil uil-comments-alt"></i> 26</a></li>
-												<li><a href="#"><i class="uil uil-link"></i></a></li>
-											</ul>
-										</div>
-									</div>
-								</div>
-		
-								<div class="entry col-md-4 col-sm-6 col-12">
-									<div class="grid-inner">
-										<div class="entry-image">
-											<div class="card">
-												<div class="card-body">
-													Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia, fuga optio voluptatibus saepe tenetur aliquam debitis eos accusantium!
-												</div>
-											</div>
-										</div>
-										<div class="entry-meta">
-											<ul>
-												<li><i class="uil uil-schedule"></i> 21st Mar 2021</li>
-												<li><a href="blog-single.html#comments"><i class="uil uil-comments-alt"></i> 11</a></li>
-												<li><a href="#"><i class="uil uil-align-justify"></i></a></li>
-											</ul>
-										</div>
-									</div>
-								</div>
-		
-								<div class="entry col-md-4 col-sm-6 col-12">
-									<div class="grid-inner">
-										<div class="entry-image">
-											<div class="fslider" data-animation="fade" data-pagi="false" data-pause="6000" data-lightbox="gallery">
-												<div class="flexslider">
-													<div class="slider-wrap">
-														<div class="slide"><a href="images/blog/full/6-1.jpg" data-lightbox="gallery-item"><img src="images/blog/masonry/6-1.jpg" alt="Standard Post with Gallery"></a></div>
-														<div class="slide"><a href="images/blog/full/6-2.jpg" data-lightbox="gallery-item"><img src="images/blog/masonry/6-2.jpg" alt="Standard Post with Gallery"></a></div>
-														<div class="slide"><a href="images/blog/full/12-1.jpg" data-lightbox="gallery-item"><img src="images/blog/masonry/12-1.jpg" alt="Standard Post with Gallery"></a></div>
-														<div class="slide"><a href="images/blog/full/22.jpg" data-lightbox="gallery-item"><img src="images/blog/masonry/22.jpg" alt="Standard Post with Gallery"></a></div>
-													</div>
-												</div>
-											</div>
-										</div>
-										<div class="entry-title">
-											<h2><a href="blog-single.html">This is a Standard post with Fade Gallery</a></h2>
-										</div>
-										<div class="entry-meta">
-											<ul>
-												<li><i class="uil uil-schedule"></i> 3rd Apr 2021</li>
-												<li><a href="blog-single.html#comments"><i class="uil uil-comments-alt"></i> 21</a></li>
-												<li><a href="#"><i class="uil uil-images"></i></a></li>
-											</ul>
-										</div>
-										<div class="entry-content">
-											<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione, voluptatem, dolorem animi nisi autem blanditiis enim culpa reiciendis et explicabo!</p>
-											<a href="blog-single.html" class="more-link">Read More</a>
-										</div>
-									</div>
-								</div>
-		
-								<div class="entry col-md-4 col-sm-6 col-12">
-									<div class="grid-inner">
-										<div class="entry-image">
-											<iframe src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/301161123&amp;auto_play=false&amp;hide_related=true&amp;visual=true"></iframe>
-										</div>
-										<div class="entry-title">
-											<h2><a href="blog-single.html">This is an Embedded Audio Post</a></h2>
-										</div>
-										<div class="entry-meta">
-											<ul>
-												<li><i class="uil uil-schedule"></i> 28th April 2021</li>
-												<li><a href="blog-single.html#comments"><i class="uil uil-comments-alt"></i> 16</a></li>
-												<li><a href="#"><i class="uil uil-music"></i></a></li>
-											</ul>
-										</div>
-										<div class="entry-content">
-											<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione, voluptatem, dolorem animi nisi autem blanditiis enim culpa reiciendis et explicabo tenetur voluptate rerum.</p>
-											<a href="blog-single.html" class="more-link">Read More</a>
-										</div>
-									</div>
-								</div>
-		
-								<div class="entry col-md-4 col-sm-6 col-12">
-									<div class="grid-inner">
-										<div class="entry-image">
-											<iframe width="560" height="315" src="https://www.youtube.com/embed/SZEflIVnhH8" allowfullscreen></iframe>
-										</div>
-										<div class="entry-title">
-											<h2><a href="blog-single-full.html">This is a Standard post with a Youtube Video</a></h2>
-										</div>
-										<div class="entry-meta">
-											<ul>
-												<li><i class="uil uil-schedule"></i> 30th Apr 2021</li>
-												<li><a href="blog-single-full.html#comments"><i class="uil uil-comments-alt"></i> 34</a></li>
-												<li><a href="#"><i class="uil uil-film"></i></a></li>
-											</ul>
-										</div>
-										<div class="entry-content">
-											<p>Asperiores, tenetur, blanditiis, quaerat odit ex exercitationem pariatur quibusdam veritatis quisquam laboriosam esse beatae hic perferendis velit deserunt!</p>
-											<a href="blog-single-full.html" class="more-link">Read More</a>
-										</div>
-									</div>
-								</div>-->
 		
 							</div><!-- #posts end -->
 		
@@ -2666,101 +2373,6 @@
 									</div>
 								</div>
 
-								<!--<div class="entry col-md-6">
-									<div class="grid-inner row align-items-center">
-										<div class="col-lg-6">
-											<div class="entry-image">
-												<a href="https://www.youtube.com/playlist?list=PLUD0p5NnO5i4Wg0pl78ZQoPbUhREgWy5F"><img src="one-page/images/blog/reaper2.png" alt="Paris"></a>
-											</div>
-										</div>
-										<div class="col-lg-6 mt-3 mt-lg-0">
-											<span class="before-heading fst-normal">Production</span>
-											<div class="entry-title text-transform-none">
-												<h3 class="fw-normal"><a href="https://www.youtube.com/playlist?list=PLUD0p5NnO5i4Wg0pl78ZQoPbUhREgWy5F">免費人聲混音製作教學(六集)</a></h3>
-											</div>
-											<div class="entry-content">
-												完全不藏私，跟著我的步驟就能做出相同品質的商業級混音。
-												<a href="https://www.youtube.com/playlist?list=PLUD0p5NnO5i4Wg0pl78ZQoPbUhREgWy5F" class="more-link">Read more <i class="uil uil-angle-right-b"></i></a>
-											</div>
-										</div>
-									</div>
-								</div>
-
-								<div class="entry col-md-6">
-									<div class="grid-inner row align-items-center">
-										<div class="col-lg-6">
-											<div class="entry-image">
-												<a href="https://www.youtube.com/watch?v=Yp6ekMyZtj8&list=PLUD0p5NnO5i7KW0jiSBiANR68K4Fjb_H6"><img src="one-page/images/blog/ado.png" alt="Ado"></a>
-											</div>
-										</div>
-										<div class="col-lg-6 mt-3 mt-lg-0">
-											<span class="before-heading fst-normal">Production/Translation</span>
-											<div class="entry-title text-transform-none">
-												<h3 class="fw-normal"><a href="https://www.youtube.com/watch?v=Yp6ekMyZtj8&list=PLUD0p5NnO5i7KW0jiSBiANR68K4Fjb_H6">ADO的配唱製作(翻譯)</a></h3>
-											</div>
-											<div class="entry-content">這主要是翻譯ADO擔任怪忌蝶製作人的錄音配唱側錄，讓大家了解她的配唱風格與技巧，進而學習更多的演唱與詮釋技巧。
-												<a href="https://www.youtube.com/watch?v=Yp6ekMyZtj8&list=PLUD0p5NnO5i7KW0jiSBiANR68K4Fjb_H6" class="more-link">Read more <i class="uil uil-angle-right-b"></i></a>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="entry col-md-6">
-									<div class="grid-inner row align-items-center">
-										<div class="col-lg-6">
-											<div class="entry-image">
-												<a href="https://youtube.com/playlist?list=PLUD0p5NnO5i5wEx4W_jsdebfgWAByxn4p&si=rqMmmfNExObGooVN"><img src="one-page/images/blog/remix.jpg" alt="Remix"></a>
-											</div>
-										</div>
-										<div class="col-lg-6 mt-3 mt-lg-0">
-											<span class="before-heading fst-normal">Mixing</span>
-											<div class="entry-title text-transform-none">
-												<h3 class="fw-normal"><a href="https://youtube.com/playlist?list=PLUD0p5NnO5i5wEx4W_jsdebfgWAByxn4p&si=rqMmmfNExObGooVN">Hikari的Remix二創</a></h3>
-											</div>
-											<div class="entry-content">這邊的Remix不是指電音DJ混音，而是擷取實況內容做音訊分離與標準的音樂製作流程後，重製成爲接近發行的水準，基本上都是二創。
-												<a href="https://youtube.com/playlist?list=PLUD0p5NnO5i5wEx4W_jsdebfgWAByxn4p&si=rqMmmfNExObGooVN" class="more-link">Read more <i class="uil uil-angle-right-b"></i></a>
-											</div>
-										</div>
-									</div>
-								</div>
-								
-								<div class="entry col-md-6">
-									<div class="grid-inner row align-items-center">
-										<div class="col-lg-6">
-											<div class="entry-image">
-												<a href="https://www.youtube.com/@hikari-tsai/streams"><img src="one-page/images/blog/strems.png" alt="Paris"></a>
-											</div>
-										</div>
-										<div class="col-lg-6 mt-3 mt-lg-0">
-											<span class="before-heading fst-normal">Strems</span>
-											<div class="entry-title text-transform-none">
-												<h3 class="fw-normal"><a href="https://www.youtube.com/@hikari-tsai/streams">通常是技術台，歡迎來聊天</a></h3>
-											</div>
-											<div class="entry-content">可能混音、可能作曲、也可能寫程式，歡迎聊天
-												<a href="https://www.youtube.com/@hikari-tsai/streams" class="more-link">Read more <i class="uil uil-angle-right-b"></i></a>
-											</div>
-										</div>
-									</div>
-								</div>-->
-								<!--
-								<div class="entry col-md-6">
-									<div class="grid-inner row align-items-center">
-										<div class="col-lg-6">
-											<div class="entry-image">
-												<a href="#"><img src="one-page/images/blog/4.jpg" alt="Paris"></a>
-											</div>
-										</div>
-										<div class="col-lg-6 mt-3 mt-lg-0">
-											<span class="before-heading fst-normal">Inspiration</span>
-											<div class="entry-title text-transform-none">
-												<h3 class="fw-normal"><a href="#">Top Ten Signs You're a Designer</a></h3>
-											</div>
-											<div class="entry-content">
-												<a href="#" class="more-link">Read more <i class="uil uil-angle-right-b"></i></a>
-											</div>
-										</div>
-									</div>
-								</div>
-								-->
 
 							</div>
 
@@ -2788,107 +2400,6 @@
 
 				</div>
 
-				<!--<div id="section-contact" class="page-section pt-0">
-
-					<div class="row mx-0 mb-6 align-items-stretch">
-						<div class="col-lg-8 col-md-6 d-none d-md-block px-0">
-							<div class="gmap h-100" data-address="Melbourne, Australia" data-maptype="ROADMAP" data-zoom="14" data-markers='[{ address: "Melbourne, Australia", html: "Melbourne, Australia", icon:{ image: "one-page/images/icons/map-icon-red.png", iconsize: [32, 32], iconanchor: [14,44] } }]' data-styles='[{"featureType":"all","elementType":"labels.text.fill","stylers":[{"saturation":36},{"color":"#000000"},{"lightness":40}]},{"featureType":"all","elementType":"labels.text.stroke","stylers":[{"visibility":"on"},{"color":"#000000"},{"lightness":16}]},{"featureType":"all","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"administrative","elementType":"geometry.fill","stylers":[{"color":"#000000"},{"lightness":20}]},{"featureType":"administrative","elementType":"geometry.stroke","stylers":[{"color":"#000000"},{"lightness":17},{"weight":1.2}]},{"featureType":"administrative","elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"administrative.country","elementType":"all","stylers":[{"visibility":"simplified"}]},{"featureType":"administrative.country","elementType":"geometry","stylers":[{"visibility":"simplified"}]},{"featureType":"administrative.country","elementType":"labels.text","stylers":[{"visibility":"simplified"}]},{"featureType":"administrative.province","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"administrative.locality","elementType":"all","stylers":[{"visibility":"simplified"},{"saturation":"-100"},{"lightness":"30"}]},{"featureType":"administrative.neighborhood","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"administrative.land_parcel","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"landscape","elementType":"all","stylers":[{"visibility":"simplified"},{"gamma":"0.00"},{"lightness":"74"}]},{"featureType":"landscape","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":20}]},{"featureType":"landscape.man_made","elementType":"all","stylers":[{"lightness":"3"}]},{"featureType":"poi","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"poi","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":21}]},{"featureType":"road","elementType":"geometry","stylers":[{"visibility":"simplified"}]},{"featureType":"road.highway","elementType":"geometry.fill","stylers":[{"color":"#000000"},{"lightness":17}]},{"featureType":"road.highway","elementType":"geometry.stroke","stylers":[{"color":"#000000"},{"lightness":29},{"weight":0.2}]},{"featureType":"road.arterial","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":18}]},{"featureType":"road.local","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":16}]},{"featureType":"transit","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":19}]},{"featureType":"water","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":17}]}]'></div>
-						</div>
-						<div class="col-lg-4 col-md-6 bg-contrast-100">
-							<div class="col-padding">
-								<h3 class="font-body fw-normal ls-1">Our Headquarters</h3>
-
-								<div style="font-size: 16px; line-height: 1.7;">
-									<address style="line-height: 1.7;">
-										<strong>North America:</strong><br>
-										795 Folsom Ave, Suite 600<br>
-										San Francisco, CA 94107<br>
-									</address>
-
-									<div class="clear mt-4"></div>
-
-									<address style="line-height: 1.7;">
-										<strong>Europe:</strong><br>
-										795 Folsom Ave, Suite 600<br>
-										San Francisco, CA 94107<br>
-									</address>
-
-									<div class="clear mt-5"></div>
-
-									<abbr title="Phone Number"><strong>Phone:</strong></abbr> (1) 8547 632521<br>
-									<abbr title="Fax"><strong>Fax:</strong></abbr> (1) 11 4752 1433<br>
-									<abbr title="Email Address"><strong>Email:</strong></abbr> info@canvas.com
-								</div>
-							</div>
-						</div>
-					</div>
-
-					<div class="container">
-
-						<div class="mx-auto mt-5" style="max-width: 850px;">
-
-							<div class="form-widget">
-
-								<div class="form-result"></div>
-
-								<form class="row mb-0" id="template-contactform" name="template-contactform" action="include/form.php" method="post">
-
-									<div class="form-process">
-										<div class="css3-spinner">
-											<div class="css3-spinner-scale-ripple">
-												<div></div>
-												<div></div>
-												<div></div>
-											</div>
-										</div>
-									</div>
-
-									<div class="col-md-6 mb-4">
-										<input type="text" id="template-contactform-name" name="template-contactform-name" value="" class="form-control border-form-control required" placeholder="Name">
-									</div>
-									<div class="col-md-6 mb-4">
-										<input type="email" id="template-contactform-email" name="template-contactform-email" value="" class="required email form-control border-form-control" placeholder="Email Address">
-									</div>
-
-									<div class="w-100"></div>
-
-									<div class="col-md-4 mb-4">
-										<input type="text" id="template-contactform-phone" name="template-contactform-phone" value="" class="form-control border-form-control" placeholder="Phone">
-									</div>
-
-									<div class="col-md-8 mb-4">
-										<input type="text" id="template-contactform-subject" name="subject" value="" class="required form-control border-form-control" placeholder="Subject">
-									</div>
-
-									<div class="w-100"></div>
-
-									<div class="col-12 mb-4">
-										<textarea class="required form-control border-form-control" id="template-contactform-message" name="template-contactform-message" rows="7" cols="30" placeholder="Your Message"></textarea>
-									</div>
-
-									<div class="col-12 text-center mb-4">
-										<button class="button button-border button-circle fw-medium ms-0 mt-4" type="submit" id="template-contactform-submit" name="template-contactform-submit" value="submit">Send Message</button>
-										<br>
-										<small class="d-block mt-3 text-muted">We'll do our best to get back to you within 6-8 working hours.</small>
-									</div>
-
-									<div class="w-100"></div>
-
-									<div class="col-12 d-none">
-										<input type="text" id="template-contactform-botcheck" name="template-contactform-botcheck" value="" class="form-control">
-									</div>
-
-									<input type="hidden" name="prefix" value="template-contactform-">
-
-								</form>
-
-							</div>
-
-						</div>
-
-					</div>
-
-				</div>-->
 				<div id="section-contact" class="row feature-box-border-vertical border-hover-animate col-mb-50 justify-content-center align-items-center my-5">
 					<h2 class="text-center text-uppercase fw-light ls-3 font-body">找Hikari混音</h2>
 					<div class="col-lg-9">
@@ -3246,140 +2757,12 @@
 	<script src="js/plugins.min.js"></script>
 	<script src="js/functions.bundle.js"></script>
 	<script>
-		document.addEventListener('DOMContentLoaded', function(){
-			const posts = document.getElementById('posts');
-			if(!posts) return;
-			const entries = () => Array.from(posts.querySelectorAll('.entry'));
-			const tagSet = new Set();
-
-			// parse tags from one entry (lowercase)
-			function parseTags(el){
-				const icon = el.querySelector('i.bi-music-note-beamed');
-				const li = icon ? icon.closest('li') : null;
-				if(!li) return [];
-				const clone = li.cloneNode(true);
-				clone.querySelectorAll('i').forEach(n=>n.remove());
-				const text = (clone.textContent || '').trim();
-				if(!text) return [];
-				return text.split(/[,\u3001\/\|\uFF0C;；]+/).map(s=>s.trim().toLowerCase()).filter(Boolean);
-			}
-
-			// init tags
-			entries().forEach(el=>{
-				const tags = parseTags(el);
-				el._tags = tags;
-				tags.forEach(t=>tagSet.add(t));
+		jQuery(document).ready( function(){
+			jQuery(".dropdown-item span").on( 'click', function(){
+				var displayText = jQuery(this).text();
+				jQuery("#grid-filter-btn").html(displayText);
+				jQuery(this).parents('.dropdown').find('.show').toggleClass('show', false);
 			});
-
-			const bar = document.getElementById('works-toggle-bar');
-			if(!bar || tagSet.size === 0) return;
-
-			// build buttons
-			const tags = Array.from(tagSet).sort((a,b)=> a.localeCompare(b,'zh-Hant'));
-			tags.forEach(tag=>{
-				const btn = document.createElement('button');
-				btn.type = 'button';
-				btn.className = 'toggle-btn';
-				btn.dataset.tag = tag;
-				btn.textContent = tag;
-				bar.appendChild(btn);
-			});
-			const clear = document.createElement('button');
-			clear.type = 'button';
-			clear.className = 'clear-btn';
-			clear.innerHTML = ' <i class="uil uil-sync"></i>';
-			clear.setAttribute('aria-label', 'Clear filters');
-			//clear.textContent = 'Clear';
-			bar.appendChild(clear);
-
-			// attempt to relayout common layout libraries, fallback to resize
-			function relayout(){
-				// jQuery Isotope
-				if(window.jQuery && typeof jQuery.fn.isotope === 'function'){
-					try { jQuery('#posts').isotope('layout'); return; } catch(e){}
-				}
-				// global iso instance (you may set window.iso when init)
-				if(window.iso && typeof window.iso.layout === 'function'){ try{ window.iso.layout(); return;}catch(e){} }
-				// jQuery Masonry
-				if(window.jQuery && typeof jQuery.fn.masonry === 'function'){
-					try { jQuery('#posts').masonry('layout'); return; } catch(e){}
-				}
-				// Masonry instance stored on element
-				if(posts._masonry && typeof posts._masonry.layout === 'function'){ try{ posts._masonry.layout(); return;}catch(e){} }
-				if(posts.masonry && typeof posts.masonry.layout === 'function'){ try{ posts.masonry.layout(); return;}catch(e){} }
-				// fallback: trigger resize to let other scripts recalc
-				setTimeout(()=> window.dispatchEvent(new Event('resize')), 50);
-			}
-
-			// apply filter and relayout
-			function applyFilter(){
-				const active = Array.from(bar.querySelectorAll('.toggle-btn.active')).map(b=>b.dataset.tag);
-				const all = entries();
-				if(active.length === 0){
-					all.forEach(e=> e.style.display = '');
-					relayout();
-					return;
-				}
-				all.forEach(e=>{
-					const tags = e._tags || parseTags(e);
-					const has = tags.some(t => active.includes(t));
-					e.style.display = has ? '' : 'none';
-				});
-				relayout();
-			}
-
-			// delegate clicks
-			bar.addEventListener('click', function(e){
-				const btn = e.target.closest('button.toggle-btn');
-				if(btn){
-					btn.classList.toggle('active');
-					applyFilter();
-					return;
-				}
-				if(e.target.closest('button.clear-btn')){
-					bar.querySelectorAll('.toggle-btn.active').forEach(b=>b.classList.remove('active'));
-					applyFilter();
-				}
-			});
-
-			// in case some other script injects or modifies posts, observe and rebuild tags/buttons
-			const mo = new MutationObserver((mutations)=>{
-				let need = false;
-				for(const m of mutations){
-					if(m.type === 'childList' && (m.addedNodes.length || m.removedNodes.length)){ need = true; break; }
-				}
-				if(!need) return;
-				// rebuild tagSet and buttons while preserving active selection
-				const activeNow = new Set(Array.from(bar.querySelectorAll('.toggle-btn.active')).map(b=>b.dataset.tag));
-				tagSet.clear();
-				entries().forEach(el=>{
-					const tags = parseTags(el);
-					el._tags = tags;
-					tags.forEach(t=>tagSet.add(t));
-				});
-				// rebuild buttons
-				bar.innerHTML = '';
-				const newTags = Array.from(tagSet).sort((a,b)=> a.localeCompare(b,'zh-Hant'));
-				newTags.forEach(tag=>{
-					const b = document.createElement('button');
-					b.type = 'button';
-					b.className = 'toggle-btn';
-					b.dataset.tag = tag;
-					b.textContent = tag;
-					if(activeNow.has(tag)) b.classList.add('active');
-					bar.appendChild(b);
-				});
-				const c = document.createElement('button');
-				c.type = 'button'; c.className = 'clear-btn'; c.textContent = 'Clear';
-				bar.appendChild(c);
-				applyFilter();
-			});
-
-			mo.observe(posts, { childList: true, subtree: false });
-
-			// initial layout (in case layout lib already ran)
-			relayout();
-
 		});
 	</script>
 
