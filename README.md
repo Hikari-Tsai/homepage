@@ -117,6 +117,17 @@ node tools/build.mjs         # 產生 index.html，並補抓新作品的日期
 
 然後用瀏覽器打開 `index.html` 確認。產生時如果資料有錯，會直接列出是第幾筆、哪裡有問題。
 
+## 發布日期從哪裡來
+
+- **YouTube**：用 YouTube Data API v3 查詢上傳日期。API 金鑰存在 GitHub repo 的 Secret `YOUTUBE_API_KEY`，
+  只在 GitHub Actions 產生頁面時使用，不會出現在網頁上。金鑰在 Google Cloud 專案 `homepage-youtube` 裡，
+  名稱是 `homepage-build`，限制只能呼叫 YouTube Data API v3。
+- 本機執行時如果沒有設定 `YOUTUBE_API_KEY` 環境變數，會改用讀取影片頁面的方式抓日期。
+- **Spotify**：讀取專輯／單曲頁面的發行日期。
+- 抓到的日期存在 `data/dates.json`，之後只會查還沒有日期的作品。
+- 想重新查詢所有 YouTube 日期：到 GitHub repo 的 **Actions → Build and deploy → Run workflow**，
+  勾選「重新查詢所有 YouTube 影片的發布日期」後執行。
+
 ## 修改、隱藏、刪除作品
 
 - **修改**：在 `data/works.yml` 找到那一段直接改。

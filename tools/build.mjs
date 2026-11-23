@@ -1,5 +1,6 @@
 // 依 data/works.yml、data/authors.yml 與 src/index.html 模板產生 index.html
 // 用法：node tools/build.mjs            產生 index.html（新影片會自動補抓發布日期）
+//       node tools/build.mjs --refresh  重新查詢所有 YouTube 影片的日期
 //       node tools/build.mjs --check    只檢查資料，不寫檔
 import { readFileSync, writeFileSync, existsSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
@@ -63,7 +64,40 @@ async function fetchDate(key) {
 		: page.match(/itemprop="(?:datePublished|uploadDate)" content="([^"]+)"/) || page.match(/"(?:publishDate|uploadDate)":"([^"]+)"/);
 	return m ? m[1] : null;
 }
-const missing = [...new Set(works.filter(w => !w.hidden && !w.date && dateKey(w) && !dates[dateKey(w)]).map(dateKey))];
+
+// YouTube Data API v3：有設定環境變數 YOUTUBE_API_KEY 時使用（GitHub Actions 由 Secret 提供），
+// 一次最多查 50 部影片。沒有金鑰時（例如本機）退回讀取影片頁面。
+async function fetchYouTubeDates(ids, apiKey) {
+	const found = {};
+	for (let i = 0; i < ids.length; i += 50) {
+		const params = new URLSearchParams({ part: 'snippet', id: ids.slice(i, i + 50).join(','), fields: 'items(id,snippet/publishedAt)', key: apiKey });
+		const res = await fetch(`https://www.googleapis.com/youtube/v3/videos?${params}`);
+		const body = await res.json();
+		if (!res.ok) throw new Error(`YouTube API 回應 ${res.status}：${body?.error?.message ?? '未知錯誤'}`);
+		for (const it of body.items ?? []) found[it.id] = it.snippet.publishedAt;
+	}
+	return found;
+}
+
+// --refresh：忽略快取，重新查詢所有 YouTube 影片的日期
+const refresh = process.argv.includes('--refresh');
+let missing = [...new Set(works.filter(w => !w.hidden && !w.date && dateKey(w) && (!dates[dateKey(w)] || (refresh && ytId(w)))).map(dateKey))];
+const apiKey = process.env.YOUTUBE_API_KEY;
+const ytMissing = missing.filter(k => !k.startsWith('spotify:'));
+if (apiKey && ytMissing.length) {
+	try {
+		const found = await fetchYouTubeDates(ytMissing, apiKey);
+		for (const id of ytMissing) {
+			if (found[id]) { dates[id] = found[id]; console.log(`抓到發布日期（API）${id} ${found[id]}`); }
+			else console.warn(`YouTube API 查不到 ${id}（影片可能已下架或設為私人），這張卡片先不顯示日期`);
+		}
+		missing = missing.filter(k => k.startsWith('spotify:'));
+	} catch (e) {
+		console.warn(`${e.message}，改用讀取影片頁面的方式`);
+	}
+} else if (ytMissing.length) {
+	console.log('沒有設定 YOUTUBE_API_KEY，YouTube 日期改用讀取影片頁面的方式');
+}
 for (const key of missing) {
 	try {
 		const d = await fetchDate(key);
