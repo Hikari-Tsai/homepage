@@ -131,6 +131,29 @@
 			text-align: center;
 		}
 
+		/* 作品搜尋框 */
+		#works-search-wrap {
+			position: relative;
+			width: 260px;
+			max-width: 100%;
+		}
+
+		#works-search-wrap i {
+			position: absolute;
+			left: 14px;
+			top: 50%;
+			transform: translateY(-50%);
+			opacity: .5;
+			pointer-events: none;
+		}
+
+		#works-search {
+			padding-left: 38px;
+			height: 100%;
+			min-height: 42px;
+			border-radius: 0;
+		}
+
 		#dropdown-filter .dropdown-toggle::after {
 			content: "\F282";
 			font-family: "bootstrap-icons";
@@ -737,13 +760,17 @@
 							<!--<div class="grid-filter-wrap justify-content-center">
 								<div id="works-toggle-bar" style="display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin:40px 0;"></div>
 							</div>-->
-							<div class="grid-filter-wrap justify-content-center mb-5">
+							<div class="grid-filter-wrap justify-content-center flex-wrap gap-3 mb-3">
+								<div id="works-search-wrap">
+									<i class="bi-search"></i>
+									<input id="works-search" type="search" class="form-control" placeholder="搜尋歌名、作者、器材…" aria-label="搜尋作品" autocomplete="off">
+								</div>
 								<div id="dropdown-filter" class="dropdown border-0">
 									<a id="grid-filter-btn" class="button m-0 bg-color text-white dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
 										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;作品分類 (ALL)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 									</a>
 
-									<ul class="dropdown-menu custom-filter py-0 border-default rounded-0" data-container="#posts">
+									<ul class="dropdown-menu custom-filter py-0 border-default rounded-0">
 										<li><a href="#" class="dropdown-item" data-filter="*"><span>All</span></a></li>
 										<li><a href="#" class="dropdown-item" data-filter=".vocal-recording"><span>Vocal Recording</span></a></li>
 										<li><a href="#" class="dropdown-item" data-filter=".vocal-recording-remote"><span>Vocal Recording(Remote)</span></a></li>
@@ -767,6 +794,10 @@
 							<div id="posts" class="post-grid row grid-container gutter-40">
 								<!-- @works：作品卡片由 tools/build.mjs 依 data/works.yml 產生 -->
 							</div><!-- #posts end -->
+							<div id="works-more" class="text-center mt-4">
+								<p id="works-empty" class="text-muted" hidden>找不到符合的作品</p>
+								<button id="works-more-btn" type="button" class="button button-border button-rounded m-0" hidden>載入更多</button>
+							</div>
 		
 						</div>
 					</div>
@@ -1330,6 +1361,7 @@
 	============================================= -->
 	<script src="js/plugins.min.js"></script>
 	<script src="js/functions.bundle.js"></script>
+	<script src="js/portfolio.js"></script>
 	<script>
 		jQuery(document).ready( function(){
 			jQuery(".dropdown-item span").on( 'click', function(){

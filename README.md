@@ -128,6 +128,11 @@ node tools/build.mjs         # 產生 index.html，並補抓新作品的日期
 - 想重新查詢所有 YouTube 日期：到 GitHub repo 的 **Actions → Build and deploy → Run workflow**，
   勾選「重新查詢所有 YouTube 影片的發布日期」後執行。
 
+## 作品區的搜尋與載入更多
+
+頁面上的作品區一次先顯示最新 12 張，下方有「載入更多」按鈕；搜尋框可以找標題、作者、工作項目、日期和描述，
+空白分開的多個關鍵字要全部符合。這部分由 `js/portfolio.js` 處理，想改一次顯示的張數，改裡面的 `PAGE_SIZE`。
+
 ## 修改、隱藏、刪除作品
 
 - **修改**：在 `data/works.yml` 找到那一段直接改。
