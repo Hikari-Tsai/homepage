@@ -149,9 +149,41 @@
 
 		#works-search {
 			padding-left: 38px;
+			padding-right: 38px;
 			height: 100%;
 			min-height: 42px;
 			border-radius: 0;
+		}
+
+		/* 用自己的清除鈕取代瀏覽器內建的 X（各瀏覽器行為不一致） */
+		#works-search::-webkit-search-cancel-button {
+			-webkit-appearance: none;
+			display: none;
+		}
+
+		#works-search-clear {
+			position: absolute;
+			right: 4px;
+			top: 50%;
+			transform: translateY(-50%);
+			width: 34px;
+			height: 34px;
+			border: 0;
+			background: transparent;
+			color: inherit;
+			opacity: .55;
+			cursor: pointer;
+		}
+
+		#works-search-clear:hover {
+			opacity: 1;
+		}
+
+		#works-search-clear i {
+			position: static;
+			left: auto;
+			transform: none;
+			opacity: 1;
 		}
 
 		#dropdown-filter .dropdown-toggle::after {
@@ -764,6 +796,7 @@
 								<div id="works-search-wrap">
 									<i class="bi-search"></i>
 									<input id="works-search" type="search" class="form-control" placeholder="搜尋歌名、作者、器材…" aria-label="搜尋作品" autocomplete="off">
+									<button id="works-search-clear" type="button" aria-label="清除搜尋" hidden><i class="bi-x-lg"></i></button>
 								</div>
 								<div id="dropdown-filter" class="dropdown border-0">
 									<a id="grid-filter-btn" class="button m-0 bg-color text-white dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">

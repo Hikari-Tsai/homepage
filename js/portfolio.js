@@ -62,15 +62,31 @@
 		});
 	});
 
+	var clearBtn = document.getElementById('works-search-clear');
 	var timer = null;
-	input.addEventListener('input', function () {
+	function search(now) {
 		clearTimeout(timer);
-		timer = setTimeout(function () {
-			state.query = normalize(input.value);
+		if (clearBtn) clearBtn.hidden = input.value === '';
+		var run = function () {
+			var q = normalize(input.value);
+			if (q === state.query) return;
+			state.query = q;
 			state.limit = PAGE_SIZE;
 			apply();
-		}, 150);
+		};
+		if (now) run(); else timer = setTimeout(run, 150);
+	}
+	function clearSearch() {
+		input.value = '';
+		search(true);
+		input.focus();
+	}
+	input.addEventListener('input', function () { search(false); });
+	input.addEventListener('search', function () { search(true); }); // 部分瀏覽器按 Enter 或內建清除時觸發
+	input.addEventListener('keydown', function (e) {
+		if (e.key === 'Escape' && input.value) { e.preventDefault(); clearSearch(); }
 	});
+	if (clearBtn) clearBtn.addEventListener('click', clearSearch);
 
 	moreBtn.addEventListener('click', function () {
 		state.limit += PAGE_SIZE;
