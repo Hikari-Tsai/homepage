@@ -1,0 +1,9 @@
+{
+  "name": "homepage-tools",
+  "private": true,
+  "type": "module",
+  "description": "產生 index.html 的工具（node tools/build.mjs）",
+  "dependencies": {
+    "js-yaml": "4.1.0"
+  }
+}

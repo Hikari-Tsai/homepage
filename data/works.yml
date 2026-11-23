@@ -1,0 +1,704 @@
+# 作品集資料：每個「- 」開頭的區塊是一張卡片。頁面上依日期由新到舊排列，沒有日期的排最後。
+# 欄位說明見 README.md。改完執行 node tools/build.mjs 產生 index.html（push 後也會自動產生）。
+
+- title: 【ORIGINAL】多魚的我們
+  youtube: c7NPbpB5eZc
+  authors: [魷魷, 多帕]
+  roles: [Composition, Arrangement, Vocal Recording, Full Mixing]
+  note: 強力錄音室，BAE1272, Tube-Tech CL1B, Neumann U87, Apogee Symphony I/O，配唱製作人：徐逸卉
+
+- title: 【ORIGINAL】負け犬同盟
+  youtube: ipCfbsUQV84
+  authors: [魷魷, 多帕]
+  roles: [Composition, Arrangement, Vocal Recording, Full Mixing]
+  note: 強力錄音室，BAE1272, Tube-Tech CL1B, Neumann U87, Apogee Symphony I/O，配唱製作人：徐逸卉
+
+- title: 【ORIGINAL】冬は、別れを言わない
+  youtube: DYcvEvNnS6M
+  authors: [多帕]
+  roles: [Composition, Arrangement, Full Mixing]
+  filters: [full-mixing, compose, arrange, vocal-recording]
+  note: Ensemble Music Studio，Austrian Audio OC818 + SSL BIG SIX，配唱製作人：家家
+
+- title: 【ORIGINAL】冬天．我們不說再見(中文版)
+  youtube: ZlMq4FrpyO8
+  authors: [多帕]
+  roles: [Composition, Arrangement, Vocal Recording, Full Mixing]
+  note: Ensemble Music Studio，Austrian Audio OC818 + SSL BIG SIX，配唱製作人：家家
+
+- title: 【ORIGINAL】夏天．我們不說再見 feat.多帕
+  youtube: avq-BP9K0J8
+  authors: [Hikari Tsai, 多帕]
+  roles: [Composition, Arrangement, Vocal Recording, Full Mixing]
+  note: Ensemble Music Studio，Austrian Audio OC818 + SSL BIG SIX，配唱製作人：家家
+
+- title: 【ORIGINAL】YuMelody 藍海夢境
+  youtube: JzR3RHLAA3g
+  authors: [魷魷]
+  roles: [Composition, Arrangement, Vocal Recording, Full Mixing]
+  note: 強力錄音室，BAE1272, Tube-Tech CL1B, Neumann U87, Apogee Symphony I/O，配唱製作人：徐逸卉
+
+- title: 【ORIGINAL】不容失敗的初戀
+  spotify: https://open.spotify.com/embed/album/58ekaWRxBUntmTUBN2vBtl?utm_source=generator
+  link: https://open.spotify.com/album/51w3oL6GHzp27LFNYv9plw
+  authors: [大合虎子]
+  roles: [Composition, Arrangement, Full Mixing]
+  note: 宅錄，YAMAHA AG03 + SENNHEISER e945
+
+- title: 【ORIGINAL】未完成的歌－DEMO原始創作集
+  spotify: https://open.spotify.com/embed/album/51w3oL6GHzp27LFNYv9plw?utm_source=generator
+  link: https://open.spotify.com/album/51w3oL6GHzp27LFNYv9plw
+  authors: [Hikari]
+  roles: [Composition, Arrangement, Rough Mixing]
+  note: 這是十年前寫下，沒賣掉的歌。從舊硬碟找一些比較喜歡的作品，整理後重新發行。都是宅錄也沒有混音。期待著有天能被客人買走，但就這麼過了10年、15年。
+
+- title: 【ORIGINAL】自魷的魷(魷魷同名曲)
+  youtube: ncmTezp_VVE
+  authors: [魷魷]
+  roles: [Composition, Arrangement, Full Mixing]
+  note: 宅錄，RME Babyface Pro + SHURE MV7
+
+- title: 【ORIGINAL】不容失敗的初戀(清純版)
+  youtube: Acd5eDr1IiU
+  authors: [虎子]
+  roles: [Composition, Arrangement, Full Mixing]
+  note: 宅錄，YAMAHA AG03 + SENNHEISER e945
+  hidden: true
+
+- title: 【ORIGINAL】不容失敗的初戀(鴨肉版)
+  youtube: K4DP0JNA1WQ
+  authors: [虎子]
+  roles: [Composition, Arrangement, Full Mixing]
+  note: 宅錄，YAMAHA AG03 + SENNHEISER e945
+  hidden: true
+
+- title: 【COVER】僕は...
+  youtube: Y4ELQY0-36A
+  authors: [語風薯薯, 愛紗公主]
+  roles: [Vocal Recording]
+  note: Ensemble Music Studio， Mohog 1176, SSL BigSix, OC818。
+
+- title: 【COVER】リードコントロール
+  youtube: IfxJ-VsHdYo
+  authors: [毛大福]
+  roles: [Vocal Recording]
+  note: Ensemble Music Studio， Mohog 1176, SSL BigSix, OC818。
+
+- title: 【COVER】可愛くてごめん
+  youtube: l6hnMhl7h-8
+  authors: [多帕]
+  roles: [Vocal Recording]
+  note: Ensemble Music Studio, SSL BigSix, OC818。
+
+- title: 【COVER】食虫植物
+  youtube: trrLxXbRjeM
+  authors: [多帕]
+  roles: [Vocal Recording, Vocal Mixing]
+  note: Ensemble Music Studio, SSL BigSix, OC818。
+
+- title: 【COVER】寄り酔い / 和ぬか
+  youtube: nJUj17dAa7A
+  authors: [魷魷]
+  roles: [Vocal Recording, Vocal Mixing]
+  note: Ensemble Music Studio, SSL BigSix, OC818。
+
+- title: 【COVER】一半一半
+  youtube: LVGBgsnDjx4
+  authors: [余偉文]
+  roles: [Vocal Recording, Vocal Mixing]
+  note: Ensemble Music Studio， Mohog 1176, SSL BigSix, OC818。
+
+- title: 【ORIGINAL】沒有你的禮拜一好不習慣
+  youtube: LDZE4GmfSG8
+  authors: [暖暖]
+  roles: [Vocal Recording, Full Mixing]
+  note: Ensemble Music Studio, SSL BigSix, OC818。偉文老師擔任製作人
+
+- title: 【COVER】海へ
+  youtube: wt4FIWQEBhk
+  authors: [柒藍]
+  roles: [Arrangement, Vocal Recording, Full Mixing]
+  note: Ensemble Music Studio, SSL BigSix, OC818
+
+- title: 【COVER】机さする / 青木遥
+  youtube: RoRiINh8Klc
+  authors: [多帕]
+  roles: [Vocal Recording]
+  note: Ensemble Music Studio， Mohog 1176, SSL BigSix, OC818。
+
+- title: 【COVER】花に亡霊/ ヨルシカ
+  youtube: GobiRp85-hY
+  authors: [多帕]
+  roles: [Vocal Recording, Vocal Mixing]
+  note: Ensemble Music Studio， TubeTech CL-1B, SSL BigSix, OC818。
+
+- title: 【COVER】Endless Rain / X-Japan
+  youtube: b1zcwZuvuTc
+  authors: [多帕]
+  roles: [Piano]
+  note: 大安森林公園公共鋼琴
+
+- title: 【COVER】フォニイ / ツミキ
+  youtube: P0lQq3Uh4CY
+  authors: [多帕]
+  roles: [Vocal Recording, Vocal Mixing]
+  note: Ensemble Music Studio， TubeTech CL-1B, SSL BigSix, OC818。
+
+- title: 【ORIGINAL】以毅為名/成功高中114年成年禮原創曲
+  youtube: U67Q4DI24_E
+  authors: [成功高中]
+  roles: [Vocal Recording, Full Mixing]
+  note: Ensemble Music Studio， TubeTech CL-1B, SSL BigSix, OC818。家家老師演唱並擔任製作人，烏納姆老師作編曲、多帕合音
+
+- title: 【ORIGINAL】未說完的夏天
+  youtube: ytPMWYQs7cQ
+  authors: [月洛櫻]
+  roles: [Vocal Recording, Full Mixing]
+  note: Ensemble Music Studio， TubeTech CL-1B, SSL BigSix, OC818。余偉文擔任配唱製作人
+
+- title: 【COVER】ラビットホール
+  youtube: 0lAFji6ZHgo
+  authors: [多帕]
+  roles: [Vocal Recording]
+  note: Ensemble Music Studio， TubeTech CL-1B, SSL BigSix, OC818。本曲由皮卡老師進行混音
+
+- title: 【COVER】バニー / すりぃ
+  youtube: P8Nr0E_Fh9o
+  authors: [貝拉子]
+  roles: [Vocal Recording, Vocal Mixing]
+  note: Ensemble Music Studio， TubeTech CL-1B, SSL BigSix, OC818，配唱製作人：多帕
+
+- title: 【COVER】バニー / すりぃ
+  youtube: ksoG_7AsUE0
+  authors: [魷魷]
+  roles: [Vocal Recording, Vocal Mixing]
+  note: Ensemble Music Studio， TubeTech CL-1B, SSL BigSix, OC818，配唱製作人：多帕
+
+- title: 【COVER】殘響散歌
+  youtube: -tlTog9WBcI
+  authors: [多帕]
+  roles: [Vocal Recording, Vocal Mixing]
+  note: Ensemble Music Studio， TubeTech CL-1B, SSL BigSix, OC818
+
+- title: 【COVER】敕勒歌
+  youtube: VGlbvwn7_og
+  authors: [閻鈴]
+  roles: [Vocal Mixing]
+  note: 宅錄，SSL 2 mk2 + Sennheiser MK4
+
+- title: 【COVER】你的微笑(One-Take)
+  youtube: DE91YFYAtq4
+  authors: [亞璐, 余偉文]
+  roles: [Vocal Recording]
+  note: 雙人同步One-Take錄音，Ensemble Music Studio， SSL BigSix + OC818，混音師：皮卡
+
+- title: 【COVER】相信自己／太陽の楽園〜Promised Land〜
+  youtube: i8-vqYfySPw
+  authors: [極光39]
+  roles: [Vocal Recording, Vocal Mixing]
+  note: Ensemble Music Studio， SSL BigSix + OC818,配唱製作人：余偉文
+
+- title: 【COVER】Bのリベンジ
+  youtube: JZVKes8Kuss
+  link: https://www.youtube.com/shorts/JZVKes8Kuss
+  authors: [多帕]
+  roles: [Vocal Recording, Vocal Mixing]
+  note: Ensemble Music Studio， SSL BigSix + OC818
+  hidden: true
+
+- title: 【COVER】リードコントロール
+  youtube: kAeNuXfjsOA
+  authors: [多帕]
+  roles: [Vocal Recording, Vocal Mixing]
+  note: Ensemble Music Studio， SSL BigSix + OC818
+  hidden: true
+
+- title: 【COVER】カタオモイ - Aimer
+  youtube: UjFEIpLqjSI
+  authors: [可樂月月]
+  roles: [Vocal Recording, Vocal Mixing]
+  note: Ensemble Music Studio， SSL BigSix + OC818,配唱製作人：余偉文
+
+- title: 【COVER】Time Goes By (Short Version)
+  youtube: asoEPsBP7-Q
+  authors: [多帕]
+  roles: [Piano, Vocal Recording, Vocal Mixing]
+  filters: [vocal-recording, vocal-mixing]
+  note: "Ensemble Music Studio， SSL BigSix + OC818, Piano: Korg SV2, Instrumental: Spectrasonics-Keyscape"
+
+- title: 【COVER】キャットラビング
+  youtube: 9MD34Sa9n6w
+  authors: [多帕]
+  roles: [Vocal Recording, Vocal Mixing]
+  note: Ensemble Music Studio， SSL BigSix + OC818
+
+- title: 【COVER】ウィマーマ・サーガ
+  youtube: 3bZd0bkQiWQ
+  authors: [多帕]
+  roles: [Vocal Recording(Remote), Vocal Mixing]
+  note: 宅錄Audient iD4 + SHURE SM7B
+
+- title: 【ORIGINAL】映雪
+  youtube: x4B4LLqwLxc
+  authors: [詩瑠]
+  roles: [Vocal Recording, Full Mixing]
+  note: Ensemble Music Studio， SSL BigSix+OC818，配唱製作人：余偉文
+
+- title: 【ORIGINAL】此刻的禮物-The Present Moment-
+  youtube: XNEFMEYo1Do
+  authors: [流川莉蘿, 傲拉拉, 暖暖, 咩花糖, 卡妮娜]
+  roles: [Vocal Recording, Vocal Mixing]
+  note: Ensemble Music Studio， SSL BigSix+OC818，配唱製作人：余偉文
+
+- title: 【COVER】Call of Silence
+  youtube: cyUgVrdJWbA
+  authors: [Horsker 霍矢敋]
+  roles: [Vocal Mixing]
+  note: 宅錄，NRODE NT1 + RODE AI-1
+
+- title: 【COVER】單身狗之歌
+  youtube: QD0gacdVsqg
+  authors: [魷魷, 多帕]
+  roles: [Vocal Recording(Remote), Vocal Mixing]
+  note: 宅錄，RME Babyface Pro + SHURE MV7，Audient iD4 + SHURE SM7B，
+
+- title: 【COVER】IRIS OUT
+  youtube: tnUAL9MFcnM
+  authors: [魷魷]
+  roles: [Vocal Recording(Remote), Vocal Mixing]
+  note: 宅錄，RME Babyface Pro + SHURE MV7
+
+- title: 霞(全專輯人聲錄音)
+  spotify: https://open.spotify.com/embed/album/5d3n6qsnhgm1GV53yLk0Zd?utm_source=generator
+  link: https://open.spotify.com/album/5d3n6qsnhgm1GV53yLk0Zd?si=mPdPXeiYTwCkRDLCe-jBew
+  authors: [宋德鶴]
+  roles: [Vocal Recording]
+  note: 於強力錄音室，使用Telefunken C12、BAE 1272、Tubetech CL-1B與Avid Pro Tools HD I/O 16x16 Analog Interface錄製
+
+- title: 【COVER】食虫植物 / 理芽
+  youtube: JZe6Otg6QTw
+  authors: [安潔妲莉幽爾]
+  roles: [Vocal Recording, Vocal Mixing]
+  note: Ensemble Music Studio，Austrian Audio OC818 + SSL BIG SIX
+
+- title: 【COVER】カイコ / DECO*27
+  youtube: gEdiQ7uAx6g
+  authors: [多帕]
+  roles: [Vocal Recording(Remote), Vocal Mixing]
+  note: 宅錄(遠端錄音)，Audient iD4 + SHURE SM7B
+
+- title: 【ORIGINAL】EVER GREEN / DW
+  disco: https://hmusic.disco.ac/e/t/157078608?download=true&s=goFGQjIjZM2jXAIrZDWaFTtZtKU%3AAHaCbCzh&artwork=true&color=%2332B57C&theme=white
+  link: https://www.youtube.com/watch?v=n7IDYLrVn4A
+  popup: true
+  authors: [DW]
+  roles: [Full Mixing]
+  note: Golden Mix 2025 混音比賽投稿作品
+
+- title: 【COVER】まかせろり / いな
+  youtube: TltBxY97FRY
+  authors: [多帕]
+  roles: [Vocal Recording, Vocal Mixing]
+  note: Ensemble Music Studio，Austrian Audio OC818 + SSL BIG SIX
+
+- title: 【COVER】まかせろり / いな
+  youtube: n7IDYLrVn4A
+  authors: [魷魷]
+  roles: [Vocal Recording(Remote), Vocal Mixing]
+  note: 遠端錄音(宅錄)，RME Babyface Pro + SHURE MV7
+
+- title: 【COVER】Buffer / Empty old City
+  youtube: eew7QfOF4R0
+  authors: [多帕]
+  roles: [Vocal Recording, Vocal Mixing]
+  note: Ensemble Music Studio，Austrian Audio OC818 + SSL BIG SIX
+
+- title: 【COVER】沒出息
+  youtube: qiDMmJRktBk
+  authors: [可樂月月]
+  roles: [Vocal Mixing]
+
+- title: 【COVER】Magia(阿卡貝拉版)/Kalafina
+  link: https://x.com/Elina_Miyamori/status/1986657870872780879
+  popup: true
+  authors: [宮森えりな, 蜜提妮雅]
+  roles: [Vocal Recording(Remote), Vocal Mixing]
+  date: 2025-11-07  # 推文日期
+  note: 負責繪里奈部分，宅錄(遠端One-take錄音)，AG03+未知品牌電容麥克風
+  media_html: |
+    <blockquote data-type="iframe" class="twitter-tweet" data-media-max-width="560"><p lang="zh" dir="ltr"><a href="https://twitter.com/hashtag/%E5%A6%AE%E9%99%AA%E8%9C%9C%E5%94%B1?src=hash&amp;ref_src=twsrc%5Etfw">#妮陪蜜唱</a> <a href="https://twitter.com/hashtag/%E5%A6%AE%E5%80%91%E5%BF%AB%E5%87%BA%E9%81%93?src=hash&amp;ref_src=twsrc%5Etfw">#妮們快出道</a> <br>血包們中午奈安!<br>嘗試和蜜提妮雅合唱了MAGIA🦇✨<br>謝謝小光老師幫我做微調🥺<a href="https://twitter.com/hikari_tsai?ref_src=twsrc%5Etfw">@hikari_tsai</a> <br><br>MAGIA是我入坑魔法少女小圓超級喜歡的一首曲子之一<br>衝著情懷跟著一起合唱了✨<br>謝謝蜜提妮亞辦這個合唱小活動嘿嘿🩷✨<br><br>👉活動情報來源在這裡：<a href="https://t.co/TkncKJeQ8S">https://t.co/TkncKJeQ8S</a> <a href="https://t.co/zjbeGU7Xwq">pic.twitter.com/zjbeGU7Xwq</a></p>&mdash; 宮森えりな 🦇吸血鬼Vtuber 🧛‍♀️ (@Elina_Miyamori) <a href="https://twitter.com/Elina_Miyamori/status/1986657870872780879?ref_src=twsrc%5Etfw">November 7, 2025</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+- title: 【COVER】沒出息
+  youtube: yqw78x9d1oo
+  authors: [余偉文, 亞璐]
+  roles: [Arrangement, Vocal Recording, Vocal Mixing]
+  note: Ensemble Music Center，同步One-take錄音，OC16+OC818, SSL Big SiX
+
+- title: 【COVER】真的傻
+  youtube: 09UQ5dcvaGk
+  authors: [亞璐]
+  roles: [Vocal Recording, Vocal Mixing]
+  note: 大禾音樂錄音室，配唱製作人：林尚德
+
+- title: 【COVER】愛言葉ii
+  youtube: mf2GIhukSwk
+  authors: [宮森えりな]
+  roles: [Vocal Recording(Remote), Vocal Mixing]
+  note: 宅錄(遠端錄音)，AG03+未知品牌電容麥克風
+
+- title: 【COVER】月之少女哥倫比婭 銀月之庭「月亮的愛女不再行走於常世」
+  youtube: 01YCt3oBlTk
+  authors: [閻鈴]
+  roles: [Vocal Remixing]
+  note: 宅錄，SSL 2 mk2 + Sennheiser MK4
+
+- title: 【COVER】水星記
+  youtube: 6HznubWLeNo
+  authors: [冰上夢凌]
+  roles: [Vocal Recording, Vocal Mixing]
+  note: Ensemble Music Studio，Austrian Audio OC818 + SSL BIG SIX
+
+- title: 【COVER】オツキミリサイタル / じん
+  youtube: 52g1zsI_niE
+  authors: [多帕]
+  roles: [Vocal Recording]
+  note: Ensemble Music Studio，Austrian Audio OC818 + SSL BIG SIX，混音師為皮卡老師（歡迎委託）
+
+- title: 【COVER】『革命道中 - On The Way』acoustic ver.
+  youtube: 1Z6pQbbF6ns
+  authors: [Horsker 霍矢敋]
+  roles: [Vocal Mixing]
+  note: 宅錄，NRODE NT1 + RODE AI-1
+
+- title: 【COVER】GOLDEN
+  youtube: d_d8o8zLcWc
+  authors: [艾茵莉思Aynlice]
+  roles: [Vocal Recording]
+  note: Ensemble Music Studio，Austrian Audio OC818 + SSL BIG SIX，混音師為皮卡老師（歡迎委託）
+
+- title: 【COVER】やらないか(中文版快來一發吧！)
+  youtube: EpXxEXIfQYI
+  authors: [魷魷]
+  roles: [Vocal Mixing]
+  note: 宅錄，RME Babyface Pro + SHURE MV7
+
+- title: 【COVER】不枉
+  youtube: lkeQlX36XQA
+  authors: [余偉文]
+  roles: [Vocal Recording, Vocal Mixing]
+  note: Ensemble Music Studio，Austrian Audio OC818 + SSL BIG SIX
+
+- title: 【COVER】DECO*27-モニタリング(BEST FRIEND REMIX)
+  youtube: h9vmS9BgROY
+  authors: [多帕]
+  roles: [Vocal Recording, Vocal Mixing]
+  note: Ensemble Music Studio，Austrian Audio OC818 + SSL BIG SIX
+
+- title: 【COVER】DECO*27-モニタリング(BEST FRIEND REMIX)
+  youtube: xndibZT6klc
+  authors: [魷魷]
+  roles: [Vocal Recording(Remote), Vocal Mixing]
+  note: 宅錄(遠端錄音)，RME Babyface Pro + SHURE MV7
+
+- title: 【COVER】DECO*27-モニタリング
+  youtube: qo-J_jehnvM
+  authors: [極光39]
+  roles: [Vocal Recording, Vocal Mixing]
+  note: Ensemble Music Studio，Austrian Audio OC818 + SSL BIG SIX
+
+- title: 【COVER】チェリーポップ
+  youtube: H72V83l5xls
+  authors: [多帕]
+  roles: [Vocal Recording, Vocal Mixing]
+  note: Ensemble Music Studio，Austrian Audio OC818 + SSL BIG SIX
+
+- title: 【COVER】チェリーポップ
+  youtube: 6hlDewPWdvE
+  authors: [魷魷]
+  roles: [Vocal Recording, Vocal Mixing]
+  note: Ensemble Music Studio，Austrian Audio OC818 + SSL BIG SIX
+
+- title: 【COVER】ハッピーラッキーチャッピー
+  youtube: JhQOE7O64cQ
+  popup: false
+  authors: [多帕]
+  roles: [Vocal Recording, Vocal Mixing]
+  filters: [vocal-mixing]
+  note: Ensemble Music Studio，Austrian Audio OC818 + SSL BIG SIX
+
+- title: 【COVER】月牙灣
+  youtube: r4_zk1j1ZSc
+  popup: false
+  authors: [死大福STAFF]
+  roles: [Vocal Recording, Vocal Mixing]
+  note: Ensemble Music Studio，Austrian Audio OC818 + SSL BIG SIX，One-take錄音
+
+- title: 【收播BGM】HATP OF THE STARLIT LAKE
+  link: https://www.twitch.tv/yuyu4vtuber/clip/TentativeNaiveTardigradeEleGiggle-0Cf0cPzFJCAKZnCA
+  authors: [魷魷]
+  roles: [Composition, BGM]
+  date: 2025-06-24  # 影片檔名上的日期
+  media_html: |
+    <a data-fancybox href="one-page/images/videos/20250624_TentativeNaiveTardigradeEleGiggle-0Cf0cPzFJCAKZnCA_source.mp4">
+    <video data-width="560" data-height="315" class="aspect-ratio-box">
+    <source src="one-page/images/videos/3068054-1.output.mp4" type="video/mp4">
+    </video>
+    </a>
+
+- title: 【開場BGM】10x The Flames
+  link: "#"
+  authors: [小光]
+  roles: [Composition, BGM]
+  media_html: |
+    <a data-fancybox href="one-page/images/videos/HikariLoading.mp4">
+    <img src="one-page/images/videos/HikariLoading.gif" width="640">
+    </a>
+
+- title: 【ORIGINAL】FIRST CHOICE
+  disco: https://hmusic.disco.ac/e/t/162397588?download=true&s=euKBOIKLCSQdTRaN4iF6c_Bs_Kc%3AiNzTh8eC&artwork=true&color=%2332B57C&theme=white
+  link: https://s.disco.ac/eoofriziwxwb
+  popup: true
+  authors: [MIX COLLECTIVE]
+  roles: [Full Mixing]
+  note: 2025 SUMMER MIXING CONTEST投稿作品
+
+- title: 【COVER】桜日和とタイムマシン
+  youtube: X1wYgo6uNHk
+  popup: false
+  authors: [天櫻咲樂]
+  roles: [Vocal Recording, Vocal Mixing]
+  note: Ensemble Music Studio，Austrian Audio OC818 + SSL BIG SIX
+
+- title: 如月(迷你專輯)
+  spotify: https://open.spotify.com/embed/album/2vw9lZRZ6AlBy7i0OyZ2ow?utm_source=generator
+  link: https://open.spotify.com/album/2vw9lZRZ6AlBy7i0OyZ2ow?si=mPdPXeiYTwCkRDLCe-jBew
+  authors: [宋德鶴]
+  roles: [Vocal Recording]
+  note: 於強力錄音室，使用Telefunken C12、BAE 1272、Tubetech CL-1B與Avid Pro Tools HD I/O 16x16 Analog Interface錄製
+
+- title: 【COVER】旦那様とのラブラブ・ラブソング
+  youtube: p_H9wz1tfBU
+  authors: [魷魷, 多帕]
+  roles: [Vocal Mixing]
+  note: 宅錄，RME Babyface Pro + SHURE MV7，Audient iD4 + SHURE SM7B
+
+- title: 【COVER】買你/魏如萱
+  youtube: Dy--H5C-w8I
+  authors: [魷魷, 伊糯姆]
+  roles: [Vocal Recording(Remote), Full Mixing]
+  note: 宅錄(遠端錄音)，RME Babyface Pro + SHURE MV7，SHURE MV7i，重編曲：可希，配唱製作：余偉文
+
+- title: 【COVER】絶絶絶絶対聖域
+  youtube: LT2pQUP4DTA
+  authors: [瓦西瓦瓦Vaswawa]
+  roles: [Vocal Mixing]
+
+- title: 【COVER】TOMBOY
+  youtube: t-IkJvzUQPA
+  authors: [雪迎]
+  roles: [Vocal Mixing]
+  note: Audient EVO4 + SHURE SM7B
+
+- title: 【COVER】無樂不作
+  youtube: x22ULB2H2EM
+  authors: [Horsker 霍矢敋]
+  roles: [Vocal Mixing]
+  note: 宅錄，NRODE NT1 + RODE AI-1
+
+- title: 霞
+  spotify: https://open.spotify.com/embed/track/4IdPBhbIVOjbYF96uvsmPK?utm_source=generator
+  spotify_height: 152
+  link: https://open.spotify.com/track/4IdPBhbIVOjbYF96uvsmPK?si=4a3495c4b08745df
+  authors: [宋德鶴]
+  roles: [Vocal Recording]
+  note: 於強力錄音室，使用Telefunken C12、BAE 1272、Tubetech CL-1B與Avid Pro Tools HD I/O 16x16 Analog Interface錄製
+
+- title: 三年後的大雪
+  spotify: https://open.spotify.com/embed/track/5wPSDvBFCJa7vGUy0dw92V?utm_source=generator
+  spotify_height: 152
+  link: https://www.kkbox.com/tw/tc/song/8qHs-7a8YrrZNAk7Df
+  authors: [宋德鶴]
+  roles: [Vocal Recording]
+  note: 於強力錄音室，使用Telefunken C12、BAE 1272、Tubetech CL-1B與Apogee Symphony錄製
+
+- title: 淵
+  spotify: https://open.spotify.com/embed/track/0JHjA5R4aBfcrnYZnb2YMU?utm_source=generator
+  spotify_height: 152
+  link: https://www.kkbox.com/tw/tc/song/8qHs-7a8YrrZNAk7Df
+  authors: [宋德鶴]
+  roles: [Vocal Recording]
+  note: 於強力錄音室，使用Telefunken C12、BAE 1272、Tubetech CL-1B與Apogee Symphony錄製
+
+- title: 【COVER】チャイナアドバイス (China Advice)
+  youtube: DwHGtHpe-Xg
+  authors: [Ikusen(小千)]
+  roles: [Vocal Mixing]
+
+- title: 【COVER】みむかゥわナイストライ
+  youtube: vytWhQUWboM
+  authors: [宮森えりな]
+  roles: [Vocal Recording(Remote), Vocal Mixing]
+
+- title: 【改編曲】可希的狗(改編貴社的狗)
+  youtube: 6VkkfUlDgic
+  authors: [Hikari, 毛大福]
+  roles: [Re-Arrangement, Recording, Full Mixing]
+  note: "這是用於可希生日上的二創曲，已獲得原作者許可。宅錄，Hikari: Apogee Quartet + SHURE SM58，毛大福SHURE MV7i"
+
+- title: 【COVER】みむかゥわナイストライ
+  youtube: Z4rZOLibiKo
+  authors: [魷魷]
+  roles: [Vocal Mixing]
+  note: 宅錄，RME Babyface Pro + SHURE MV7
+
+- title: 【COVER】愛💛スクリ～ム！
+  youtube: WFRQokea3CU
+  authors: [魷魷]
+  roles: [Vocal Mixing]
+  note: 宅錄，RME Babyface Pro + SHURE MV7
+
+- title: 【COVER】愛💛スクリ～ム！
+  youtube: C0KRQ3ka0fA
+  authors: [宮森えりな]
+  roles: [Vocal Recording(Remote), Vocal Mixing]
+
+- title: 【COVER】真的傻
+  youtube: kEyEfpmXwqM
+  link: https://www.youtube.com/watch?v=v8pRt9eNEfs
+  authors: [亞璐]
+  roles: [Live Recording]
+  note: 大禾音樂錄音室
+
+- title: 【COVER】月牙灣
+  youtube: v8pRt9eNEfs
+  authors: [望夜]
+  roles: [Vocal Recording, Vocal Mixing]
+  note: Ensemble Music Studio，Austrian Audio OC818 + SSL BIG SIX
+
+- title: 【COVER】踊
+  youtube: bTiXlO5L7PE
+  authors: [雪迎]
+  roles: [Vocal Mixing]
+  note: Audient EVO4 + SHURE SM7B
+
+- title: 【COVER】アイドル
+  youtube: 6bzrJANIl4k
+  authors: [艾因莉思]
+  roles: [Vocal Recording, Vocal Mixing]
+  note: Ensemble Music Studio，Austrian Audio OC818 + SSL BIG SIX
+
+- title: 【SynthV歌声合成】人魚の歌
+  youtube: Qs5TL7aBrOg
+  authors: [夏語遙]
+  roles: [SynthV Tune, Vocal Mixing]
+
+- title: 【COVER】大魚
+  youtube: rB-mmZGemdM
+  authors: [家家]
+  roles: [Vocal Recording, Vocal Mixing]
+  note: Ensemble Music Studio，Austrian Audio OC818 + SSL BIG SIX
+
+- title: 【BGM】紀錄片《蛹》
+  youtube: UzgZi0mDEv8
+  authors: [公共電視]
+  roles: [SFX, BGM, Foley]
+
+- title: 【BGM】紀錄片《暴民》
+  youtube: C-Mo1pvOXFg
+  authors: [唐吉軻德工作室]
+  roles: [SFX, BGM, Foley]
+
+- title: 鬼画連篇：臺灣動漫恐懼體驗展
+  image: https://pier2.org/upload/event/IYEHHWCR208407.jpg
+  link: https://pier2.org/exhibition/info/108/
+  authors: [駁二]
+  roles: [Arrangement, Recording, Full Mixing]
+  note: 負責《北投女巫》《引路人》之製作、作曲、編曲與錄音
+
+- title: 赤胴
+  image: https://hahow-production.imgix.net/64a3fd730e7192dcd4280262?w=340&sat=0&auto=format&s=cfa7bd6b9d996ae6e0734ff5d3bb6dda
+  link: https://www.facebook.com/takehideshamisen
+  authors: [廣原武豪]
+  roles: [Full Mixing]
+
+- title: 序曲
+  image: images/albums/spresto.jpg
+  link: https://www.facebook.com/SprestoFanPage
+  authors: [Spresto 馳云章樂團]
+  roles: [MIDI Mockup, Full Mixing]
+
+- title: 數位有聲圖書館20
+  image: images/albums/daisy20.jpg
+  link: https://viis.ntl.edu.tw/exhibition/cp/193
+  authors: [國立臺灣圖書館]
+  roles: [Recording, Producter, BGM]
+
+- title: 數位有聲圖書館18
+  image: images/albums/daisy18.jpg
+  link: https://viis.ntl.edu.tw/exhibition/cp/134
+  authors: [國立臺灣圖書館]
+  roles: [Recording, Producter, BGM]
+
+- title: 數位有聲圖書館17
+  image: images/albums/daisy17.jpg
+  link: https://viis.ntl.edu.tw/exhibition/cp/98
+  authors: [國立臺灣圖書館]
+  roles: [Recording, Producter, BGM]
+
+- authors:
+    - {name: 國立臺灣圖書館, url: https://viis.ntl.edu.tw/exhibition/cp/106}
+  roles: [Recording, Producter, BGM]
+  date: 2020  # 109年
+  media_html: |
+    <a href="https://viis.ntl.edu.tw/exhibition/cp/106" class="entry-link" target="_blank">
+    109年繪本口述影像有聲書
+    <span>- 國立臺灣圖書館</span>
+    </a>
+
+- authors:
+    - {name: 國立臺灣圖書館, url: https://viis.ntl.edu.tw/exhibition/cp/164}
+  roles: [Recording, Producter, BGM]
+  date: 2021  # 110年
+  media_html: |
+    <a href="https://viis.ntl.edu.tw/exhibition/cp/164" class="entry-link" target="_blank">
+    110年繪本口述影像有聲書
+    <span>- 國立臺灣圖書館</span>
+    </a>
+
+- authors:
+    - {name: 國立臺灣圖書館, url: https://viis.ntl.edu.tw/exhibition/cp/188}
+  roles: [Recording, Producter, BGM]
+  date: 2022  # 111年
+  media_html: |
+    <a href="https://viis.ntl.edu.tw/exhibition/cp/188" class="entry-link" target="_blank">
+    111年繪本口述影像有聲書
+    <span>- 國立臺灣圖書館</span>
+    </a>
+
+- title: 99%的愛
+  spotify: https://open.spotify.com/embed/album/3FxZjYkyTgBgjraFAEdBv4?utm_source=generator
+  link: "#"
+  authors: [蘇育霆]
+  roles: [Recording, Full Mixing]
+  note: 負責：夢、距離、布偶留聲機、魂體轉換四首歌曲的錄音與混音
+
+- title: 萬仞孤城(專輯)
+  spotify: https://open.spotify.com/embed/album/6uD0tS3BK6ITmkp165f9FS?utm_source=generator
+  link: https://open.spotify.com/track/6uD0tS3BK6ITmkp165f9FS
+  authors: [文藝復興]
+  roles: [Vocal Recording, Full Mixing, Arrangement, Mastering]
+
+- title: 海と光
+  spotify: https://open.spotify.com/embed/track/0YHuL5fBOWZeFkxFuVNaOR?utm_source=generator
+  spotify_height: 152
+  link: https://open.spotify.com/track/0YHuL5fBOWZeFkxFuVNaOR
+  authors: [黃小玫]
+  roles: [Full Mixing]
+  note: 於強力錄音室，使用SSL 4000G Console 進行類比+數位混音
+
+- title: 其他更多早期的混音與原創作品
+  spotify: https://open.spotify.com/embed/playlist/4Y9TQL2WBUM7SmcV4BxeOT?utm_source=generator
+  link: "#"
+  authors: [群星]
+  roles: [Arrangement, Recording, Full Mixing, Mastering]
+  note: 通常是實體發行或是數位發行的作品，沒有發表YT
