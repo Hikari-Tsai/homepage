@@ -1,7 +1,7 @@
 // 作品集：分類篩選 + 搜尋 + 載入更多
 // 三者一起決定哪些卡片顯示，最後交給 Canvas 內建的 Isotope 排版。
 (function () {
-	var PAGE_SIZE = 12; // 一次顯示幾張
+	var PAGE_SIZE = 24; // 一開始顯示幾張，每按一次「載入更多」再多顯示幾張
 
 	var grid = document.getElementById('posts');
 	var input = document.getElementById('works-search');
@@ -33,10 +33,42 @@
 		});
 	}
 
+	// 延後載入：卡片真的被顯示時才載入影片和推文，沒顯示的卡片不下載
+	var twitterRequested = false;
+	var relayoutTimer = null;
+	var resizeObserver = window.ResizeObserver ? new ResizeObserver(function () {
+		clearTimeout(relayoutTimer);
+		relayoutTimer = setTimeout(function () { if (iso) iso.layout(); }, 100);
+	}) : null;
+	function activate(el) {
+		if (el._activated) return;
+		el._activated = true;
+		// <source data-src> / <img data-src> / <iframe data-src>：補上 src
+		var lazy = el.querySelectorAll('[data-src]');
+		lazy.forEach(function (m) { m.setAttribute('src', m.getAttribute('data-src')); m.removeAttribute('data-src'); });
+		el.querySelectorAll('video').forEach(function (v) { if (lazy.length) v.load(); });
+		// 圖片、推文載入後卡片高度會變，自動重新排版
+		if (resizeObserver) resizeObserver.observe(el);
+		// 推文：第一次有推文卡片顯示時才載入 Twitter 的程式
+		if (el.querySelector('blockquote.twitter-tweet')) {
+			if (window.twttr && twttr.widgets) {
+				twttr.widgets.load(el);
+			} else if (!twitterRequested) {
+				twitterRequested = true;
+				var s = document.createElement('script');
+				s.async = true;
+				s.src = 'https://platform.twitter.com/widgets.js';
+				s.charset = 'utf-8';
+				document.body.appendChild(s);
+			}
+		}
+	}
+
 	var iso = null;
 	function apply() {
 		var matched = items.filter(matches);
 		var shown = new Set(matched.slice(0, state.limit));
+		shown.forEach(activate);
 		var filterFn = function (a) {
 			var el = a instanceof Element ? a : this; // 相容不同版本 Isotope 的呼叫方式
 			return shown.has(el);

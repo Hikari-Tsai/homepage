@@ -139,16 +139,16 @@ function mediaHtml(w) {
 	if (w.youtube) return [
 		`<a data-fancybox href="https://www.youtube.com/embed/${w.youtube}">`,
 		`\t<div class="aspect-ratio-box">`,
-		`\t\t<img src="https://img.youtube.com/vi/${w.youtube}/hqdefault.jpg" width="640" alt="${attr(w.title ?? '')}" loading="lazy">`,
+		`\t\t<img data-src="https://img.youtube.com/vi/${w.youtube}/hqdefault.jpg" width="640" alt="${attr(w.title ?? '')}" loading="lazy">`,
 		`\t</div>`,
 		`</a>`];
-	if (w.spotify) return [`<iframe style="border-radius:12px" src="${attr(w.spotify)}" width="100%" height="${w.spotify_height ?? 352}" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`];
+	if (w.spotify) return [`<iframe style="border-radius:12px" data-src="${attr(w.spotify)}" width="100%" height="${w.spotify_height ?? 352}" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`];
 	if (w.disco) {
 		const id = (w.disco.match(/\/e\/t\/(\d+)/) || [])[1];
 		const idAttr = id ? `id="disco-track-${id}" name="disco-track-${id}" ` : '';
-		return [`<iframe ${idAttr}allowfullscreen frameborder="0" class="disco-embed" src="${attr(w.disco)}" width="480" height="235"></iframe>`];
+		return [`<iframe ${idAttr}allowfullscreen frameborder="0" class="disco-embed" data-src="${attr(w.disco)}" width="480" height="235" loading="lazy"></iframe>`];
 	}
-	if (w.image) return [`<a href="${attr(w.image_link ?? w.link ?? '#')}"><img src="${attr(w.image)}" alt="${attr(w.title ?? '')}"></a>`];
+	if (w.image) return [`<a href="${attr(w.image_link ?? w.link ?? '#')}"><img data-src="${attr(w.image)}" alt="${attr(w.title ?? '')}" loading="lazy"></a>`];
 	return w.media_html.trimEnd().split('\n');
 }
 
