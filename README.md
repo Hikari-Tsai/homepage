@@ -16,6 +16,7 @@ https://themeforest.net/item/canvas-the-multipurpose-html5-template/9228123
 |---|---|
 | `data/works.yml` | 每張作品卡片一筆（頁面上依日期由新到舊排列） |
 | `data/authors.yml` | 作者名字 → YouTube 頻道，每位作者只寫一次 |
+| `data/i18n.yml` | 作品集以外所有文字的中文、英文、日文 |
 | `src/index.html` | 頁面其他部分的模板（作品區塊用 `<!-- @works -->` 標記） |
 | `data/dates.json` | YouTube 上傳日、Spotify 發行日的快取（自動產生，不用手改） |
 | `index.html` | **產生出來的結果，不要直接改** |
@@ -184,6 +185,32 @@ node tools/build.mjs         # 產生 index.html，並補抓新作品的日期
 `js/portfolio.js` 換成 `src`（再加上 `loading="lazy"`，捲到附近才載入）。`youtube`、`spotify`、`disco`、`image`
 這些欄位會自動處理；自己寫 `media_html` 時，把圖片、影片 `<source>` 的 `src` 改寫成 `data-src` 就有一樣的效果。
 推文不用加 Twitter 的 `<script>`，卡片顯示時會自動載入。
+
+## 網站文字與多語系（中文／English／日本語）
+
+作品集以外的文字（自我介紹、服務、推薦、部落格、價目表、獎項、頁尾等）都放在 `data/i18n.yml`，
+每段文字有一個 key，並列中、英、日三種語言：
+
+```yaml
+contact.01:
+  zh: "找Hikari混音"
+  en: "Work with Hikari"
+  ja: "Hikariにミックスを依頼"
+```
+
+- **改文字**：直接改 `data/i18n.yml` 對應語言的內容，可以用 HTML（例如 `<b>`、`<br>`）。
+  `zh` 就是頁面預設顯示的中文，不用再去改 `src/index.html`。
+- **某個語言沒寫**：會顯示中文，產生頁面時會提醒。
+- **要找某段文字的 key**：在 `data/i18n.yml` 搜尋那段中文，或在 `src/index.html` 找 `data-i18n="..."`。
+- **新增一段要翻譯的文字**：在 `src/index.html` 的元素加上 `data-i18n="自訂key"`（例如 `<p data-i18n="contact.45">…</p>`），
+  再到 `data/i18n.yml` 加同名的 key。屬性可以用 `data-i18n-placeholder`、`data-i18n-aria-label`。
+- 專有名詞、價格、證書英文名稱等三種語言都一樣的文字沒有加 key，直接寫在 `src/index.html`。
+- 作品卡片的內容（歌名、描述）不翻譯；作品區的按鈕與提示文字有翻譯（`ui.*` 開頭的 key 給程式使用）。
+
+切換方式：右上角的「中／EN／日」，切換時不會重新載入頁面，並會記住訪客的選擇。
+第一次造訪時依瀏覽器語言決定（中文→中文、日文→日文、英文或其他→English）。
+也可以直接分享指定語言的網址：`index.html?lang=ja`、`?lang=en`、`?lang=zh`。
+切換的程式在 `js/i18n.js`。
 
 ## 修改、隱藏、刪除作品
 

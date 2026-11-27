@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- 此檔由 tools/build.mjs 自動產生，請勿直接修改。要改作品請改 data/works.yml，其他內容請改 src/index.html。 -->
+<!-- 此檔由 tools/build.mjs 自動產生，請勿直接修改。作品請改 data/works.yml，文字與翻譯請改 data/i18n.yml，其他內容請改 src/index.html。 -->
 <html dir="ltr" lang="en-US">
 <head>
 	
@@ -132,6 +132,43 @@
 			text-align: center;
 		}
 
+		/* 語言切換 */
+		#lang-switch {
+			display: flex;
+			align-items: center;
+			gap: 2px;
+			margin-left: auto;
+			margin-right: 12px;
+			padding: 2px 8px;
+			border-radius: 999px;
+			background: rgba(255, 255, 255, .88);
+			color: #212529;
+			box-shadow: 0 1px 4px rgba(0, 0, 0, .12);
+			z-index: 2;
+		}
+
+		#lang-switch button {
+			background: none;
+			border: 0;
+			border-bottom: 2px solid transparent;
+			padding: 4px 6px;
+			font-size: 13px;
+			letter-spacing: 1px;
+			color: inherit;
+			opacity: .55;
+			cursor: pointer;
+		}
+
+		#lang-switch button:hover,
+		#lang-switch button.active {
+			opacity: 1;
+		}
+
+		#lang-switch button.active {
+			font-weight: 700;
+			border-bottom-color: currentColor;
+		}
+
 		/* 作品搜尋框 */
 		#works-search-wrap {
 			position: relative;
@@ -260,6 +297,11 @@
 							</a>
 						</div><!-- #logo end -->
 
+						<div id="lang-switch" role="group" aria-label="語言" data-i18n-aria-label="ui.language">
+							<button type="button" data-lang="zh" lang="zh-Hant">中</button>
+							<button type="button" data-lang="en" lang="en">EN</button>
+							<button type="button" data-lang="ja" lang="ja">日</button>
+						</div>
 						<div class="primary-menu-trigger">
 							<button class="cnvs-hamburger" type="button" title="Open Mobile Menu">
 								<span class="cnvs-hamburger-box"><span class="cnvs-hamburger-inner"></span></span>
@@ -272,22 +314,22 @@
 
 							<ul class="one-page-menu menu-container" data-easing="easeInOutExpo" data-speed="1250" data-offset="65">
 								<li class="menu-item">
-									<a href="#" class="menu-link" data-href="#wrapper"><div>Home</div></a>
+									<a href="#" class="menu-link" data-href="#wrapper"><div data-i18n="nav.02">Home</div></a>
 								</li>
 								<li class="menu-item">
-									<a href="#" class="menu-link" data-href="#section-about"><div>About</div></a>
+									<a href="#" class="menu-link" data-href="#section-about"><div data-i18n="nav.03">About</div></a>
 								</li>
 								<li class="menu-item">
-									<a href="#" class="menu-link" data-href="#section-works"><div>Works</div></a>
+									<a href="#" class="menu-link" data-href="#section-works"><div data-i18n="nav.04">Works</div></a>
 								</li>
 								<li class="menu-item">
-									<a href="#" class="menu-link" data-href="#section-services"><div>Services</div></a>
+									<a href="#" class="menu-link" data-href="#section-services"><div data-i18n="nav.05">Services</div></a>
 								</li>
 								<li class="menu-item">
-									<a href="#" class="menu-link" data-href="#section-blog"><div>Blog</div></a>
+									<a href="#" class="menu-link" data-href="#section-blog"><div data-i18n="nav.06">Blog</div></a>
 								</li>
 								<li class="menu-item">
-									<a href="#" class="menu-link" data-href="#section-contact"><div>Contact</div></a>
+									<a href="#" class="menu-link" data-href="#section-contact"><div data-i18n="nav.07">Contact</div></a>
 								</li>
 							</ul>
 
@@ -308,11 +350,8 @@
 					<div class="container py-5">
 						<div class="emphasis-title mb-5">
 							<h1 class="text-uppercase fw-bold" style="font-size: 52px; letter-spacing: 10px; word-spacing: 5px; color: #FFF;">Hikari Tsai</h1>
-							<span class="text-uppercase" style="color: #c5c5c5;letter-spacing:10px; font-size: 18px">Recording, Mixing & ML Engineer </span>
-							<p class="lead mt-5" style="max-width: 600px; line-height: 1.8; color: #FFF">
-								Hi, 我是Hikari，一個喜歡獨立音樂人、混音師以及軟體工程師。曾與陳芳語(Kimberly)、隕浮流(Verbal)、林鴻鳴(星光二班)以及黃小玫等多位藝人合作，為音樂串流公司訓練芒果醬、黃明志等藝人的演唱模型。同時也是一個鍵盤手，多次參加墾丁春天吶喊、海洋音樂祭以及公共電視演出，並為國外知名金屬樂團如 graveworm, leaves' eyes, Traja（Nightwish主唱）開場演出。設計多種獲獎產品。<br>
-								相較於自己站在舞台上，我更喜歡看著別人成功，如果有音樂的問題，歡迎來找我討論吧！
-							</p>
+							<span data-i18n="hero.02" class="text-uppercase" style="color: #c5c5c5;letter-spacing:10px; font-size: 18px">Recording, Mixing & ML Engineer</span>
+							<p data-i18n="hero.03" class="lead mt-5" style="max-width: 600px; line-height: 1.8; color: #FFF">Hi, 我是Hikari，一個喜歡獨立音樂人、混音師以及軟體工程師。曾與陳芳語(Kimberly)、隕浮流(Verbal)、林鴻鳴(星光二班)以及黃小玫等多位藝人合作，為音樂串流公司訓練芒果醬、黃明志等藝人的演唱模型。同時也是一個鍵盤手，多次參加墾丁春天吶喊、海洋音樂祭以及公共電視演出，並為國外知名金屬樂團如 graveworm, leaves' eyes, Traja（Nightwish主唱）開場演出。設計多種獲獎產品。<br> 相較於自己站在舞台上，我更喜歡看著別人成功，如果有音樂的問題，歡迎來找我討論吧！</p>
 						</div>
 						<div class="d-flex mt-5" style="--cnvs-socialicon-gap:0.5rem;">
 							<!--<a href="#" class="social-icon si-small rounded-circle text-white bg-facebook" title="Facebook">
@@ -618,9 +657,7 @@
 					<div class="section m-0">
 						<div class="container">
 							<div class="mx-auto text-center" style="max-width: 900px;">
-								<h2 class="mb-0 fw-light ls-1">
-									We truly enjoy working on music production—whether it’s Mixing, Recording, or Composing—just as much as you need these services. This allows us to help you achieve your musical goals more effortlessly. Feel free to explore the wide range of music production services we offer.
-								</h2>
+								<h2 data-i18n="services.01" class="mb-0 fw-light ls-1">We truly enjoy working on music production—whether it’s Mixing, Recording, or Composing—just as much as you need these services. This allows us to help you achieve your musical goals more effortlessly. Feel free to explore the wide range of music production services we offer.</h2>
 							</div>
 						</div>
 					</div>
@@ -636,7 +673,7 @@
 											<a href="#"><i class="icon-et-lightbulb op-gradient-icon"></i></a>
 										</div>
 										<div class="fbox-content fbox-content-sm">
-											<h3>Composition</h3>
+											<h3 data-i18n="services.02">Composition</h3>
 										</div>
 									</div>
 								</div>
@@ -646,7 +683,7 @@
 											<a href="#"><i class="icon-et-pencil op-gradient-icon"></i></a>
 										</div>
 										<div class="fbox-content fbox-content-sm">
-											<h3>Arrangement</h3>
+											<h3 data-i18n="services.03">Arrangement</h3>
 										</div>
 									</div>
 								</div>
@@ -656,7 +693,7 @@
 											<a href="#"><i class="icon-et-mic op-gradient-icon"></i></a>
 										</div>
 										<div class="fbox-content fbox-content-sm">
-											<h3>Recording</h3>
+											<h3 data-i18n="services.04">Recording</h3>
 										</div>
 									</div>
 								</div>
@@ -666,7 +703,7 @@
 											<a href="#"><i class="icon-et-adjustments op-gradient-icon"></i></a>
 										</div>
 										<div class="fbox-content fbox-content-sm">
-											<h3>Mixing</h3>
+											<h3 data-i18n="services.05">Mixing</h3>
 										</div>
 									</div>
 								</div>
@@ -676,7 +713,7 @@
 											<a href="#"><i class="icon-et-genius op-gradient-icon"></i></a>
 										</div>
 										<div class="fbox-content fbox-content-sm">
-											<h3>Mastering</h3>
+											<h3 data-i18n="services.06">Mastering</h3>
 										</div>
 									</div>
 								</div>
@@ -686,7 +723,7 @@
 											<a href="#"><i class="icon-et-hotairballoon op-gradient-icon"></i></a>
 										</div>
 										<div class="fbox-content fbox-content-sm">
-											<h3>Distribution</h3>
+											<h3 data-i18n="services.07">Distribution</h3>
 										</div>
 									</div>
 								</div>
@@ -697,7 +734,7 @@
 
 					<div class="section dark m-0">
 						<div class="mx-auto text-center" style="max-width: 900px;">
-							<h2 class="mb-0 fw-light ls-1">Like Our Services? Get an <a href="#" data-scrollto="#section-contact" data-offset="140" data-easing="easeInOutExpo" data-speed="1250" class="button button-border button-circle button-light button-large my-0" style="position: relative; top: -3px;">Instant Quote</a></h2>
+							<h2 class="mb-0 fw-light ls-1"><span data-i18n="services.08">Like Our Services? Get an</span> <a data-i18n="services.09" href="#" data-scrollto="#section-contact" data-offset="140" data-easing="easeInOutExpo" data-speed="1250" class="button button-border button-circle button-light button-large my-0" style="position: relative; top: -3px;">Instant Quote</a></h2>
 						</div>
 					</div>
 
@@ -712,68 +749,50 @@
 										<div class="flexslider">
 											<div class="slider-wrap">
 												<div class="slide">
-													<p class="mb-4 fs-4 fw-light ls-1">
-														對於行外人也友善！委託音樂相關的東西的時候，都會因為相關知識匱乏，在溝通的時候會很緊張。但是Hikari都會很詳細的解釋相關的東西！效率高又能符合期望，真的很棒！				
-													</p>
+													<p data-i18n="services.10" class="mb-4 fs-4 fw-light ls-1">對於行外人也友善！委託音樂相關的東西的時候，都會因為相關知識匱乏，在溝通的時候會很緊張。但是Hikari都會很詳細的解釋相關的東西！效率高又能符合期望，真的很棒！</p>
 													<h4 class="h5 mb-0 fw-medium">
 														魷魷 VTuber
 													</h4>
 													<small class="text-muted">咪喵事務所</small>
 												</div>
 												<div class="slide">
-													<p class="mb-4 fs-4 fw-light ls-1">
-														小光老師製作效率很高，也會給出具體的協助與指導，溝通也都很順暢，交給他每次真的都可以順利拿到好作品…！					
-													</p>
+													<p data-i18n="services.13" class="mb-4 fs-4 fw-light ls-1">小光老師製作效率很高，也會給出具體的協助與指導，溝通也都很順暢，交給他每次真的都可以順利拿到好作品…！</p>
 													<h4 class="h5 mb-0 fw-medium">
 														宮森えりな VTuber
 													</h4>
 													<small class="text-muted"></small>
 												</div>
 												<div class="slide">
-													<p class="mb-4 fs-4 fw-light ls-1">
-														Hikari老師專業細心！對於第一次宅錄有許多不懂的地方也會耐心溝通，並且會跟進客戶的要求和歌曲本身完成作品！最後成品也十分滿意，非常感謝老師！(*òωó _)						
-													</p>
+													<p data-i18n="services.15" class="mb-4 fs-4 fw-light ls-1">Hikari老師專業細心！對於第一次宅錄有許多不懂的地方也會耐心溝通，並且會跟進客戶的要求和歌曲本身完成作品！最後成品也十分滿意，非常感謝老師！(*òωó _)</p>
 													<h4 class="h5 mb-0 fw-medium">
 														多帕 VTuber
 													</h4>
 													<small class="text-muted">咪喵事務所</small>
 												</div>
 												<div class="slide">
-													<p class="mb-4 fs-4 fw-light ls-1">
-														與Hikari配合過數支商用影片，對於高品質的配樂製作與英文旁白印象深刻，配合度高且容易溝通
-													</p>
-													<h4 class="h5 mb-0 fw-medium">
-														顏小八 導演
-													</h4>
+													<p data-i18n="services.18" class="mb-4 fs-4 fw-light ls-1">與Hikari配合過數支商用影片，對於高品質的配樂製作與英文旁白印象深刻，配合度高且容易溝通</p>
+													<h4 data-i18n="services.19" class="h5 mb-0 fw-medium">顏小八 導演</h4>
 													<small class="text-muted">有間工作室</small>
 												</div>
 												<div class="slide">
-													<p class="mb-4 fs-4 fw-light ls-1">
-														Hikari在專輯製作上幫我很多忙，非常願意花很多時間和我溝通確定我要什麼，最後也很專業和負責地幫我完成我想要的成品，總之很感謝他們！
-													</p>
-													<h4 class="h5 mb-0 fw-medium"> 蘇育霆 歌手/製作人</h4>
-													<small class="text-muted">華研國際音樂有限公司</small>
+													<p data-i18n="services.21" class="mb-4 fs-4 fw-light ls-1">Hikari在專輯製作上幫我很多忙，非常願意花很多時間和我溝通確定我要什麼，最後也很專業和負責地幫我完成我想要的成品，總之很感謝他們！</p>
+													<h4 data-i18n="services.22" class="h5 mb-0 fw-medium">蘇育霆 歌手/製作人</h4>
+													<small data-i18n="services.23" class="text-muted">華研國際音樂有限公司</small>
 												</div>
 												<div class="slide">
-													<p class="mb-4 fs-4 fw-light ls-1">
-														Hikari是業界速度快、且將音樂視為珍貴原創商品的配樂音效公司。無論是合作案的大小或性質，他們都會以相同的敬業態度完成工作。創業的路上總是比較辛苦，我很幸運有這樣能夠相互扶持的夥伴一同前進、慢慢地一同站穩腳步。
-													</p>
-													<h4 class="h5 mb-0 fw-medium">張偉翰(小馬)  導演</h4>
+													<p data-i18n="services.24" class="mb-4 fs-4 fw-light ls-1">Hikari是業界速度快、且將音樂視為珍貴原創商品的配樂音效公司。無論是合作案的大小或性質，他們都會以相同的敬業態度完成工作。創業的路上總是比較辛苦，我很幸運有這樣能夠相互扶持的夥伴一同前進、慢慢地一同站穩腳步。</p>
+													<h4 data-i18n="services.25" class="h5 mb-0 fw-medium">張偉翰(小馬) 導演</h4>
 													<small class="text-muted">好年冬影像工作室</small>
 												</div>
 												<div class="slide">
-													<p class="mb-4 fs-4 fw-light ls-1">
-														Hikari在音樂製作上展現了高度的專業，不論是在編曲或是混音方面，總是很精準地完成我要的東西，他們總是很有耐心地詢問你的需求並盡力做到完美一致，對於音樂方面的大小事，我放心把自己交給他們。
-													</p>
-													<h4 class="h5 mb-0 fw-medium">創作歌手 銘鴻</h4>
-													<small class="text-muted">全球傑出華人流行音樂參賽者</small>
+													<p data-i18n="services.27" class="mb-4 fs-4 fw-light ls-1">Hikari在音樂製作上展現了高度的專業，不論是在編曲或是混音方面，總是很精準地完成我要的東西，他們總是很有耐心地詢問你的需求並盡力做到完美一致，對於音樂方面的大小事，我放心把自己交給他們。</p>
+													<h4 data-i18n="services.28" class="h5 mb-0 fw-medium">創作歌手 銘鴻</h4>
+													<small data-i18n="services.29" class="text-muted">全球傑出華人流行音樂參賽者</small>
 												</div>
 												<div class="slide">
-													<p class="mb-4 fs-4 fw-light ls-1">
-														謝謝Hikari的大力支持，協助本計畫將深奧難懂的雲南麗江納西族的東巴經文錄音工作，順利完成。小光老師認真細心的敬業精神，值得推薦給大家～
-													</p>
-													<h4 class="h5 mb-0 fw-medium">胡其瑞 助理研究員</h4>
-													<small class="text-muted">中央研究院歷史語言研究所</small>
+													<p data-i18n="services.30" class="mb-4 fs-4 fw-light ls-1">謝謝Hikari的大力支持，協助本計畫將深奧難懂的雲南麗江納西族的東巴經文錄音工作，順利完成。小光老師認真細心的敬業精神，值得推薦給大家～</p>
+													<h4 data-i18n="services.31" class="h5 mb-0 fw-medium">胡其瑞 助理研究員</h4>
+													<small data-i18n="services.32" class="text-muted">中央研究院歷史語言研究所</small>
 												</div>
 											</div>
 										</div>
@@ -789,20 +808,18 @@
 				<section id="section-works" class="page-section pt-0">
 					<div class="content-wrap">
 						<div class="container">
-							<h2 class="text-center text-uppercase fw-light ls-3 font-body">Recently Music Works</h2>
+							<h2 data-i18n="works.01" class="text-center text-uppercase fw-light ls-3 font-body">Recently Music Works</h2>
 							<!--<div class="grid-filter-wrap justify-content-center">
 								<div id="works-toggle-bar" style="display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin:40px 0;"></div>
 							</div>-->
 							<div class="grid-filter-wrap justify-content-center flex-wrap gap-3 mb-3">
 								<div id="works-search-wrap">
 									<i class="bi-search"></i>
-									<input id="works-search" type="search" class="form-control" placeholder="搜尋歌名、作者、器材…" aria-label="搜尋作品" autocomplete="off">
-									<button id="works-search-clear" type="button" aria-label="清除搜尋" hidden><i class="bi-x-lg"></i></button>
+									<input data-i18n-placeholder="works.search_placeholder" data-i18n-aria-label="ui.search_label" id="works-search" type="search" class="form-control" placeholder="搜尋歌名、作者、器材…" aria-label="搜尋作品" autocomplete="off">
+									<button id="works-search-clear" type="button" aria-label="清除搜尋" data-i18n-aria-label="ui.clear_search" hidden><i class="bi-x-lg"></i></button>
 								</div>
 								<div id="dropdown-filter" class="dropdown border-0">
-									<a id="grid-filter-btn" class="button m-0 bg-color text-white dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;作品分類 (ALL)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-									</a>
+									<a data-i18n="works.02" id="grid-filter-btn" class="button m-0 bg-color text-white dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;作品分類 (ALL)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
 
 									<ul class="dropdown-menu custom-filter py-0 border-default rounded-0">
 										<li><a href="#" class="dropdown-item" data-filter="*"><span>All</span></a></li>
@@ -3260,8 +3277,8 @@
 								</div>
 							</div><!-- #posts end -->
 							<div id="works-more" class="text-center mt-4">
-								<p id="works-empty" class="text-muted" hidden>找不到符合的作品</p>
-								<button id="works-more-btn" type="button" class="button button-border button-rounded m-0" hidden>載入更多</button>
+								<p data-i18n="works.03" id="works-empty" class="text-muted" hidden>找不到符合的作品</p>
+								<button data-i18n="works.04" id="works-more-btn" type="button" class="button button-border button-rounded m-0" hidden>載入更多</button>
 							</div>
 		
 						</div>
@@ -3270,7 +3287,7 @@
 		
 				<div id="section-blog" class="page-section">
 
-					<h2 class="text-center text-uppercase fw-light ls-3 font-body">Recently From the Blog</h2>
+					<h2 data-i18n="blog.01" class="text-center text-uppercase fw-light ls-3 font-body">Recently From the Blog</h2>
 					
 
 					<div class="section mb-0">
@@ -3286,8 +3303,8 @@
 											</a>
 											<div class="p-4">
 												<div class="entry-title">
-													<h5 class="fw-medium text-danger mb-3">Production</h5>
-													<h3 class="text-transform-none ls-0 h5"><a href="https://www.youtube.com/playlist?list=PLUD0p5NnO5i4Wg0pl78ZQoPbUhREgWy5F">免費人聲混音製作教學(六集)</a></h3>
+													<h5 data-i18n="blog.02" class="fw-medium text-danger mb-3">Production</h5>
+													<h3 class="text-transform-none ls-0 h5"><a data-i18n="blog.03" href="https://www.youtube.com/playlist?list=PLUD0p5NnO5i4Wg0pl78ZQoPbUhREgWy5F">免費人聲混音製作教學(六集)</a></h3>
 												</div>
 												<!--<div class="entry-meta">
 													<ul>
@@ -3296,11 +3313,11 @@
 													</ul>
 												</div>-->
 												<div class="entry-content mt-4">
-													<p class="mb-0">完全不藏私，跟著我的步驟就能做出相同品質的商業級混音。</p>
+													<p data-i18n="blog.04" class="mb-0">完全不藏私，跟著我的步驟就能做出相同品質的商業級混音。</p>
 												</div>
 												<div class="entry-image mb-0">
 												<div class="text-center">
-													<a href="https://www.youtube.com/playlist?list=PLUD0p5NnO5i4Wg0pl78ZQoPbUhREgWy5F" class="button button-border button-rounded"><i class="bi-play-circle-fill"></i> Play Video</a>
+													<a href="https://www.youtube.com/playlist?list=PLUD0p5NnO5i4Wg0pl78ZQoPbUhREgWy5F" class="button button-border button-rounded"><i class="bi-play-circle-fill"></i> <span data-i18n="blog.05">Play Video</span></a>
 												</div>
 											</div>
 											</div>
@@ -3313,8 +3330,8 @@
 											</a>
 											<div class="p-4">
 												<div class="entry-title">
-													<h5 class="fw-medium text-danger mb-3">Production/Translation</h5>
-													<h3 class="text-transform-none ls-0 h5"><a href="https://youtube.com/playlist?list=PLUD0p5NnO5i7KW0jiSBiANR68K4Fjb_H6">ADO的配唱製作(翻譯)</a></h3>
+													<h5 data-i18n="blog.06" class="fw-medium text-danger mb-3">Production/Translation</h5>
+													<h3 class="text-transform-none ls-0 h5"><a data-i18n="blog.07" href="https://youtube.com/playlist?list=PLUD0p5NnO5i7KW0jiSBiANR68K4Fjb_H6">ADO的配唱製作(翻譯)</a></h3>
 												</div>
 												<!--<div class="entry-meta">
 													<ul>
@@ -3323,11 +3340,11 @@
 													</ul>
 												</div>-->
 												<div class="entry-content mt-4">
-													<p class="mb-0">這主要是翻譯ADO擔任怪忌蝶製作人的錄音配唱側錄，讓大家了解她的配唱風格與技巧，進而學習更多的演唱與詮釋技巧。</p>
+													<p data-i18n="blog.08" class="mb-0">這主要是翻譯ADO擔任怪忌蝶製作人的錄音配唱側錄，讓大家了解她的配唱風格與技巧，進而學習更多的演唱與詮釋技巧。</p>
 												</div>
 												<div class="entry-image mb-0">
 												<div class="text-center">
-													<a href="https://youtube.com/playlist?list=PLUD0p5NnO5i7KW0jiSBiANR68K4Fjb_H6" class="button button-border button-rounded"><i class="bi-play-circle-fill"></i> Play Video</a>
+													<a href="https://youtube.com/playlist?list=PLUD0p5NnO5i7KW0jiSBiANR68K4Fjb_H6" class="button button-border button-rounded"><i class="bi-play-circle-fill"></i> <span data-i18n="blog.09">Play Video</span></a>
 												</div>
 											</div>
 											</div>
@@ -3340,8 +3357,8 @@
 											</a>
 											<div class="p-4">
 												<div class="entry-title">
-													<h5 class="fw-medium text-info mb-3">Mixing</h5>
-													<h3 class="text-transform-none ls-0 h5"><a href="https://youtube.com/playlist?list=PLUD0p5NnO5i5wEx4W_jsdebfgWAByxn4p">Hikari的Remix二創</a></h3>
+													<h5 data-i18n="blog.10" class="fw-medium text-info mb-3">Mixing</h5>
+													<h3 class="text-transform-none ls-0 h5"><a data-i18n="blog.11" href="https://youtube.com/playlist?list=PLUD0p5NnO5i5wEx4W_jsdebfgWAByxn4p">Hikari的Remix二創</a></h3>
 												</div>
 												<!--<div class="entry-meta">
 													<ul>
@@ -3350,11 +3367,11 @@
 													</ul>
 												</div>-->
 												<div class="entry-content mt-4">
-													<p class="mb-0">這邊的Remix不是指電音DJ混音，而是擷取實況內容做音訊分離與標準的音樂製作流程後，重製成爲接近發行的水準，基本上都是二創。</p>
+													<p data-i18n="blog.12" class="mb-0">這邊的Remix不是指電音DJ混音，而是擷取實況內容做音訊分離與標準的音樂製作流程後，重製成爲接近發行的水準，基本上都是二創。</p>
 												</div>
 												<div class="entry-image mb-0">
 												<div class="text-center">
-													<a href="https://youtube.com/playlist?list=PLUD0p5NnO5i5wEx4W_jsdebfgWAByxn4p" class="button button-border button-rounded"><i class="bi-play-circle-fill"></i> Play Video</a>
+													<a href="https://youtube.com/playlist?list=PLUD0p5NnO5i5wEx4W_jsdebfgWAByxn4p" class="button button-border button-rounded"><i class="bi-play-circle-fill"></i> <span data-i18n="blog.13">Play Video</span></a>
 												</div>
 											</div>
 											</div>
@@ -3367,8 +3384,8 @@
 											</a>
 											<div class="p-4">
 												<div class="entry-title">
-													<h5 class="fw-medium text-success mb-3">Strems</h5>
-													<h3 class="text-transform-none ls-0 h5"><a href="https://www.youtube.com/@hikari-tsai/streams">通常是技術台，歡迎來聊天</a></h3>
+													<h5 data-i18n="blog.14" class="fw-medium text-success mb-3">Strems</h5>
+													<h3 class="text-transform-none ls-0 h5"><a data-i18n="blog.15" href="https://www.youtube.com/@hikari-tsai/streams">通常是技術台，歡迎來聊天</a></h3>
 												</div>
 												<!--<div class="entry-meta">
 													<ul>
@@ -3377,11 +3394,11 @@
 													</ul>
 												</div>-->
 												<div class="entry-content mt-4">
-													<p class="mb-0">可能混音、可能作曲、也可能寫程式，歡迎聊天</p>
+													<p data-i18n="blog.16" class="mb-0">可能混音、可能作曲、也可能寫程式，歡迎聊天</p>
 												</div>
 												<div class="entry-image mb-0">
 												<div class="text-center">
-													<a href="https://www.youtube.com/@hikari-tsai/streams" class="button button-border button-rounded"><i class="bi-play-circle-fill"></i> Play Video</a>
+													<a href="https://www.youtube.com/@hikari-tsai/streams" class="button button-border button-rounded"><i class="bi-play-circle-fill"></i> <span data-i18n="blog.17">Play Video</span></a>
 												</div>
 											</div>
 											</div>
@@ -3394,8 +3411,8 @@
 											</a>
 											<div class="p-4">
 												<div class="entry-title">
-													<h5 class="fw-medium text-warning mb-3">Distribution</h5>
-													<h3 class="text-transform-none ls-0 h5"><a href="https://www.notion.so/2226b467a94380348205d399504a619e?source=copy_link">實體發行教學</a></h3>
+													<h5 data-i18n="blog.18" class="fw-medium text-warning mb-3">Distribution</h5>
+													<h3 class="text-transform-none ls-0 h5"><a data-i18n="blog.19" href="https://www.notion.so/2226b467a94380348205d399504a619e?source=copy_link">實體發行教學</a></h3>
 												</div>
 												<!--<div class="entry-meta">
 													<ul>
@@ -3404,11 +3421,11 @@
 													</ul>
 												</div>-->
 												<div class="entry-content mt-4">
-													<p class="mb-0">這年頭還有人要實體發行嗎？在很多年前寫了一篇實體發行的教學給大家參考</p>
+													<p data-i18n="blog.20" class="mb-0">這年頭還有人要實體發行嗎？在很多年前寫了一篇實體發行的教學給大家參考</p>
 												</div>
 												<div class="entry-image mb-0">
 												<div class="text-center">
-													<a href="https://www.notion.so/2226b467a94380348205d399504a619e?source=copy_link" class="button button-border button-rounded"><i class="bi-arrow-right-circle-fill"></i> View Blog</a>
+													<a href="https://www.notion.so/2226b467a94380348205d399504a619e?source=copy_link" class="button button-border button-rounded"><i class="bi-arrow-right-circle-fill"></i> <span data-i18n="blog.21">View Blog</span></a>
 												</div>
 											</div>
 											</div>
@@ -3421,8 +3438,8 @@
 											</a>
 											<div class="p-4">
 												<div class="entry-title">
-													<h5 class="fw-medium text-warning mb-3">Distribution</h5>
-													<h3 class="text-transform-none ls-0 h5"><a href="https://www.youtube.com/watch?v=IGLVCzBlQGs">數位發行教學</a></h3>
+													<h5 data-i18n="blog.22" class="fw-medium text-warning mb-3">Distribution</h5>
+													<h3 class="text-transform-none ls-0 h5"><a data-i18n="blog.23" href="https://www.youtube.com/watch?v=IGLVCzBlQGs">數位發行教學</a></h3>
 												</div>
 												<!--<div class="entry-meta">
 													<ul>
@@ -3431,11 +3448,11 @@
 													</ul>
 												</div>-->
 												<div class="entry-content mt-4">
-													<p class="mb-0">你有製作原創曲嗎？除了YT之外也可以考慮數位發行增加曝光量，也能增加額外的收入</p>
+													<p data-i18n="blog.24" class="mb-0">你有製作原創曲嗎？除了YT之外也可以考慮數位發行增加曝光量，也能增加額外的收入</p>
 												</div>
 												<div class="entry-image mb-0">
 												<div class="text-center">
-													<a href="https://www.youtube.com/watch?v=IGLVCzBlQGs" class="button button-border button-rounded"><i class="bi-play-circle-fill"></i> Play Video</a>
+													<a href="https://www.youtube.com/watch?v=IGLVCzBlQGs" class="button button-border button-rounded"><i class="bi-play-circle-fill"></i> <span data-i18n="blog.25">Play Video</span></a>
 												</div>
 											</div>
 											</div>
@@ -3471,13 +3488,13 @@
 				</div>
 
 				<div id="section-contact" class="row feature-box-border-vertical border-hover-animate col-mb-50 justify-content-center align-items-center my-5">
-					<h2 class="text-center text-uppercase fw-light ls-3 font-body">找Hikari混音</h2>
+					<h2 data-i18n="contact.01" class="text-center text-uppercase fw-light ls-3 font-body">找Hikari混音</h2>
 					<div class="col-lg-9">
 						<div class="card" style="max-width:700px; margin:0 auto; padding: 0 10px;">
 						<!-- Default panel contents -->
-							<div class="card-header"><b>參考價目表  <span class="badge bg-primary rounded-pill">若有活動請以活動價格為主</span></b></div>
+							<div class="card-header"><b><span data-i18n="contact.02">參考價目表</span>  <span data-i18n="contact.03" class="badge bg-primary rounded-pill">若有活動請以活動價格為主</span></b></div>
 							<div class="card-body">
-								<p class="card-text">根據混音形態不同，價格也有不同，大致上可以分為Vocal Mix、Multitrack Full Mix and SSL Full Mixing，所有混音皆贈送母帶後期(Mastering)</p>
+								<p data-i18n="contact.04" class="card-text">根據混音形態不同，價格也有不同，大致上可以分為Vocal Mix、Multitrack Full Mix and SSL Full Mixing，所有混音皆贈送母帶後期(Mastering)</p>
 							</div>
 
 							<!-- Table -->
@@ -3485,39 +3502,39 @@
 								<thead>
 									<tr>
 										<th>#</th>
-										<th>Type</th>
-										<th>Description</th>
-										<th>Review</th>
-										<th>Price</th>
+										<th data-i18n="contact.05">Type</th>
+										<th data-i18n="contact.06">Description</th>
+										<th data-i18n="contact.07">Review</th>
+										<th data-i18n="contact.08">Price</th>
 									</tr>
 								</thead>
 								<tbody>
 									<tr>
 										<td>0</td>
 										<td>Tracking</td>
-										<td>現場錄音，使用汐止強力錄音室錄製</td>
-										<td>現場確認</td>
+										<td data-i18n="contact.10">現場錄音，使用汐止強力錄音室錄製</td>
+										<td data-i18n="contact.11">現場確認</td>
 										<td>NTD. 1,500/hr</td>
 									</tr>
 									<tr>
 										<td>1</td>
 										<td>Vocal Mix</td>
-										<td>僅有一軌卡拉帶加上Vocals，Vocals不限數量與分軌(包含Vocal Edit&Tuning) <span class="badge bg-primary rounded-pill">贈母帶後期</span></td>
-										<td>線上傳檔</td>
-										<td>NTD. 5,000<span class="badge bg-danger rounded-pill">最優惠</span></td>
+										<td data-i18n="contact.14">僅有一軌卡拉帶加上Vocals，Vocals不限數量與分軌(包含Vocal Edit&Tuning) <span class="badge bg-primary rounded-pill">贈母帶後期</span></td>
+										<td data-i18n="contact.15">線上傳檔</td>
+										<td data-i18n="contact.16">NTD. 5,000<span class="badge bg-danger rounded-pill">最優惠</span></td>
 									</tr>
 									<tr>
 										<td>2</td>
 										<td>Multitrack Full Mix</td>
-										<td>多軌道分軌混音，通常是原創曲或是重編曲之作品(包含Vocal Edit&Tuning) <span class="badge bg-primary rounded-pill">贈母帶後期</span></td>
-										<td>線上傳檔、線上同步</td>
+										<td data-i18n="contact.18">多軌道分軌混音，通常是原創曲或是重編曲之作品(包含Vocal Edit&Tuning) <span class="badge bg-primary rounded-pill">贈母帶後期</span></td>
+										<td data-i18n="contact.19">線上傳檔、線上同步</td>
 										<td>NTD. 15,000</td>
 									</tr>
 									<tr>
 										<td>3</td>
 										<td>SSL Multitrack Full Mix</td>
-										<td>使用強力錄音室SSL 4000系列進行硬體混音(<b>不</b>包含Vocal Edit&Tuning) <span class="badge bg-primary rounded-pill">贈母帶後期</span></td>
-										<td>錄音室(現場)、線上傳檔、線上同步</td>
+										<td data-i18n="contact.22">使用強力錄音室SSL 4000系列進行硬體混音(<b>不</b>包含Vocal Edit&Tuning) <span class="badge bg-primary rounded-pill">贈母帶後期</span></td>
+										<td data-i18n="contact.23">錄音室(現場)、線上傳檔、線上同步</td>
 										<td>NTD. 28,000</td>
 									</tr>
 								</tbody>
@@ -3529,12 +3546,12 @@
 							<a href="#"><i>1</i></a>
 						</div>
 						<div class="fbox-content">
-							<h3 class="text-transform-none text-larger mb-2">填寫表單確認需求與報價</h3>
-							<p>根據混音形態不同，價格也有不同，大致上可以分為Vocal Mix、Multitrack Full Mix and SSL Full Mixing</p>
-							<li><b>[Vocal Mix]</b> 僅有一軌卡拉帶加上Vocals，Vocals不限數量與分軌</li>
-							<li><b>[Multitracks Full Mix]</b> 多軌道分軌混音，通常是原創曲或是重編曲之作品(不贈送錄音)</li>
-							<li><b>[SSL Full Mix]</b> 使用強力錄音室SSL 4000系列進行硬體混音，可現場聽咪或是遠端聽咪</li>
-							<a href="https://forms.gle/VbwWArHjdvzsje1W8" class="button button-small button-dark button-rounded border-width-1 ms-0 mt-3">填寫表單<i class="uil uil-angle-right-b me-0"></i></a>
+							<h3 data-i18n="contact.25" class="text-transform-none text-larger mb-2">填寫表單確認需求與報價</h3>
+							<p data-i18n="contact.26">根據混音形態不同，價格也有不同，大致上可以分為Vocal Mix、Multitrack Full Mix and SSL Full Mixing</p>
+							<li data-i18n="contact.27"><b>[Vocal Mix]</b> 僅有一軌卡拉帶加上Vocals，Vocals不限數量與分軌</li>
+							<li data-i18n="contact.28"><b>[Multitracks Full Mix]</b> 多軌道分軌混音，通常是原創曲或是重編曲之作品(不贈送錄音)</li>
+							<li data-i18n="contact.29"><b>[SSL Full Mix]</b> 使用強力錄音室SSL 4000系列進行硬體混音，可現場聽咪或是遠端聽咪</li>
+							<a href="https://forms.gle/VbwWArHjdvzsje1W8" class="button button-small button-dark button-rounded border-width-1 ms-0 mt-3"><span data-i18n="contact.30">填寫表單</span><i class="uil uil-angle-right-b me-0"></i></a>
 						</div>
 					</div>
 	
@@ -3545,11 +3562,11 @@
 							<a href="#"><i>2</i></a>
 						</div>
 						<div class="fbox-content">
-							<h3 class="text-transform-none text-larger mb-2">準備檔案與錄音</h3>
+							<h3 data-i18n="contact.31" class="text-transform-none text-larger mb-2">準備檔案與錄音</h3>
 							<p>
-								<li><b>[Vocal Mix]</b>請提供齊頭卡拉帶與Vocal錄音分軌(若由Hikari錄音則不需提供分軌)</li>
-								<li><b>[Multitracks Full Mix]</b> 請準備24bits, 48kHz的分軌檔案，檔案齊頭，可接受ProTools Session檔案</li>
-								<li><b>[SSL Full Mix]</b> 請準備24bits, 48kHz的分軌檔案，檔案齊頭，可接受ProTools Session檔案</li>
+								<li data-i18n="contact.32"><b>[Vocal Mix]</b>請提供齊頭卡拉帶與Vocal錄音分軌(若由Hikari錄音則不需提供分軌)</li>
+								<li data-i18n="contact.33"><b>[Multitracks Full Mix]</b> 請準備24bits, 48kHz的分軌檔案，檔案齊頭，可接受ProTools Session檔案</li>
+								<li data-i18n="contact.34"><b>[SSL Full Mix]</b> 請準備24bits, 48kHz的分軌檔案，檔案齊頭，可接受ProTools Session檔案</li>
 							</p>
 						</div>
 					</div>
@@ -3561,11 +3578,11 @@
 							<a href="#"><i>3</i></a>
 						</div>
 						<div class="fbox-content">
-							<h3 class="text-transform-none text-larger mb-2">聽咪方式</h3>
+							<h3 data-i18n="contact.35" class="text-transform-none text-larger mb-2">聽咪方式</h3>
 							<p>
-								<li><b>[線上非同步]</b> 標準，所有混音方案都可以使用。</li>
-								<li><b>[線上同步]</b> 提供專用網址遠端高音質同步聽取檔案，現場修改，僅限Multitracks Full Mix方案或是SSL Full Mix方案</li>
-								<li><b>[實體錄音室]</b> 於強力錄音室現場聽咪，僅限SSL Full Mix</li>
+								<li data-i18n="contact.36"><b>[線上非同步]</b> 標準，所有混音方案都可以使用。</li>
+								<li data-i18n="contact.37"><b>[線上同步]</b> 提供專用網址遠端高音質同步聽取檔案，現場修改，僅限Multitracks Full Mix方案或是SSL Full Mix方案</li>
+								<li data-i18n="contact.38"><b>[實體錄音室]</b> 於強力錄音室現場聽咪，僅限SSL Full Mix</li>
 							</p>
 						</div>
 					</div>
@@ -3577,11 +3594,11 @@
 							<a href="#"><i>4</i></a>
 						</div>
 						<div class="fbox-content">
-							<h3 class="text-transform-none text-larger mb-2">檔案交付</h3>
+							<h3 data-i18n="contact.39" class="text-transform-none text-larger mb-2">檔案交付</h3>
 							<p>
-								<li><b>[Vocal Mix]</b>交付MMM(混音)檔案，若有和聲則會另外交付MMO(含有和聲的卡拉帶)，並提供MP3, Wavs, AIFF三種格式下載。</li>
-								<li><b>[Multitracks Full Mix]</b> 交付標準MMM, MMA以及MMO三種檔案，並提供MP3, Wavs, AIFF三種格式下載。</li>
-								在此希望能與您約定，我會全力完成委託，若有任何問題或是需要修改的地方，也請在一週內提出修改需求，若超過一週則會視為確認結案(有任何執行上的困難都可以討論但不要放半年一年都不結案)。</li>
+								<li data-i18n="contact.40"><b>[Vocal Mix]</b>交付MMM(混音)檔案，若有和聲則會另外交付MMO(含有和聲的卡拉帶)，並提供MP3, Wavs, AIFF三種格式下載。</li>
+								<li data-i18n="contact.41"><b>[Multitracks Full Mix]</b> 交付標準MMM, MMA以及MMO三種檔案，並提供MP3, Wavs, AIFF三種格式下載。</li>
+								<span data-i18n="contact.42">在此希望能與您約定，我會全力完成委託，若有任何問題或是需要修改的地方，也請在一週內提出修改需求，若超過一週則會視為確認結案(有任何執行上的困難都可以討論但不要放半年一年都不結案)。</span></li>
 							</p>
 						</div>
 					</div>
@@ -3593,47 +3610,47 @@
 							<a href="#"><i>5</i></a>
 						</div>
 						<div class="fbox-content">
-							<h3 class="text-transform-none text-larger mb-2">付款</h3>
-							<p>結案後請於一週內支付全部款項</p>
+							<h3 data-i18n="contact.43" class="text-transform-none text-larger mb-2">付款</h3>
+							<p data-i18n="contact.44">結案後請於一週內支付全部款項</p>
 						</div>
 					</div>
 	
 				</div>
 				<div id="section-zzz" class="page-section pt-0" style="max-width:700px; margin:0 auto; padding: 0 10px;">
 					<div class="col">
-						<h4>音樂/音訊獎項</h4>
+						<h4 data-i18n="profile.01">音樂/音訊獎項</h4>
 						<ul class="iconlist iconlist-lg">
-							<li><i class="bi-check-lg"></i> <span>2023 第一屆文策院文化創業加速器獲獎</span></li>
-							<li><i class="bi-check-lg"></i> <span>2022 美國消費性電子展(CES)創新獎</span></li>
-							<li><i class="bi-check-lg"></i> <span>2021 台灣精品獎</span></li>
-							<li><i class="bi-check-lg"></i> <span>2014 公共電視音樂創世紀總冠軍賽第五名 </span></li>
-							<li><i class="bi-check-lg"></i> <span>2014 搖滾台中 前六強 </span></li>
-							<li><i class="bi-check-lg"></i> <span>2013 貢寮海洋音樂祭人氣獎前十強、大舞台30強 </span></li>
-							<li><i class="bi-check-lg"></i> <span>2013 客委會桐花歌曲創作大賽舞曲組佳作  </span></li>
-							<li><i class="bi-check-lg"></i> <span>2012 桃園鐵玫瑰音樂大賽決賽  </span></li>
-							<li><i class="bi-check-lg"></i> <span>2012 紅黑搖滾大賽第二名  </span></li>
-							<li><i class="bi-check-lg"></i> <span>2012 世貿樂器展 XM搖滾一夏冠軍  </span></li>
-							<li><i class="bi-check-lg"></i> <span>2011 年漢光基金會舊愛新歡古典詩詞譜曲競賽(新歡組)優選獎 </span></li>
-							<li><i class="bi-check-lg"></i> <span>2010 年漢光基金會舊愛新歡古典詩詞譜曲競賽(新歡組)優選獎 </span></li>
+							<li><i class="bi-check-lg"></i> <span data-i18n="profile.02">2023 第一屆文策院文化創業加速器獲獎</span></li>
+							<li><i class="bi-check-lg"></i> <span data-i18n="profile.03">2022 美國消費性電子展(CES)創新獎</span></li>
+							<li><i class="bi-check-lg"></i> <span data-i18n="profile.04">2021 台灣精品獎</span></li>
+							<li><i class="bi-check-lg"></i> <span data-i18n="profile.05">2014 公共電視音樂創世紀總冠軍賽第五名</span></li>
+							<li><i class="bi-check-lg"></i> <span data-i18n="profile.06">2014 搖滾台中 前六強</span></li>
+							<li><i class="bi-check-lg"></i> <span data-i18n="profile.07">2013 貢寮海洋音樂祭人氣獎前十強、大舞台30強</span></li>
+							<li><i class="bi-check-lg"></i> <span data-i18n="profile.08">2013 客委會桐花歌曲創作大賽舞曲組佳作</span></li>
+							<li><i class="bi-check-lg"></i> <span data-i18n="profile.09">2012 桃園鐵玫瑰音樂大賽決賽</span></li>
+							<li><i class="bi-check-lg"></i> <span data-i18n="profile.10">2012 紅黑搖滾大賽第二名</span></li>
+							<li><i class="bi-check-lg"></i> <span data-i18n="profile.11">2012 世貿樂器展 XM搖滾一夏冠軍</span></li>
+							<li><i class="bi-check-lg"></i> <span data-i18n="profile.12">2011 年漢光基金會舊愛新歡古典詩詞譜曲競賽(新歡組)優選獎</span></li>
+							<li><i class="bi-check-lg"></i> <span data-i18n="profile.13">2010 年漢光基金會舊愛新歡古典詩詞譜曲競賽(新歡組)優選獎</span></li>
 						</ul>
 					</div>
 					<div class="col">
-						<h4>音樂／工程類重要證書</h4>
+						<h4 data-i18n="profile.14">音樂／工程類重要證書</h4>
 						<ul class="iconlist iconlist-lg">
 
-							<li><i class="bi-check-lg"></i> <span>大禾音樂X強力錄音室 混音大師班第二期、第六期結業(指導老師：K哥)</span></li>
+							<li><i class="bi-check-lg"></i> <span data-i18n="profile.15">大禾音樂X強力錄音室 混音大師班第二期、第六期結業(指導老師：K哥)</span></li>
 							<li><i class="bi-check-lg"></i> <span>AWS Certified Data Analytics – Specialty</span></li>
 							<li><i class="bi-check-lg"></i> <span>AWS Certified Machine Learning – Specialty</span></li>
 							<li><i class="bi-check-lg"></i> <span>AWS Certified Solutions Architect – Associate</span></li>
 							<li><i class="bi-check-lg"></i> <span>Stanford Machine Learning (Online) </span></li>
 							<!--<li><i class="bi-check-lg"></i> <span>Berklee Modern Musician (Online)</span></li>-->
-							<li><i class="bi-check-lg"></i> <span>Write Like Mozart: An Introduction to Classical Music Composition, National University of Singapore. (新加坡大學)</span></li>
-							<li><i class="bi-check-lg"></i> <span>Songwriting, Berklee College of Music (伯克利音樂學院)</span></li>
-							<li><i class="bi-check-lg"></i> <span>Developing Your Musicianship, Berklee College of Music   (伯克利音樂學院)</span></li>
-							<li><i class="bi-check-lg"></i> <span>Introduction to Music Production, Berklee College of Music   (伯克利音樂學院)</span></li>
-							<li><i class="bi-check-lg"></i> <span>Modern Musician Capstone, Berklee College of Music   (伯克利音樂學院)</span></li>
-							<li><i class="bi-check-lg"></i> <span>Modern Musician Specialization, Berklee College of Music   (伯克利音樂學院)</span></li>
-							<li><i class="bi-check-lg"></i> <span>2024 當選東華大學傑出校友</span></li>
+							<li><i class="bi-check-lg"></i> <span data-i18n="profile.20">Write Like Mozart: An Introduction to Classical Music Composition, National University of Singapore. (新加坡大學)</span></li>
+							<li><i class="bi-check-lg"></i> <span data-i18n="profile.21">Songwriting, Berklee College of Music (伯克利音樂學院)</span></li>
+							<li><i class="bi-check-lg"></i> <span data-i18n="profile.22">Developing Your Musicianship, Berklee College of Music (伯克利音樂學院)</span></li>
+							<li><i class="bi-check-lg"></i> <span data-i18n="profile.23">Introduction to Music Production, Berklee College of Music (伯克利音樂學院)</span></li>
+							<li><i class="bi-check-lg"></i> <span data-i18n="profile.24">Modern Musician Capstone, Berklee College of Music (伯克利音樂學院)</span></li>
+							<li><i class="bi-check-lg"></i> <span data-i18n="profile.25">Modern Musician Specialization, Berklee College of Music (伯克利音樂學院)</span></li>
+							<li><i class="bi-check-lg"></i> <span data-i18n="profile.26">2024 當選東華大學傑出校友</span></li>
 						</ul>
 					</div>
 				</div>
@@ -3647,9 +3664,9 @@
 			<h2 class="text-center text-uppercase fw-light ls-3 font-body"></h2>
 			<div class="col-lg-9">
 				<div class="fancy-title title-border">
-					<h4>贊助Hikari喝咖啡</h4>
+					<h4 data-i18n="page.02">贊助Hikari喝咖啡</h4>
 				</div>
-				用這些連結買軟體，廠商爸爸會請Hikari喝咖啡，Hikari會繼續努力做更多的音樂與混音給大家聽。
+				<span data-i18n="page.03">用這些連結買軟體，廠商爸爸會請Hikari喝咖啡，Hikari會繼續努力做更多的音樂與混音給大家聽。</span>
 
 				<div class="d-flex align-items-center">
 					<!--<a href="#" class="button button-rounded px-5 button-3d button-text-effect button-text-flip-x">Flip X</a>
@@ -3657,18 +3674,14 @@
 					<!--<a href="https://disco.ac/signup?b=64902&u=2387921" class="button button-rounded px-5 button-text-effect button-text-flip-y">DISCO</a>
 					<a href="https://isenselabs.com/?pa=60163" class="button button-rounded px-5 button-text-effect button-text-flip-y">iSenseLab</a>-->
 					<a href="https://pluginboutique.com/?a_aid=685edf1958653" class="button button-border button-rounded button-amber button-icon-effect button-icon-flip-y"><i class="fa-solid uil-coffee"></i>Plugin Boutique</a>
-					<a href="#" data-fancybox data-src="#dialog-fabfilter" class="button button-border button-rounded button-amber button-icon-effect button-icon-flip-y"><i class="fa-solid uil-coffee"></i>FabFilter(10%折價券)</a>
-					<a href="https://disco.ac/signup?b=64902&u=2387921" class="button button-border button-rounded button-amber button-icon-effect button-icon-flip-y"><i class="fa-solid uil-coffee"></i>DISCO(折價$20)</a>
+					<a href="#" data-fancybox data-src="#dialog-fabfilter" class="button button-border button-rounded button-amber button-icon-effect button-icon-flip-y"><i class="fa-solid uil-coffee"></i><span data-i18n="page.05">FabFilter(10%折價券)</span></a>
+					<a href="https://disco.ac/signup?b=64902&u=2387921" class="button button-border button-rounded button-amber button-icon-effect button-icon-flip-y"><i class="fa-solid uil-coffee"></i><span data-i18n="page.06">DISCO(折價$20)</span></a>
 					<a href="https://isenselabs.com/?pa=60163" class="button button-border button-rounded button-amber button-icon-effect button-icon-flip-y"><i class="fa-solid uil-coffee"></i>iSenseLab</a>
 				</div>
 			</div>
 			<div id="dialog-fabfilter" style="display:none;max-width:500px;">
-				<h2>Hello,謝謝你請我喝咖啡</h2>
-				<p>
-					請聯絡Hikari Tsai，並提供你的電子郵件地址，我會寄給你FabFilter的10%折價券。
-					這個折價券可以用在FabFilter的所有產品上，包含他們的混音、母帶處理、合成器等軟體。
-					這些軟體都是音樂製作中非常有用的工具，可以幫助你創造出更好的音樂。
-				</p>
+				<h2 data-i18n="coffee.01">Hello,謝謝你請我喝咖啡</h2>
+				<p data-i18n="coffee.02">請聯絡Hikari Tsai，並提供你的電子郵件地址，我會寄給你FabFilter的10%折價券。 這個折價券可以用在FabFilter的所有產品上，包含他們的混音、母帶處理、合成器等軟體。 這些軟體都是音樂製作中非常有用的工具，可以幫助你創造出更好的音樂。</p>
 				<div class="d-flex justify-content-center mt-4">
 					<a href="https://x.com/hikari_tsai" class="social-icon si-small bg-transparent h-bg-x-twitter" title="Twitter">
 						<i class="fa-brands fa-x-twitter"></i>
@@ -3770,7 +3783,7 @@
 
 					<div class="row justify-content-between col-mb-30">
 						<div class="col-12 col-lg-auto text-center text-lg-start">
-							Copyrights &copy; 2025 All Rights Reserved by Hikari Tsai.
+							<span>Copyrights &copy; 2025 All Rights Reserved by Hikari Tsai.</span>
 							<div class="d-flex justify-content-center mt-4">
 
 									<a href="https://x.com/hikari_tsai" class="social-icon si-small bg-transparent h-bg-x-twitter" title="Twitter">
@@ -3794,11 +3807,11 @@
 
 						<div class="col-12 col-lg-auto text-center text-lg-end">
 							<div class="copyrights-menu copyright-links">
-								<a href="#" data-scrollto="#wrapper" data-easing="easeInOutExpo" data-speed="1250" data-offset="70" class="text-contrast-600">Top</a>/
-								<a href="#" data-scrollto="#section-works" data-easing="easeInOutExpo" data-speed="1250" data-offset="70" class="text-contrast-600">Works</a>/
-								<a href="#" data-scrollto="#section-services" data-easing="easeInOutExpo" data-speed="1250" data-offset="70" class="text-contrast-600">Services</a>/
-								<a href="#" data-scrollto="#section-blog" data-easing="easeInOutExpo" data-speed="1250" data-offset="70" class="text-contrast-600">Blog</a>/
-								<a href="#" data-scrollto="#section-contact" data-easing="easeInOutExpo" data-speed="1250" data-offset="70" class="text-contrast-600">Contact</a>
+								<a data-i18n="footer.02" href="#" data-scrollto="#wrapper" data-easing="easeInOutExpo" data-speed="1250" data-offset="70" class="text-contrast-600">Top</a>/
+								<a data-i18n="footer.03" href="#" data-scrollto="#section-works" data-easing="easeInOutExpo" data-speed="1250" data-offset="70" class="text-contrast-600">Works</a>/
+								<a data-i18n="footer.04" href="#" data-scrollto="#section-services" data-easing="easeInOutExpo" data-speed="1250" data-offset="70" class="text-contrast-600">Services</a>/
+								<a data-i18n="footer.05" href="#" data-scrollto="#section-blog" data-easing="easeInOutExpo" data-speed="1250" data-offset="70" class="text-contrast-600">Blog</a>/
+								<a data-i18n="footer.06" href="#" data-scrollto="#section-contact" data-easing="easeInOutExpo" data-speed="1250" data-offset="70" class="text-contrast-600">Contact</a>
 							</div>
 						</div>
 					</div>
@@ -3812,9 +3825,7 @@
 		</div><!-- #wrapper end -->
 			<div id="dialog-discord" style="display:none;max-width:500px;">
 				<h2></h2>
-				<p>
-					DC帳號 <b>hikari_tsai</b> ，加入後跟我講一下是你是誰我才會知道你不是詐騙集團喔
-				</p>
+				<p data-i18n="page.08">DC帳號 <b>hikari_tsai</b> ，加入後跟我講一下是你是誰我才會知道你不是詐騙集團喔</p>
 
 			</div>
 
@@ -3824,18 +3835,11 @@
 
 	<!-- JavaScripts
 	============================================= -->
+	<script id="i18n-data" type="application/json">{"zh":{"nav.02":"Home","nav.03":"About","nav.04":"Works","nav.05":"Services","nav.06":"Blog","nav.07":"Contact","hero.02":"Recording, Mixing & ML Engineer","hero.03":"Hi, 我是Hikari，一個喜歡獨立音樂人、混音師以及軟體工程師。曾與陳芳語(Kimberly)、隕浮流(Verbal)、林鴻鳴(星光二班)以及黃小玫等多位藝人合作，為音樂串流公司訓練芒果醬、黃明志等藝人的演唱模型。同時也是一個鍵盤手，多次參加墾丁春天吶喊、海洋音樂祭以及公共電視演出，並為國外知名金屬樂團如 graveworm, leaves' eyes, Traja（Nightwish主唱）開場演出。設計多種獲獎產品。\u003cbr> 相較於自己站在舞台上，我更喜歡看著別人成功，如果有音樂的問題，歡迎來找我討論吧！","services.01":"We truly enjoy working on music production—whether it’s Mixing, Recording, or Composing—just as much as you need these services. This allows us to help you achieve your musical goals more effortlessly. Feel free to explore the wide range of music production services we offer.","services.02":"Composition","services.03":"Arrangement","services.04":"Recording","services.05":"Mixing","services.06":"Mastering","services.07":"Distribution","services.08":"Like Our Services? Get an","services.09":"Instant Quote","services.10":"對於行外人也友善！委託音樂相關的東西的時候，都會因為相關知識匱乏，在溝通的時候會很緊張。但是Hikari都會很詳細的解釋相關的東西！效率高又能符合期望，真的很棒！","services.13":"小光老師製作效率很高，也會給出具體的協助與指導，溝通也都很順暢，交給他每次真的都可以順利拿到好作品…！","services.15":"Hikari老師專業細心！對於第一次宅錄有許多不懂的地方也會耐心溝通，並且會跟進客戶的要求和歌曲本身完成作品！最後成品也十分滿意，非常感謝老師！(*òωó _)","services.18":"與Hikari配合過數支商用影片，對於高品質的配樂製作與英文旁白印象深刻，配合度高且容易溝通","services.19":"顏小八 導演","services.21":"Hikari在專輯製作上幫我很多忙，非常願意花很多時間和我溝通確定我要什麼，最後也很專業和負責地幫我完成我想要的成品，總之很感謝他們！","services.22":"蘇育霆 歌手/製作人","services.23":"華研國際音樂有限公司","services.24":"Hikari是業界速度快、且將音樂視為珍貴原創商品的配樂音效公司。無論是合作案的大小或性質，他們都會以相同的敬業態度完成工作。創業的路上總是比較辛苦，我很幸運有這樣能夠相互扶持的夥伴一同前進、慢慢地一同站穩腳步。","services.25":"張偉翰(小馬) 導演","services.27":"Hikari在音樂製作上展現了高度的專業，不論是在編曲或是混音方面，總是很精準地完成我要的東西，他們總是很有耐心地詢問你的需求並盡力做到完美一致，對於音樂方面的大小事，我放心把自己交給他們。","services.28":"創作歌手 銘鴻","services.29":"全球傑出華人流行音樂參賽者","services.30":"謝謝Hikari的大力支持，協助本計畫將深奧難懂的雲南麗江納西族的東巴經文錄音工作，順利完成。小光老師認真細心的敬業精神，值得推薦給大家～","services.31":"胡其瑞 助理研究員","services.32":"中央研究院歷史語言研究所","works.01":"Recently Music Works","works.02":"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;作品分類 (ALL)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;","works.03":"找不到符合的作品","works.04":"載入更多","blog.01":"Recently From the Blog","blog.02":"Production","blog.03":"免費人聲混音製作教學(六集)","blog.04":"完全不藏私，跟著我的步驟就能做出相同品質的商業級混音。","blog.05":"Play Video","blog.06":"Production/Translation","blog.07":"ADO的配唱製作(翻譯)","blog.08":"這主要是翻譯ADO擔任怪忌蝶製作人的錄音配唱側錄，讓大家了解她的配唱風格與技巧，進而學習更多的演唱與詮釋技巧。","blog.09":"Play Video","blog.10":"Mixing","blog.11":"Hikari的Remix二創","blog.12":"這邊的Remix不是指電音DJ混音，而是擷取實況內容做音訊分離與標準的音樂製作流程後，重製成爲接近發行的水準，基本上都是二創。","blog.13":"Play Video","blog.14":"Strems","blog.15":"通常是技術台，歡迎來聊天","blog.16":"可能混音、可能作曲、也可能寫程式，歡迎聊天","blog.17":"Play Video","blog.18":"Distribution","blog.19":"實體發行教學","blog.20":"這年頭還有人要實體發行嗎？在很多年前寫了一篇實體發行的教學給大家參考","blog.21":"View Blog","blog.22":"Distribution","blog.23":"數位發行教學","blog.24":"你有製作原創曲嗎？除了YT之外也可以考慮數位發行增加曝光量，也能增加額外的收入","blog.25":"Play Video","contact.01":"找Hikari混音","contact.02":"參考價目表","contact.03":"若有活動請以活動價格為主","contact.04":"根據混音形態不同，價格也有不同，大致上可以分為Vocal Mix、Multitrack Full Mix and SSL Full Mixing，所有混音皆贈送母帶後期(Mastering)","contact.05":"Type","contact.06":"Description","contact.07":"Review","contact.08":"Price","contact.10":"現場錄音，使用汐止強力錄音室錄製","contact.11":"現場確認","contact.14":"僅有一軌卡拉帶加上Vocals，Vocals不限數量與分軌(包含Vocal Edit&Tuning) \u003cspan class=\"badge bg-primary rounded-pill\">贈母帶後期\u003c/span>","contact.15":"線上傳檔","contact.16":"NTD. 5,000\u003cspan class=\"badge bg-danger rounded-pill\">最優惠\u003c/span>","contact.18":"多軌道分軌混音，通常是原創曲或是重編曲之作品(包含Vocal Edit&Tuning) \u003cspan class=\"badge bg-primary rounded-pill\">贈母帶後期\u003c/span>","contact.19":"線上傳檔、線上同步","contact.22":"使用強力錄音室SSL 4000系列進行硬體混音(\u003cb>不\u003c/b>包含Vocal Edit&Tuning) \u003cspan class=\"badge bg-primary rounded-pill\">贈母帶後期\u003c/span>","contact.23":"錄音室(現場)、線上傳檔、線上同步","contact.25":"填寫表單確認需求與報價","contact.26":"根據混音形態不同，價格也有不同，大致上可以分為Vocal Mix、Multitrack Full Mix and SSL Full Mixing","contact.27":"\u003cb>[Vocal Mix]\u003c/b> 僅有一軌卡拉帶加上Vocals，Vocals不限數量與分軌","contact.28":"\u003cb>[Multitracks Full Mix]\u003c/b> 多軌道分軌混音，通常是原創曲或是重編曲之作品(不贈送錄音)","contact.29":"\u003cb>[SSL Full Mix]\u003c/b> 使用強力錄音室SSL 4000系列進行硬體混音，可現場聽咪或是遠端聽咪","contact.30":"填寫表單","contact.31":"準備檔案與錄音","contact.32":"\u003cb>[Vocal Mix]\u003c/b>請提供齊頭卡拉帶與Vocal錄音分軌(若由Hikari錄音則不需提供分軌)","contact.33":"\u003cb>[Multitracks Full Mix]\u003c/b> 請準備24bits, 48kHz的分軌檔案，檔案齊頭，可接受ProTools Session檔案","contact.34":"\u003cb>[SSL Full Mix]\u003c/b> 請準備24bits, 48kHz的分軌檔案，檔案齊頭，可接受ProTools Session檔案","contact.35":"聽咪方式","contact.36":"\u003cb>[線上非同步]\u003c/b> 標準，所有混音方案都可以使用。","contact.37":"\u003cb>[線上同步]\u003c/b> 提供專用網址遠端高音質同步聽取檔案，現場修改，僅限Multitracks Full Mix方案或是SSL Full Mix方案","contact.38":"\u003cb>[實體錄音室]\u003c/b> 於強力錄音室現場聽咪，僅限SSL Full Mix","contact.39":"檔案交付","contact.40":"\u003cb>[Vocal Mix]\u003c/b>交付MMM(混音)檔案，若有和聲則會另外交付MMO(含有和聲的卡拉帶)，並提供MP3, Wavs, AIFF三種格式下載。","contact.41":"\u003cb>[Multitracks Full Mix]\u003c/b> 交付標準MMM, MMA以及MMO三種檔案，並提供MP3, Wavs, AIFF三種格式下載。","contact.42":"在此希望能與您約定，我會全力完成委託，若有任何問題或是需要修改的地方，也請在一週內提出修改需求，若超過一週則會視為確認結案(有任何執行上的困難都可以討論但不要放半年一年都不結案)。","contact.43":"付款","contact.44":"結案後請於一週內支付全部款項","profile.01":"音樂/音訊獎項","profile.02":"2023 第一屆文策院文化創業加速器獲獎","profile.03":"2022 美國消費性電子展(CES)創新獎","profile.04":"2021 台灣精品獎","profile.05":"2014 公共電視音樂創世紀總冠軍賽第五名","profile.06":"2014 搖滾台中 前六強","profile.07":"2013 貢寮海洋音樂祭人氣獎前十強、大舞台30強","profile.08":"2013 客委會桐花歌曲創作大賽舞曲組佳作","profile.09":"2012 桃園鐵玫瑰音樂大賽決賽","profile.10":"2012 紅黑搖滾大賽第二名","profile.11":"2012 世貿樂器展 XM搖滾一夏冠軍","profile.12":"2011 年漢光基金會舊愛新歡古典詩詞譜曲競賽(新歡組)優選獎","profile.13":"2010 年漢光基金會舊愛新歡古典詩詞譜曲競賽(新歡組)優選獎","profile.14":"音樂／工程類重要證書","profile.15":"大禾音樂X強力錄音室 混音大師班第二期、第六期結業(指導老師：K哥)","profile.20":"Write Like Mozart: An Introduction to Classical Music Composition, National University of Singapore. (新加坡大學)","profile.21":"Songwriting, Berklee College of Music (伯克利音樂學院)","profile.22":"Developing Your Musicianship, Berklee College of Music (伯克利音樂學院)","profile.23":"Introduction to Music Production, Berklee College of Music (伯克利音樂學院)","profile.24":"Modern Musician Capstone, Berklee College of Music (伯克利音樂學院)","profile.25":"Modern Musician Specialization, Berklee College of Music (伯克利音樂學院)","profile.26":"2024 當選東華大學傑出校友","page.02":"贊助Hikari喝咖啡","page.03":"用這些連結買軟體，廠商爸爸會請Hikari喝咖啡，Hikari會繼續努力做更多的音樂與混音給大家聽。","page.05":"FabFilter(10%折價券)","page.06":"DISCO(折價$20)","coffee.01":"Hello,謝謝你請我喝咖啡","coffee.02":"請聯絡Hikari Tsai，並提供你的電子郵件地址，我會寄給你FabFilter的10%折價券。 這個折價券可以用在FabFilter的所有產品上，包含他們的混音、母帶處理、合成器等軟體。 這些軟體都是音樂製作中非常有用的工具，可以幫助你創造出更好的音樂。","footer.02":"Top","footer.03":"Works","footer.04":"Services","footer.05":"Blog","footer.06":"Contact","page.08":"DC帳號 \u003cb>hikari_tsai\u003c/b> ，加入後跟我講一下是你是誰我才會知道你不是詐騙集團喔","works.search_placeholder":"搜尋歌名、作者、器材…","ui.load_more":"載入更多（還有 {n} 件）","ui.search_label":"搜尋作品","ui.clear_search":"清除搜尋","ui.language":"語言"},"en":{"nav.02":"Home","nav.03":"About","nav.04":"Works","nav.05":"Services","nav.06":"Blog","nav.07":"Contact","hero.02":"Recording, Mixing &amp; ML Engineer","hero.03":"Hi, I'm Hikari — an indie musician, mixing engineer, and software engineer. I've worked with many artists, including Kimberly Chen (陳芳語), Verbal (隕浮流), 林鴻鳴 (One Million Star, Season 2) and Sandy Huang (黃小玫), and trained singing-voice models of artists such as Mango Jump and Namewee for a music streaming company. I'm also a keyboardist who has played Spring Scream, the Ho-Hai-Yan Rock Festival and shows on Taiwan's Public Television, and opened for international metal acts such as Graveworm, Leaves' Eyes and Tarja (Nightwish). I've also designed several award-winning products.\u003cbr> Rather than standing on stage myself, I'd rather watch others succeed. If you have any questions about music, feel free to reach out!","services.01":"We truly enjoy working on music production—whether it’s Mixing, Recording, or Composing—just as much as you need these services. This allows us to help you achieve your musical goals more effortlessly. Feel free to explore the wide range of music production services we offer.","services.02":"Composition","services.03":"Arrangement","services.04":"Recording","services.05":"Mixing","services.06":"Mastering","services.07":"Distribution","services.08":"Like Our Services? Get an","services.09":"Instant Quote","services.10":"Friendly even to non-experts! I always get nervous commissioning music work because I know so little about it, but Hikari explains everything in detail. Fast, efficient and exactly what I hoped for — really great!","services.13":"Hikari works very efficiently and gives concrete help and guidance. Communication is always smooth, and every time I get a great result…!","services.15":"Hikari is professional and attentive! It was my first time recording at home and I didn't know much, but he patiently talked me through everything and finished the work following both my requests and the song itself. I'm very happy with the result — thank you so much! (*òωó _)","services.18":"We've worked with Hikari on several commercial videos and were impressed by the high-quality scoring and English narration. Very cooperative and easy to communicate with.","services.19":"顏小八, Director","services.21":"Hikari helped me a lot with my album. He was willing to spend plenty of time with me to pin down exactly what I wanted, and finished the work professionally and responsibly. I'm truly grateful!","services.22":"蘇育霆, Singer / Producer","services.23":"HIM International Music","services.24":"Hikari is a fast-moving music and sound studio that treats music as a precious original creation. Whatever the size or nature of the project, they bring the same professionalism to every job. Building a business is never easy, and I'm lucky to have partners like them to move forward with and find our footing together.","services.25":"張偉翰 (小馬), Director","services.27":"Hikari shows real professionalism in music production. Whether arranging or mixing, he always delivers exactly what I'm after. He patiently asks about your needs and does his best to get everything just right — I'm happy to trust him with anything music-related.","services.28":"銘鴻, Singer-songwriter","services.29":"Contestant, Global Outstanding Chinese Pop Music Competition","services.30":"Many thanks to Hikari for his great support in helping our project complete the difficult recording of Dongba scriptures of the Naxi people of Lijiang, Yunnan. His careful, dedicated professionalism is something I highly recommend.","services.31":"胡其瑞, Assistant Research Fellow","services.32":"Institute of History and Philology, Academia Sinica","works.01":"Recent Music Works","works.02":"&nbsp;&nbsp;&nbsp;&nbsp;Categories (ALL)&nbsp;&nbsp;&nbsp;&nbsp;","works.03":"No matching works found","works.04":"Load more","blog.01":"Recently From the Blog","blog.02":"Production","blog.03":"Free Vocal Mixing Tutorial (6 Episodes)","blog.04":"Nothing held back — follow my steps and you can get the same commercial-quality mix.","blog.05":"Play Video","blog.06":"Production / Translation","blog.07":"Ado's Vocal Production (Translated)","blog.08":"A translated behind-the-scenes recording session in which Ado directs vocals as a producer — a look at her vocal style and techniques to help you learn more about singing and interpretation.","blog.09":"Play Video","blog.10":"Mixing","blog.11":"Hikari's Remixes (Fan Works)","blog.12":"“Remix” here doesn't mean a DJ remix: I take stream footage, separate the audio and run it through a standard music production workflow to rebuild it at near-release quality. They're basically fan works.","blog.13":"Play Video","blog.14":"Streams","blog.15":"Mostly tech streams — come hang out!","blog.16":"Sometimes mixing, sometimes composing, sometimes coding — feel free to chat.","blog.17":"Play Video","blog.18":"Distribution","blog.19":"Physical Release Guide","blog.20":"Does anyone still do physical releases these days? I wrote a guide to physical releases years ago — here it is for reference.","blog.21":"View Blog","blog.22":"Distribution","blog.23":"Digital Distribution Guide","blog.24":"Have you made original songs? Besides YouTube, consider digital distribution to reach more listeners and earn extra income.","blog.25":"Play Video","contact.01":"Work with Hikari","contact.02":"Reference Prices","contact.03":"Campaign prices take priority when available","contact.04":"Prices vary by type of mix, roughly divided into Vocal Mix, Multitrack Full Mix and SSL Full Mixing. Mastering is included free with every mix.","contact.05":"Type","contact.06":"Description","contact.07":"Review","contact.08":"Price","contact.10":"On-site recording at 強力錄音室 in Xizhi","contact.11":"Review on site","contact.14":"One instrumental (karaoke) track plus vocals; unlimited vocal tracks and stems (includes Vocal Edit &amp; Tuning) \u003cspan class=\"badge bg-primary rounded-pill\">Free mastering\u003c/span>","contact.15":"Online upload","contact.16":"NTD. 5,000\u003cspan class=\"badge bg-danger rounded-pill\">Best value\u003c/span>","contact.18":"Multitrack stem mixing, usually for original songs or new arrangements (includes Vocal Edit &amp; Tuning) \u003cspan class=\"badge bg-primary rounded-pill\">Free mastering\u003c/span>","contact.19":"Online upload, live online session","contact.22":"Hardware mix on the SSL 4000 series console at 強力錄音室 (does \u003cb>not\u003c/b> include Vocal Edit &amp; Tuning) \u003cspan class=\"badge bg-primary rounded-pill\">Free mastering\u003c/span>","contact.23":"In studio, online upload, live online session","contact.25":"Fill in the Form for Requirements &amp; a Quote","contact.26":"Prices vary by type of mix, roughly divided into Vocal Mix, Multitrack Full Mix and SSL Full Mixing.","contact.27":"\u003cb>[Vocal Mix]\u003c/b> One instrumental track plus vocals; unlimited vocal tracks and stems","contact.28":"\u003cb>[Multitracks Full Mix]\u003c/b> Multitrack stem mixing, usually for original songs or new arrangements (recording not included)","contact.29":"\u003cb>[SSL Full Mix]\u003c/b> Hardware mix on the SSL 4000 series at 強力錄音室; review in person or remotely","contact.30":"Fill in the form","contact.31":"Preparing Files &amp; Recording","contact.32":"\u003cb>[Vocal Mix]\u003c/b> Please provide the instrumental and vocal stems, all starting from the same point (not needed if Hikari records the vocals)","contact.33":"\u003cb>[Multitracks Full Mix]\u003c/b> Please prepare 24-bit / 48 kHz stems, all starting from the same point. Pro Tools sessions are accepted.","contact.34":"\u003cb>[SSL Full Mix]\u003c/b> Please prepare 24-bit / 48 kHz stems, all starting from the same point. Pro Tools sessions are accepted.","contact.35":"How to Review","contact.36":"\u003cb>[Online, asynchronous]\u003c/b> Standard; available for every mixing plan.","contact.37":"\u003cb>[Online, live]\u003c/b> Listen together in high quality through a dedicated link while changes are made in real time. Multitracks Full Mix or SSL Full Mix plans only.","contact.38":"\u003cb>[In studio]\u003c/b> Review in person at 強力錄音室. SSL Full Mix only.","contact.39":"Delivery","contact.40":"\u003cb>[Vocal Mix]\u003c/b> Delivered as an MMM (full mix) file, plus an MMO (instrumental with backing vocals) if there are harmonies; downloadable as MP3, WAV and AIFF.","contact.41":"\u003cb>[Multitracks Full Mix]\u003c/b> Delivered as the standard MMM, MMA and MMO files; downloadable as MP3, WAV and AIFF.","contact.42":"One request: I'll put everything into your project, so please send any questions or revisions within one week. After one week the project will be considered complete. (If anything makes that hard, let's talk — just please don't leave a project open for six months or a year.)","contact.43":"Payment","contact.44":"Please pay the full amount within one week after the project is completed.","profile.01":"Music / Audio Awards","profile.02":"2023 Award, 1st TAICCA Cultural Startup Accelerator","profile.03":"2022 CES Innovation Award","profile.04":"2021 Taiwan Excellence Award","profile.05":"2014 5th place, PTS “Music Genesis” Grand Finals","profile.06":"2014 Top 6, Rock in Taichung","profile.07":"2013 Ho-Hai-Yan Gongliao Rock Festival: Top 10 for the Popularity Award, Top 30 for the Main Stage","profile.08":"2013 Honorable Mention (Dance), Hakka Affairs Council Tung Blossom Songwriting Contest","profile.09":"2012 Finalist, Taoyuan Iron Rose Music Competition","profile.10":"2012 2nd place, Red &amp; Black Rock Competition","profile.11":"2012 Winner, XM Rock Summer at the Taipei World Trade Center Music Instrument Show","profile.12":"2011 Merit Award (New category), Han Kuang Foundation Classical Poetry Composition Contest","profile.13":"2010 Merit Award (New category), Han Kuang Foundation Classical Poetry Composition Contest","profile.14":"Key Music / Engineering Certificates","profile.15":"Completed Mixing Master Class cohorts 2 and 6, 大禾音樂 × 強力錄音室 (instructor: K哥)","profile.20":"Write Like Mozart: An Introduction to Classical Music Composition, National University of Singapore","profile.21":"Songwriting, Berklee College of Music","profile.22":"Developing Your Musicianship, Berklee College of Music","profile.23":"Introduction to Music Production, Berklee College of Music","profile.24":"Modern Musician Capstone, Berklee College of Music","profile.25":"Modern Musician Specialization, Berklee College of Music","profile.26":"2024 Distinguished Alumni Award, National Dong Hwa University","page.02":"Buy Hikari a Coffee","page.03":"Buy software through these links and the vendors will treat Hikari to a coffee — which keeps Hikari making more music and mixes for everyone.","page.05":"FabFilter (10% off coupon)","page.06":"DISCO ($20 off)","coffee.01":"Hello, thanks for the coffee!","coffee.02":"Please contact Hikari Tsai with your email address and I'll send you a 10% FabFilter coupon. It works on every FabFilter product, including their mixing, mastering and synth plugins — all very useful tools for music production that can help you make better music.","footer.02":"Top","footer.03":"Works","footer.04":"Services","footer.05":"Blog","footer.06":"Contact","page.08":"Discord: \u003cb>hikari_tsai\u003c/b> — after adding me, please tell me who you are so I know you're not a scammer!","works.search_placeholder":"Search title, artist, gear…","ui.load_more":"Load more ({n} remaining)","ui.search_label":"Search works","ui.clear_search":"Clear search","ui.language":"Language"},"ja":{"nav.02":"ホーム","nav.03":"プロフィール","nav.04":"作品","nav.05":"サービス","nav.06":"ブログ","nav.07":"お問い合わせ","hero.02":"レコーディング・ミキシング＆MLエンジニア","hero.03":"こんにちは、Hikariです。インディーミュージシャン、ミキシングエンジニア、そしてソフトウェアエンジニアです。陳芳語（Kimberly）、隕浮流（Verbal）、林鴻鳴（『超級星光大道』第2期）、黃小玫など多くのアーティストと仕事をしてきたほか、音楽ストリーミング企業で芒果醬（Mango Jump）や黃明志（Namewee）などの歌声モデルの学習も手がけました。キーボーディストとして墾丁「春天吶喊（Spring Scream）」、貢寮海洋音楽祭、台湾公共テレビに出演し、Graveworm、Leaves' Eyes、Tarja（Nightwish）など海外の有名メタルアーティストのオープニングアクトも務めました。受賞歴のあるプロダクトも複数デザインしています。\u003cbr> 自分がステージに立つよりも、誰かが成功するのを見るほうが好きです。音楽のことで困ったら、気軽に相談してください！","services.01":"ミキシング、レコーディング、作曲――音楽制作のあらゆる場面で、私たちは音楽づくりを心から楽しんでいます。だからこそ、あなたの音楽の目標をもっとスムーズに実現するお手伝いができます。幅広い音楽制作サービスをぜひご覧ください。","services.02":"作曲","services.03":"編曲","services.04":"レコーディング","services.05":"ミキシング","services.06":"マスタリング","services.07":"配信・リリース","services.08":"サービスが気に入ったら","services.09":"お見積もりを依頼","services.10":"専門外の人にも優しいです！音楽関係の依頼は知識がなくて緊張してしまうのですが、Hikariさんはいつも丁寧に説明してくれます。仕事が早く、期待通りの仕上がりで本当に最高です！","services.13":"小光先生は制作がとても早く、具体的なサポートやアドバイスもくれます。やり取りもスムーズで、毎回素晴らしい作品に仕上げてくれます…！","services.15":"Hikari先生はプロフェッショナルで丁寧です！初めての宅録で分からないことだらけでしたが、根気よく相談に乗ってくれて、こちらの要望と曲そのものに寄り添って仕上げてくれました。完成品にも大満足です。本当にありがとうございました！(*òωó _)","services.18":"Hikariさんとは複数の商業映像でご一緒しました。高品質な劇伴制作と英語ナレーションが印象的で、柔軟に対応してくれてコミュニケーションも取りやすいです。","services.19":"顏小八（監督）","services.21":"アルバム制作で本当にたくさん助けてもらいました。私が何を求めているのか時間をかけて丁寧に確認してくれ、最後までプロとして責任を持って仕上げてくれました。心から感謝しています！","services.22":"蘇育霆（歌手／プロデューサー）","services.23":"華研國際音樂（HIM International Music）","services.24":"Hikariは業界でも仕事が早く、音楽を大切なオリジナル作品として扱う音楽・音響制作チームです。案件の規模や内容にかかわらず、いつも同じ誠実さで仕事をしてくれます。起業の道は大変なことばかりですが、支え合いながら一緒に歩んでいけるパートナーに出会えて幸運です。","services.25":"張偉翰（小馬）監督","services.27":"Hikariさんは音楽制作において非常に高いプロ意識を持っています。編曲でもミックスでも、いつもこちらの求めるものを的確に形にしてくれます。要望を根気よく聞き取り、完璧に仕上げようと尽力してくれるので、音楽のことは安心して任せられます。","services.28":"シンガーソングライター 銘鴻","services.29":"全球傑出華人流行音楽コンテスト 出場者","services.30":"雲南省麗江のナシ族に伝わる難解なトンパ経典の録音作業を、本プロジェクトのために無事完了させてくださったHikariさんの多大なご協力に感謝します。真摯で丁寧な仕事ぶりは、自信を持っておすすめできます。","services.31":"胡其瑞（助理研究員）","services.32":"中央研究院 歴史語言研究所","works.01":"最近の作品","works.02":"&nbsp;&nbsp;&nbsp;&nbsp;作品カテゴリー (ALL)&nbsp;&nbsp;&nbsp;&nbsp;","works.03":"該当する作品が見つかりません","works.04":"もっと見る","blog.01":"ブログ新着","blog.02":"制作","blog.03":"無料ボーカルミックス講座（全6回）","blog.04":"出し惜しみなし。手順どおりに進めれば、同じクオリティの商業レベルのミックスが作れます。","blog.05":"動画を見る","blog.06":"制作／翻訳","blog.07":"Adoのボーカルディレクション（翻訳）","blog.08":"Adoがプロデューサーとしてボーカル録音をディレクションするメイキングの翻訳です。彼女の歌唱スタイルやテクニックを知り、歌と表現をさらに学ぶ参考にしてください。","blog.09":"動画を見る","blog.10":"ミキシング","blog.11":"Hikariのリミックス（二次創作）","blog.12":"ここでいうRemixはDJのリミックスではありません。配信の素材から音声を分離し、通常の音楽制作フローで仕上げ直して、リリースに近いクオリティまで作り直したものです。基本的には二次創作です。","blog.13":"動画を見る","blog.14":"配信","blog.15":"主に技術系の配信です。気軽に遊びに来てください！","blog.16":"ミックスしたり、作曲したり、プログラミングしたり。気軽に話しかけてください。","blog.17":"動画を見る","blog.18":"リリース","blog.19":"フィジカルリリース講座","blog.20":"今どきフィジカルでリリースする人なんているの？何年も前に書いたフィジカルリリースのガイドを参考までに公開しています。","blog.21":"ブログを読む","blog.22":"リリース","blog.23":"デジタル配信講座","blog.24":"オリジナル曲を作っていますか？YouTube以外にもデジタル配信をすれば、より多くの人に届き、収入にもつながります。","blog.25":"動画を見る","contact.01":"Hikariにミックスを依頼","contact.02":"参考料金表","contact.03":"キャンペーン中はキャンペーン価格が優先されます","contact.04":"料金はミックスの種類によって異なり、主にVocal Mix、Multitrack Full Mix、SSL Full Mixingに分かれます。すべてのミックスにマスタリングが無料で付きます。","contact.05":"種類","contact.06":"内容","contact.07":"確認方法","contact.08":"料金","contact.10":"汐止の強力錄音室でのスタジオ録音","contact.11":"現場で確認","contact.14":"インスト（カラオケ）1トラック＋ボーカル。ボーカルのトラック数・パラデータは無制限（Vocal Edit &amp; Tuning込み） \u003cspan class=\"badge bg-primary rounded-pill\">マスタリング無料\u003c/span>","contact.15":"オンラインでファイル送付","contact.16":"NTD. 5,000\u003cspan class=\"badge bg-danger rounded-pill\">一番お得\u003c/span>","contact.18":"マルチトラックのパラデータミックス。主にオリジナル曲やリアレンジ作品向け（Vocal Edit &amp; Tuning込み） \u003cspan class=\"badge bg-primary rounded-pill\">マスタリング無料\u003c/span>","contact.19":"オンライン送付・オンライン同時試聴","contact.22":"強力錄音室のSSL 4000シリーズでのハードウェアミックス（Vocal Edit &amp; Tuningは\u003cb>含みません\u003c/b>） \u003cspan class=\"badge bg-primary rounded-pill\">マスタリング無料\u003c/span>","contact.23":"スタジオ（対面）・オンライン送付・オンライン同時試聴","contact.25":"フォームでご要望の確認とお見積もり","contact.26":"料金はミックスの種類によって異なり、主にVocal Mix、Multitrack Full Mix、SSL Full Mixingに分かれます。","contact.27":"\u003cb>[Vocal Mix]\u003c/b> インスト1トラック＋ボーカル。ボーカルのトラック数・パラデータは無制限","contact.28":"\u003cb>[Multitracks Full Mix]\u003c/b> マルチトラックのパラデータミックス。主にオリジナル曲やリアレンジ作品向け（録音は含みません）","contact.29":"\u003cb>[SSL Full Mix]\u003c/b> 強力錄音室のSSL 4000シリーズでハードウェアミックス。立ち会いでもリモートでも確認できます","contact.30":"フォームに入力","contact.31":"ファイルの準備と録音","contact.32":"\u003cb>[Vocal Mix]\u003c/b> 頭揃えしたインストとボーカルのパラデータをご用意ください（Hikariが録音する場合は不要です）","contact.33":"\u003cb>[Multitracks Full Mix]\u003c/b> 24bit／48kHzのパラデータを頭揃えでご用意ください。Pro Toolsのセッションファイルにも対応しています。","contact.34":"\u003cb>[SSL Full Mix]\u003c/b> 24bit／48kHzのパラデータを頭揃えでご用意ください。Pro Toolsのセッションファイルにも対応しています。","contact.35":"確認方法","contact.36":"\u003cb>[オンライン（非同期）]\u003c/b> 標準。すべてのプランで利用できます。","contact.37":"\u003cb>[オンライン（同時）]\u003c/b> 専用URLで高音質の音声を同時に聴きながら、その場で修正します。Multitracks Full MixまたはSSL Full Mixプランのみ。","contact.38":"\u003cb>[スタジオ立ち会い]\u003c/b> 強力錄音室で立ち会って確認。SSL Full Mixのみ。","contact.39":"納品","contact.40":"\u003cb>[Vocal Mix]\u003c/b> MMM（ミックス）ファイルを納品します。ハモリがある場合はMMO（ハモリ入りカラオケ）も別途納品し、MP3・WAV・AIFFの3形式でダウンロードできます。","contact.41":"\u003cb>[Multitracks Full Mix]\u003c/b> 標準のMMM・MMA・MMOの3種類を納品し、MP3・WAV・AIFFの3形式でダウンロードできます。","contact.42":"ひとつお願いがあります。ご依頼には全力で取り組みますので、ご質問や修正のご要望は1週間以内にお知らせください。1週間を過ぎた場合は完了とさせていただきます。（事情がある場合はご相談ください。ただ、半年や1年も完了しないままにするのはご遠慮ください。）","contact.43":"お支払い","contact.44":"完了後1週間以内に全額をお支払いください。","profile.01":"音楽・オーディオ関連の受賞歴","profile.02":"2023 第1回 文化内容策進院（TAICCA）文化スタートアップアクセラレーター 受賞","profile.03":"2022 CES イノベーションアワード","profile.04":"2021 台湾エクセレンスアワード","profile.05":"2014 台湾公共テレビ「音樂創世紀」グランドチャンピオン大会 5位","profile.06":"2014 搖滾台中（Rock in Taichung）トップ6","profile.07":"2013 貢寮海洋音楽祭 人気賞トップ10・メインステージ30強","profile.08":"2013 客家委員会 桐花ソングライティングコンテスト ダンス部門 佳作","profile.09":"2012 桃園鐵玫瑰音楽コンテスト 決勝進出","profile.10":"2012 紅黑ロックコンテスト 2位","profile.11":"2012 台北世界貿易センター楽器展「XM搖滾一夏」優勝","profile.12":"2011 漢光基金会 古典詩詞作曲コンテスト（新歡部門）優選","profile.13":"2010 漢光基金会 古典詩詞作曲コンテスト（新歡部門）優選","profile.14":"音楽・エンジニアリング関連の主な資格","profile.15":"大禾音樂 × 強力錄音室 ミキシングマスタークラス 第2期・第6期 修了（講師：K哥）","profile.20":"Write Like Mozart: An Introduction to Classical Music Composition, National University of Singapore（シンガポール国立大学）","profile.21":"Songwriting, Berklee College of Music（バークリー音楽大学）","profile.22":"Developing Your Musicianship, Berklee College of Music（バークリー音楽大学）","profile.23":"Introduction to Music Production, Berklee College of Music（バークリー音楽大学）","profile.24":"Modern Musician Capstone, Berklee College of Music（バークリー音楽大学）","profile.25":"Modern Musician Specialization, Berklee College of Music（バークリー音楽大学）","profile.26":"2024 国立東華大学 傑出校友に選出","page.02":"Hikariにコーヒーをおごる","page.03":"これらのリンクからソフトを購入すると、メーカーさんがHikariにコーヒーをおごってくれます。Hikariはこれからも皆さんのために音楽やミックスを作り続けます。","page.05":"FabFilter（10%オフクーポン）","page.06":"DISCO（$20オフ）","coffee.01":"こんにちは、コーヒーをありがとう！","coffee.02":"メールアドレスを添えてHikari Tsaiまでご連絡ください。FabFilterの10%オフクーポンをお送りします。このクーポンはミキシング、マスタリング、シンセなどFabFilterの全製品に使えます。どれも音楽制作にとても役立つツールで、より良い音楽づくりの助けになります。","footer.02":"トップ","footer.03":"作品","footer.04":"サービス","footer.05":"ブログ","footer.06":"お問い合わせ","page.08":"Discordアカウント：\u003cb>hikari_tsai\u003c/b>。追加したら誰なのか一言教えてください。詐欺じゃないと分かるので！","works.search_placeholder":"曲名・アーティスト・機材で検索…","ui.load_more":"もっと見る（残り {n} 件）","ui.search_label":"作品を検索","ui.clear_search":"検索をクリア","ui.language":"言語"}}</script>
+	<script src="js/i18n.js"></script>
 	<script src="js/plugins.min.js"></script>
 	<script src="js/functions.bundle.js"></script>
 	<script src="js/portfolio.js"></script>
-	<script>
-		jQuery(document).ready( function(){
-			jQuery(".dropdown-item span").on( 'click', function(){
-				var displayText = jQuery(this).text();
-				jQuery("#grid-filter-btn").html(displayText);
-				jQuery(this).parents('.dropdown').find('.show').toggleClass('show', false);
-			});
-		});
-	</script>
 
 </body>
 </html>

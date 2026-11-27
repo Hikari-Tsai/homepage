@@ -1,0 +1,694 @@
+# 網站文字翻譯（作品集以外的部分）
+# 每個 key 對應 src/index.html 裡 data-i18n="key" 的元素；zh 是預設顯示的中文，en / ja 是切換後的文字。
+# 可以使用 HTML（例如 <b>、<br>）。某個語言沒寫就顯示中文。改完執行 node tools/build.mjs（push 後也會自動產生）。
+
+nav.02:
+  zh: "Home"
+  en: "Home"
+  ja: "ホーム"
+
+nav.03:
+  zh: "About"
+  en: "About"
+  ja: "プロフィール"
+
+nav.04:
+  zh: "Works"
+  en: "Works"
+  ja: "作品"
+
+nav.05:
+  zh: "Services"
+  en: "Services"
+  ja: "サービス"
+
+nav.06:
+  zh: "Blog"
+  en: "Blog"
+  ja: "ブログ"
+
+nav.07:
+  zh: "Contact"
+  en: "Contact"
+  ja: "お問い合わせ"
+
+hero.02:
+  zh: "Recording, Mixing & ML Engineer"
+  en: "Recording, Mixing &amp; ML Engineer"
+  ja: "レコーディング・ミキシング＆MLエンジニア"
+
+hero.03:
+  zh: "Hi, 我是Hikari，一個喜歡獨立音樂人、混音師以及軟體工程師。曾與陳芳語(Kimberly)、隕浮流(Verbal)、林鴻鳴(星光二班)以及黃小玫等多位藝人合作，為音樂串流公司訓練芒果醬、黃明志等藝人的演唱模型。同時也是一個鍵盤手，多次參加墾丁春天吶喊、海洋音樂祭以及公共電視演出，並為國外知名金屬樂團如 graveworm, leaves' eyes, Traja（Nightwish主唱）開場演出。設計多種獲獎產品。<br> 相較於自己站在舞台上，我更喜歡看著別人成功，如果有音樂的問題，歡迎來找我討論吧！"
+  en: "Hi, I'm Hikari — an indie musician, mixing engineer, and software engineer. I've worked with many artists, including Kimberly Chen (陳芳語), Verbal (隕浮流), 林鴻鳴 (One Million Star, Season 2) and Sandy Huang (黃小玫), and trained singing-voice models of artists such as Mango Jump and Namewee for a music streaming company. I'm also a keyboardist who has played Spring Scream, the Ho-Hai-Yan Rock Festival and shows on Taiwan's Public Television, and opened for international metal acts such as Graveworm, Leaves' Eyes and Tarja (Nightwish). I've also designed several award-winning products.<br> Rather than standing on stage myself, I'd rather watch others succeed. If you have any questions about music, feel free to reach out!"
+  ja: "こんにちは、Hikariです。インディーミュージシャン、ミキシングエンジニア、そしてソフトウェアエンジニアです。陳芳語（Kimberly）、隕浮流（Verbal）、林鴻鳴（『超級星光大道』第2期）、黃小玫など多くのアーティストと仕事をしてきたほか、音楽ストリーミング企業で芒果醬（Mango Jump）や黃明志（Namewee）などの歌声モデルの学習も手がけました。キーボーディストとして墾丁「春天吶喊（Spring Scream）」、貢寮海洋音楽祭、台湾公共テレビに出演し、Graveworm、Leaves' Eyes、Tarja（Nightwish）など海外の有名メタルアーティストのオープニングアクトも務めました。受賞歴のあるプロダクトも複数デザインしています。<br> 自分がステージに立つよりも、誰かが成功するのを見るほうが好きです。音楽のことで困ったら、気軽に相談してください！"
+
+services.01:
+  zh: "We truly enjoy working on music production—whether it’s Mixing, Recording, or Composing—just as much as you need these services. This allows us to help you achieve your musical goals more effortlessly. Feel free to explore the wide range of music production services we offer."
+  en: "We truly enjoy working on music production—whether it’s Mixing, Recording, or Composing—just as much as you need these services. This allows us to help you achieve your musical goals more effortlessly. Feel free to explore the wide range of music production services we offer."
+  ja: "ミキシング、レコーディング、作曲――音楽制作のあらゆる場面で、私たちは音楽づくりを心から楽しんでいます。だからこそ、あなたの音楽の目標をもっとスムーズに実現するお手伝いができます。幅広い音楽制作サービスをぜひご覧ください。"
+
+services.02:
+  zh: "Composition"
+  en: "Composition"
+  ja: "作曲"
+
+services.03:
+  zh: "Arrangement"
+  en: "Arrangement"
+  ja: "編曲"
+
+services.04:
+  zh: "Recording"
+  en: "Recording"
+  ja: "レコーディング"
+
+services.05:
+  zh: "Mixing"
+  en: "Mixing"
+  ja: "ミキシング"
+
+services.06:
+  zh: "Mastering"
+  en: "Mastering"
+  ja: "マスタリング"
+
+services.07:
+  zh: "Distribution"
+  en: "Distribution"
+  ja: "配信・リリース"
+
+services.08:
+  zh: "Like Our Services? Get an"
+  en: "Like Our Services? Get an"
+  ja: "サービスが気に入ったら"
+
+services.09:
+  zh: "Instant Quote"
+  en: "Instant Quote"
+  ja: "お見積もりを依頼"
+
+services.10:
+  zh: "對於行外人也友善！委託音樂相關的東西的時候，都會因為相關知識匱乏，在溝通的時候會很緊張。但是Hikari都會很詳細的解釋相關的東西！效率高又能符合期望，真的很棒！"
+  en: "Friendly even to non-experts! I always get nervous commissioning music work because I know so little about it, but Hikari explains everything in detail. Fast, efficient and exactly what I hoped for — really great!"
+  ja: "専門外の人にも優しいです！音楽関係の依頼は知識がなくて緊張してしまうのですが、Hikariさんはいつも丁寧に説明してくれます。仕事が早く、期待通りの仕上がりで本当に最高です！"
+
+services.13:
+  zh: "小光老師製作效率很高，也會給出具體的協助與指導，溝通也都很順暢，交給他每次真的都可以順利拿到好作品…！"
+  en: "Hikari works very efficiently and gives concrete help and guidance. Communication is always smooth, and every time I get a great result…!"
+  ja: "小光先生は制作がとても早く、具体的なサポートやアドバイスもくれます。やり取りもスムーズで、毎回素晴らしい作品に仕上げてくれます…！"
+
+services.15:
+  zh: "Hikari老師專業細心！對於第一次宅錄有許多不懂的地方也會耐心溝通，並且會跟進客戶的要求和歌曲本身完成作品！最後成品也十分滿意，非常感謝老師！(*òωó _)"
+  en: "Hikari is professional and attentive! It was my first time recording at home and I didn't know much, but he patiently talked me through everything and finished the work following both my requests and the song itself. I'm very happy with the result — thank you so much! (*òωó _)"
+  ja: "Hikari先生はプロフェッショナルで丁寧です！初めての宅録で分からないことだらけでしたが、根気よく相談に乗ってくれて、こちらの要望と曲そのものに寄り添って仕上げてくれました。完成品にも大満足です。本当にありがとうございました！(*òωó _)"
+
+services.18:
+  zh: "與Hikari配合過數支商用影片，對於高品質的配樂製作與英文旁白印象深刻，配合度高且容易溝通"
+  en: "We've worked with Hikari on several commercial videos and were impressed by the high-quality scoring and English narration. Very cooperative and easy to communicate with."
+  ja: "Hikariさんとは複数の商業映像でご一緒しました。高品質な劇伴制作と英語ナレーションが印象的で、柔軟に対応してくれてコミュニケーションも取りやすいです。"
+
+services.19:
+  zh: "顏小八 導演"
+  en: "顏小八, Director"
+  ja: "顏小八（監督）"
+
+services.21:
+  zh: "Hikari在專輯製作上幫我很多忙，非常願意花很多時間和我溝通確定我要什麼，最後也很專業和負責地幫我完成我想要的成品，總之很感謝他們！"
+  en: "Hikari helped me a lot with my album. He was willing to spend plenty of time with me to pin down exactly what I wanted, and finished the work professionally and responsibly. I'm truly grateful!"
+  ja: "アルバム制作で本当にたくさん助けてもらいました。私が何を求めているのか時間をかけて丁寧に確認してくれ、最後までプロとして責任を持って仕上げてくれました。心から感謝しています！"
+
+services.22:
+  zh: "蘇育霆 歌手/製作人"
+  en: "蘇育霆, Singer / Producer"
+  ja: "蘇育霆（歌手／プロデューサー）"
+
+services.23:
+  zh: "華研國際音樂有限公司"
+  en: "HIM International Music"
+  ja: "華研國際音樂（HIM International Music）"
+
+services.24:
+  zh: "Hikari是業界速度快、且將音樂視為珍貴原創商品的配樂音效公司。無論是合作案的大小或性質，他們都會以相同的敬業態度完成工作。創業的路上總是比較辛苦，我很幸運有這樣能夠相互扶持的夥伴一同前進、慢慢地一同站穩腳步。"
+  en: "Hikari is a fast-moving music and sound studio that treats music as a precious original creation. Whatever the size or nature of the project, they bring the same professionalism to every job. Building a business is never easy, and I'm lucky to have partners like them to move forward with and find our footing together."
+  ja: "Hikariは業界でも仕事が早く、音楽を大切なオリジナル作品として扱う音楽・音響制作チームです。案件の規模や内容にかかわらず、いつも同じ誠実さで仕事をしてくれます。起業の道は大変なことばかりですが、支え合いながら一緒に歩んでいけるパートナーに出会えて幸運です。"
+
+services.25:
+  zh: "張偉翰(小馬) 導演"
+  en: "張偉翰 (小馬), Director"
+  ja: "張偉翰（小馬）監督"
+
+services.27:
+  zh: "Hikari在音樂製作上展現了高度的專業，不論是在編曲或是混音方面，總是很精準地完成我要的東西，他們總是很有耐心地詢問你的需求並盡力做到完美一致，對於音樂方面的大小事，我放心把自己交給他們。"
+  en: "Hikari shows real professionalism in music production. Whether arranging or mixing, he always delivers exactly what I'm after. He patiently asks about your needs and does his best to get everything just right — I'm happy to trust him with anything music-related."
+  ja: "Hikariさんは音楽制作において非常に高いプロ意識を持っています。編曲でもミックスでも、いつもこちらの求めるものを的確に形にしてくれます。要望を根気よく聞き取り、完璧に仕上げようと尽力してくれるので、音楽のことは安心して任せられます。"
+
+services.28:
+  zh: "創作歌手 銘鴻"
+  en: "銘鴻, Singer-songwriter"
+  ja: "シンガーソングライター 銘鴻"
+
+services.29:
+  zh: "全球傑出華人流行音樂參賽者"
+  en: "Contestant, Global Outstanding Chinese Pop Music Competition"
+  ja: "全球傑出華人流行音楽コンテスト 出場者"
+
+services.30:
+  zh: "謝謝Hikari的大力支持，協助本計畫將深奧難懂的雲南麗江納西族的東巴經文錄音工作，順利完成。小光老師認真細心的敬業精神，值得推薦給大家～"
+  en: "Many thanks to Hikari for his great support in helping our project complete the difficult recording of Dongba scriptures of the Naxi people of Lijiang, Yunnan. His careful, dedicated professionalism is something I highly recommend."
+  ja: "雲南省麗江のナシ族に伝わる難解なトンパ経典の録音作業を、本プロジェクトのために無事完了させてくださったHikariさんの多大なご協力に感謝します。真摯で丁寧な仕事ぶりは、自信を持っておすすめできます。"
+
+services.31:
+  zh: "胡其瑞 助理研究員"
+  en: "胡其瑞, Assistant Research Fellow"
+  ja: "胡其瑞（助理研究員）"
+
+services.32:
+  zh: "中央研究院歷史語言研究所"
+  en: "Institute of History and Philology, Academia Sinica"
+  ja: "中央研究院 歴史語言研究所"
+
+works.01:
+  zh: "Recently Music Works"
+  en: "Recent Music Works"
+  ja: "最近の作品"
+
+works.02:
+  zh: "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;作品分類 (ALL)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"
+  en: "&nbsp;&nbsp;&nbsp;&nbsp;Categories (ALL)&nbsp;&nbsp;&nbsp;&nbsp;"
+  ja: "&nbsp;&nbsp;&nbsp;&nbsp;作品カテゴリー (ALL)&nbsp;&nbsp;&nbsp;&nbsp;"
+
+works.03:
+  zh: "找不到符合的作品"
+  en: "No matching works found"
+  ja: "該当する作品が見つかりません"
+
+works.04:
+  zh: "載入更多"
+  en: "Load more"
+  ja: "もっと見る"
+
+blog.01:
+  zh: "Recently From the Blog"
+  en: "Recently From the Blog"
+  ja: "ブログ新着"
+
+blog.02:
+  zh: "Production"
+  en: "Production"
+  ja: "制作"
+
+blog.03:
+  zh: "免費人聲混音製作教學(六集)"
+  en: "Free Vocal Mixing Tutorial (6 Episodes)"
+  ja: "無料ボーカルミックス講座（全6回）"
+
+blog.04:
+  zh: "完全不藏私，跟著我的步驟就能做出相同品質的商業級混音。"
+  en: "Nothing held back — follow my steps and you can get the same commercial-quality mix."
+  ja: "出し惜しみなし。手順どおりに進めれば、同じクオリティの商業レベルのミックスが作れます。"
+
+blog.05:
+  zh: "Play Video"
+  en: "Play Video"
+  ja: "動画を見る"
+
+blog.06:
+  zh: "Production/Translation"
+  en: "Production / Translation"
+  ja: "制作／翻訳"
+
+blog.07:
+  zh: "ADO的配唱製作(翻譯)"
+  en: "Ado's Vocal Production (Translated)"
+  ja: "Adoのボーカルディレクション（翻訳）"
+
+blog.08:
+  zh: "這主要是翻譯ADO擔任怪忌蝶製作人的錄音配唱側錄，讓大家了解她的配唱風格與技巧，進而學習更多的演唱與詮釋技巧。"
+  en: "A translated behind-the-scenes recording session in which Ado directs vocals as a producer — a look at her vocal style and techniques to help you learn more about singing and interpretation."
+  ja: "Adoがプロデューサーとしてボーカル録音をディレクションするメイキングの翻訳です。彼女の歌唱スタイルやテクニックを知り、歌と表現をさらに学ぶ参考にしてください。"
+
+blog.09:
+  zh: "Play Video"
+  en: "Play Video"
+  ja: "動画を見る"
+
+blog.10:
+  zh: "Mixing"
+  en: "Mixing"
+  ja: "ミキシング"
+
+blog.11:
+  zh: "Hikari的Remix二創"
+  en: "Hikari's Remixes (Fan Works)"
+  ja: "Hikariのリミックス（二次創作）"
+
+blog.12:
+  zh: "這邊的Remix不是指電音DJ混音，而是擷取實況內容做音訊分離與標準的音樂製作流程後，重製成爲接近發行的水準，基本上都是二創。"
+  en: "“Remix” here doesn't mean a DJ remix: I take stream footage, separate the audio and run it through a standard music production workflow to rebuild it at near-release quality. They're basically fan works."
+  ja: "ここでいうRemixはDJのリミックスではありません。配信の素材から音声を分離し、通常の音楽制作フローで仕上げ直して、リリースに近いクオリティまで作り直したものです。基本的には二次創作です。"
+
+blog.13:
+  zh: "Play Video"
+  en: "Play Video"
+  ja: "動画を見る"
+
+blog.14:
+  zh: "Strems"
+  en: "Streams"
+  ja: "配信"
+
+blog.15:
+  zh: "通常是技術台，歡迎來聊天"
+  en: "Mostly tech streams — come hang out!"
+  ja: "主に技術系の配信です。気軽に遊びに来てください！"
+
+blog.16:
+  zh: "可能混音、可能作曲、也可能寫程式，歡迎聊天"
+  en: "Sometimes mixing, sometimes composing, sometimes coding — feel free to chat."
+  ja: "ミックスしたり、作曲したり、プログラミングしたり。気軽に話しかけてください。"
+
+blog.17:
+  zh: "Play Video"
+  en: "Play Video"
+  ja: "動画を見る"
+
+blog.18:
+  zh: "Distribution"
+  en: "Distribution"
+  ja: "リリース"
+
+blog.19:
+  zh: "實體發行教學"
+  en: "Physical Release Guide"
+  ja: "フィジカルリリース講座"
+
+blog.20:
+  zh: "這年頭還有人要實體發行嗎？在很多年前寫了一篇實體發行的教學給大家參考"
+  en: "Does anyone still do physical releases these days? I wrote a guide to physical releases years ago — here it is for reference."
+  ja: "今どきフィジカルでリリースする人なんているの？何年も前に書いたフィジカルリリースのガイドを参考までに公開しています。"
+
+blog.21:
+  zh: "View Blog"
+  en: "View Blog"
+  ja: "ブログを読む"
+
+blog.22:
+  zh: "Distribution"
+  en: "Distribution"
+  ja: "リリース"
+
+blog.23:
+  zh: "數位發行教學"
+  en: "Digital Distribution Guide"
+  ja: "デジタル配信講座"
+
+blog.24:
+  zh: "你有製作原創曲嗎？除了YT之外也可以考慮數位發行增加曝光量，也能增加額外的收入"
+  en: "Have you made original songs? Besides YouTube, consider digital distribution to reach more listeners and earn extra income."
+  ja: "オリジナル曲を作っていますか？YouTube以外にもデジタル配信をすれば、より多くの人に届き、収入にもつながります。"
+
+blog.25:
+  zh: "Play Video"
+  en: "Play Video"
+  ja: "動画を見る"
+
+contact.01:
+  zh: "找Hikari混音"
+  en: "Work with Hikari"
+  ja: "Hikariにミックスを依頼"
+
+contact.02:
+  zh: "參考價目表"
+  en: "Reference Prices"
+  ja: "参考料金表"
+
+contact.03:
+  zh: "若有活動請以活動價格為主"
+  en: "Campaign prices take priority when available"
+  ja: "キャンペーン中はキャンペーン価格が優先されます"
+
+contact.04:
+  zh: "根據混音形態不同，價格也有不同，大致上可以分為Vocal Mix、Multitrack Full Mix and SSL Full Mixing，所有混音皆贈送母帶後期(Mastering)"
+  en: "Prices vary by type of mix, roughly divided into Vocal Mix, Multitrack Full Mix and SSL Full Mixing. Mastering is included free with every mix."
+  ja: "料金はミックスの種類によって異なり、主にVocal Mix、Multitrack Full Mix、SSL Full Mixingに分かれます。すべてのミックスにマスタリングが無料で付きます。"
+
+contact.05:
+  zh: "Type"
+  en: "Type"
+  ja: "種類"
+
+contact.06:
+  zh: "Description"
+  en: "Description"
+  ja: "内容"
+
+contact.07:
+  zh: "Review"
+  en: "Review"
+  ja: "確認方法"
+
+contact.08:
+  zh: "Price"
+  en: "Price"
+  ja: "料金"
+
+contact.10:
+  zh: "現場錄音，使用汐止強力錄音室錄製"
+  en: "On-site recording at 強力錄音室 in Xizhi"
+  ja: "汐止の強力錄音室でのスタジオ録音"
+
+contact.11:
+  zh: "現場確認"
+  en: "Review on site"
+  ja: "現場で確認"
+
+contact.14:
+  zh: "僅有一軌卡拉帶加上Vocals，Vocals不限數量與分軌(包含Vocal Edit&Tuning) <span class=\"badge bg-primary rounded-pill\">贈母帶後期</span>"
+  en: "One instrumental (karaoke) track plus vocals; unlimited vocal tracks and stems (includes Vocal Edit &amp; Tuning) <span class=\"badge bg-primary rounded-pill\">Free mastering</span>"
+  ja: "インスト（カラオケ）1トラック＋ボーカル。ボーカルのトラック数・パラデータは無制限（Vocal Edit &amp; Tuning込み） <span class=\"badge bg-primary rounded-pill\">マスタリング無料</span>"
+
+contact.15:
+  zh: "線上傳檔"
+  en: "Online upload"
+  ja: "オンラインでファイル送付"
+
+contact.16:
+  zh: "NTD. 5,000<span class=\"badge bg-danger rounded-pill\">最優惠</span>"
+  en: "NTD. 5,000<span class=\"badge bg-danger rounded-pill\">Best value</span>"
+  ja: "NTD. 5,000<span class=\"badge bg-danger rounded-pill\">一番お得</span>"
+
+contact.18:
+  zh: "多軌道分軌混音，通常是原創曲或是重編曲之作品(包含Vocal Edit&Tuning) <span class=\"badge bg-primary rounded-pill\">贈母帶後期</span>"
+  en: "Multitrack stem mixing, usually for original songs or new arrangements (includes Vocal Edit &amp; Tuning) <span class=\"badge bg-primary rounded-pill\">Free mastering</span>"
+  ja: "マルチトラックのパラデータミックス。主にオリジナル曲やリアレンジ作品向け（Vocal Edit &amp; Tuning込み） <span class=\"badge bg-primary rounded-pill\">マスタリング無料</span>"
+
+contact.19:
+  zh: "線上傳檔、線上同步"
+  en: "Online upload, live online session"
+  ja: "オンライン送付・オンライン同時試聴"
+
+contact.22:
+  zh: "使用強力錄音室SSL 4000系列進行硬體混音(<b>不</b>包含Vocal Edit&Tuning) <span class=\"badge bg-primary rounded-pill\">贈母帶後期</span>"
+  en: "Hardware mix on the SSL 4000 series console at 強力錄音室 (does <b>not</b> include Vocal Edit &amp; Tuning) <span class=\"badge bg-primary rounded-pill\">Free mastering</span>"
+  ja: "強力錄音室のSSL 4000シリーズでのハードウェアミックス（Vocal Edit &amp; Tuningは<b>含みません</b>） <span class=\"badge bg-primary rounded-pill\">マスタリング無料</span>"
+
+contact.23:
+  zh: "錄音室(現場)、線上傳檔、線上同步"
+  en: "In studio, online upload, live online session"
+  ja: "スタジオ（対面）・オンライン送付・オンライン同時試聴"
+
+contact.25:
+  zh: "填寫表單確認需求與報價"
+  en: "Fill in the Form for Requirements &amp; a Quote"
+  ja: "フォームでご要望の確認とお見積もり"
+
+contact.26:
+  zh: "根據混音形態不同，價格也有不同，大致上可以分為Vocal Mix、Multitrack Full Mix and SSL Full Mixing"
+  en: "Prices vary by type of mix, roughly divided into Vocal Mix, Multitrack Full Mix and SSL Full Mixing."
+  ja: "料金はミックスの種類によって異なり、主にVocal Mix、Multitrack Full Mix、SSL Full Mixingに分かれます。"
+
+contact.27:
+  zh: "<b>[Vocal Mix]</b> 僅有一軌卡拉帶加上Vocals，Vocals不限數量與分軌"
+  en: "<b>[Vocal Mix]</b> One instrumental track plus vocals; unlimited vocal tracks and stems"
+  ja: "<b>[Vocal Mix]</b> インスト1トラック＋ボーカル。ボーカルのトラック数・パラデータは無制限"
+
+contact.28:
+  zh: "<b>[Multitracks Full Mix]</b> 多軌道分軌混音，通常是原創曲或是重編曲之作品(不贈送錄音)"
+  en: "<b>[Multitracks Full Mix]</b> Multitrack stem mixing, usually for original songs or new arrangements (recording not included)"
+  ja: "<b>[Multitracks Full Mix]</b> マルチトラックのパラデータミックス。主にオリジナル曲やリアレンジ作品向け（録音は含みません）"
+
+contact.29:
+  zh: "<b>[SSL Full Mix]</b> 使用強力錄音室SSL 4000系列進行硬體混音，可現場聽咪或是遠端聽咪"
+  en: "<b>[SSL Full Mix]</b> Hardware mix on the SSL 4000 series at 強力錄音室; review in person or remotely"
+  ja: "<b>[SSL Full Mix]</b> 強力錄音室のSSL 4000シリーズでハードウェアミックス。立ち会いでもリモートでも確認できます"
+
+contact.30:
+  zh: "填寫表單"
+  en: "Fill in the form"
+  ja: "フォームに入力"
+
+contact.31:
+  zh: "準備檔案與錄音"
+  en: "Preparing Files &amp; Recording"
+  ja: "ファイルの準備と録音"
+
+contact.32:
+  zh: "<b>[Vocal Mix]</b>請提供齊頭卡拉帶與Vocal錄音分軌(若由Hikari錄音則不需提供分軌)"
+  en: "<b>[Vocal Mix]</b> Please provide the instrumental and vocal stems, all starting from the same point (not needed if Hikari records the vocals)"
+  ja: "<b>[Vocal Mix]</b> 頭揃えしたインストとボーカルのパラデータをご用意ください（Hikariが録音する場合は不要です）"
+
+contact.33:
+  zh: "<b>[Multitracks Full Mix]</b> 請準備24bits, 48kHz的分軌檔案，檔案齊頭，可接受ProTools Session檔案"
+  en: "<b>[Multitracks Full Mix]</b> Please prepare 24-bit / 48 kHz stems, all starting from the same point. Pro Tools sessions are accepted."
+  ja: "<b>[Multitracks Full Mix]</b> 24bit／48kHzのパラデータを頭揃えでご用意ください。Pro Toolsのセッションファイルにも対応しています。"
+
+contact.34:
+  zh: "<b>[SSL Full Mix]</b> 請準備24bits, 48kHz的分軌檔案，檔案齊頭，可接受ProTools Session檔案"
+  en: "<b>[SSL Full Mix]</b> Please prepare 24-bit / 48 kHz stems, all starting from the same point. Pro Tools sessions are accepted."
+  ja: "<b>[SSL Full Mix]</b> 24bit／48kHzのパラデータを頭揃えでご用意ください。Pro Toolsのセッションファイルにも対応しています。"
+
+contact.35:
+  zh: "聽咪方式"
+  en: "How to Review"
+  ja: "確認方法"
+
+contact.36:
+  zh: "<b>[線上非同步]</b> 標準，所有混音方案都可以使用。"
+  en: "<b>[Online, asynchronous]</b> Standard; available for every mixing plan."
+  ja: "<b>[オンライン（非同期）]</b> 標準。すべてのプランで利用できます。"
+
+contact.37:
+  zh: "<b>[線上同步]</b> 提供專用網址遠端高音質同步聽取檔案，現場修改，僅限Multitracks Full Mix方案或是SSL Full Mix方案"
+  en: "<b>[Online, live]</b> Listen together in high quality through a dedicated link while changes are made in real time. Multitracks Full Mix or SSL Full Mix plans only."
+  ja: "<b>[オンライン（同時）]</b> 専用URLで高音質の音声を同時に聴きながら、その場で修正します。Multitracks Full MixまたはSSL Full Mixプランのみ。"
+
+contact.38:
+  zh: "<b>[實體錄音室]</b> 於強力錄音室現場聽咪，僅限SSL Full Mix"
+  en: "<b>[In studio]</b> Review in person at 強力錄音室. SSL Full Mix only."
+  ja: "<b>[スタジオ立ち会い]</b> 強力錄音室で立ち会って確認。SSL Full Mixのみ。"
+
+contact.39:
+  zh: "檔案交付"
+  en: "Delivery"
+  ja: "納品"
+
+contact.40:
+  zh: "<b>[Vocal Mix]</b>交付MMM(混音)檔案，若有和聲則會另外交付MMO(含有和聲的卡拉帶)，並提供MP3, Wavs, AIFF三種格式下載。"
+  en: "<b>[Vocal Mix]</b> Delivered as an MMM (full mix) file, plus an MMO (instrumental with backing vocals) if there are harmonies; downloadable as MP3, WAV and AIFF."
+  ja: "<b>[Vocal Mix]</b> MMM（ミックス）ファイルを納品します。ハモリがある場合はMMO（ハモリ入りカラオケ）も別途納品し、MP3・WAV・AIFFの3形式でダウンロードできます。"
+
+contact.41:
+  zh: "<b>[Multitracks Full Mix]</b> 交付標準MMM, MMA以及MMO三種檔案，並提供MP3, Wavs, AIFF三種格式下載。"
+  en: "<b>[Multitracks Full Mix]</b> Delivered as the standard MMM, MMA and MMO files; downloadable as MP3, WAV and AIFF."
+  ja: "<b>[Multitracks Full Mix]</b> 標準のMMM・MMA・MMOの3種類を納品し、MP3・WAV・AIFFの3形式でダウンロードできます。"
+
+contact.42:
+  zh: "在此希望能與您約定，我會全力完成委託，若有任何問題或是需要修改的地方，也請在一週內提出修改需求，若超過一週則會視為確認結案(有任何執行上的困難都可以討論但不要放半年一年都不結案)。"
+  en: "One request: I'll put everything into your project, so please send any questions or revisions within one week. After one week the project will be considered complete. (If anything makes that hard, let's talk — just please don't leave a project open for six months or a year.)"
+  ja: "ひとつお願いがあります。ご依頼には全力で取り組みますので、ご質問や修正のご要望は1週間以内にお知らせください。1週間を過ぎた場合は完了とさせていただきます。（事情がある場合はご相談ください。ただ、半年や1年も完了しないままにするのはご遠慮ください。）"
+
+contact.43:
+  zh: "付款"
+  en: "Payment"
+  ja: "お支払い"
+
+contact.44:
+  zh: "結案後請於一週內支付全部款項"
+  en: "Please pay the full amount within one week after the project is completed."
+  ja: "完了後1週間以内に全額をお支払いください。"
+
+profile.01:
+  zh: "音樂/音訊獎項"
+  en: "Music / Audio Awards"
+  ja: "音楽・オーディオ関連の受賞歴"
+
+profile.02:
+  zh: "2023 第一屆文策院文化創業加速器獲獎"
+  en: "2023 Award, 1st TAICCA Cultural Startup Accelerator"
+  ja: "2023 第1回 文化内容策進院（TAICCA）文化スタートアップアクセラレーター 受賞"
+
+profile.03:
+  zh: "2022 美國消費性電子展(CES)創新獎"
+  en: "2022 CES Innovation Award"
+  ja: "2022 CES イノベーションアワード"
+
+profile.04:
+  zh: "2021 台灣精品獎"
+  en: "2021 Taiwan Excellence Award"
+  ja: "2021 台湾エクセレンスアワード"
+
+profile.05:
+  zh: "2014 公共電視音樂創世紀總冠軍賽第五名"
+  en: "2014 5th place, PTS “Music Genesis” Grand Finals"
+  ja: "2014 台湾公共テレビ「音樂創世紀」グランドチャンピオン大会 5位"
+
+profile.06:
+  zh: "2014 搖滾台中 前六強"
+  en: "2014 Top 6, Rock in Taichung"
+  ja: "2014 搖滾台中（Rock in Taichung）トップ6"
+
+profile.07:
+  zh: "2013 貢寮海洋音樂祭人氣獎前十強、大舞台30強"
+  en: "2013 Ho-Hai-Yan Gongliao Rock Festival: Top 10 for the Popularity Award, Top 30 for the Main Stage"
+  ja: "2013 貢寮海洋音楽祭 人気賞トップ10・メインステージ30強"
+
+profile.08:
+  zh: "2013 客委會桐花歌曲創作大賽舞曲組佳作"
+  en: "2013 Honorable Mention (Dance), Hakka Affairs Council Tung Blossom Songwriting Contest"
+  ja: "2013 客家委員会 桐花ソングライティングコンテスト ダンス部門 佳作"
+
+profile.09:
+  zh: "2012 桃園鐵玫瑰音樂大賽決賽"
+  en: "2012 Finalist, Taoyuan Iron Rose Music Competition"
+  ja: "2012 桃園鐵玫瑰音楽コンテスト 決勝進出"
+
+profile.10:
+  zh: "2012 紅黑搖滾大賽第二名"
+  en: "2012 2nd place, Red &amp; Black Rock Competition"
+  ja: "2012 紅黑ロックコンテスト 2位"
+
+profile.11:
+  zh: "2012 世貿樂器展 XM搖滾一夏冠軍"
+  en: "2012 Winner, XM Rock Summer at the Taipei World Trade Center Music Instrument Show"
+  ja: "2012 台北世界貿易センター楽器展「XM搖滾一夏」優勝"
+
+profile.12:
+  zh: "2011 年漢光基金會舊愛新歡古典詩詞譜曲競賽(新歡組)優選獎"
+  en: "2011 Merit Award (New category), Han Kuang Foundation Classical Poetry Composition Contest"
+  ja: "2011 漢光基金会 古典詩詞作曲コンテスト（新歡部門）優選"
+
+profile.13:
+  zh: "2010 年漢光基金會舊愛新歡古典詩詞譜曲競賽(新歡組)優選獎"
+  en: "2010 Merit Award (New category), Han Kuang Foundation Classical Poetry Composition Contest"
+  ja: "2010 漢光基金会 古典詩詞作曲コンテスト（新歡部門）優選"
+
+profile.14:
+  zh: "音樂／工程類重要證書"
+  en: "Key Music / Engineering Certificates"
+  ja: "音楽・エンジニアリング関連の主な資格"
+
+profile.15:
+  zh: "大禾音樂X強力錄音室 混音大師班第二期、第六期結業(指導老師：K哥)"
+  en: "Completed Mixing Master Class cohorts 2 and 6, 大禾音樂 × 強力錄音室 (instructor: K哥)"
+  ja: "大禾音樂 × 強力錄音室 ミキシングマスタークラス 第2期・第6期 修了（講師：K哥）"
+
+profile.20:
+  zh: "Write Like Mozart: An Introduction to Classical Music Composition, National University of Singapore. (新加坡大學)"
+  en: "Write Like Mozart: An Introduction to Classical Music Composition, National University of Singapore"
+  ja: "Write Like Mozart: An Introduction to Classical Music Composition, National University of Singapore（シンガポール国立大学）"
+
+profile.21:
+  zh: "Songwriting, Berklee College of Music (伯克利音樂學院)"
+  en: "Songwriting, Berklee College of Music"
+  ja: "Songwriting, Berklee College of Music（バークリー音楽大学）"
+
+profile.22:
+  zh: "Developing Your Musicianship, Berklee College of Music (伯克利音樂學院)"
+  en: "Developing Your Musicianship, Berklee College of Music"
+  ja: "Developing Your Musicianship, Berklee College of Music（バークリー音楽大学）"
+
+profile.23:
+  zh: "Introduction to Music Production, Berklee College of Music (伯克利音樂學院)"
+  en: "Introduction to Music Production, Berklee College of Music"
+  ja: "Introduction to Music Production, Berklee College of Music（バークリー音楽大学）"
+
+profile.24:
+  zh: "Modern Musician Capstone, Berklee College of Music (伯克利音樂學院)"
+  en: "Modern Musician Capstone, Berklee College of Music"
+  ja: "Modern Musician Capstone, Berklee College of Music（バークリー音楽大学）"
+
+profile.25:
+  zh: "Modern Musician Specialization, Berklee College of Music (伯克利音樂學院)"
+  en: "Modern Musician Specialization, Berklee College of Music"
+  ja: "Modern Musician Specialization, Berklee College of Music（バークリー音楽大学）"
+
+profile.26:
+  zh: "2024 當選東華大學傑出校友"
+  en: "2024 Distinguished Alumni Award, National Dong Hwa University"
+  ja: "2024 国立東華大学 傑出校友に選出"
+
+page.02:
+  zh: "贊助Hikari喝咖啡"
+  en: "Buy Hikari a Coffee"
+  ja: "Hikariにコーヒーをおごる"
+
+page.03:
+  zh: "用這些連結買軟體，廠商爸爸會請Hikari喝咖啡，Hikari會繼續努力做更多的音樂與混音給大家聽。"
+  en: "Buy software through these links and the vendors will treat Hikari to a coffee — which keeps Hikari making more music and mixes for everyone."
+  ja: "これらのリンクからソフトを購入すると、メーカーさんがHikariにコーヒーをおごってくれます。Hikariはこれからも皆さんのために音楽やミックスを作り続けます。"
+
+page.05:
+  zh: "FabFilter(10%折價券)"
+  en: "FabFilter (10% off coupon)"
+  ja: "FabFilter（10%オフクーポン）"
+
+page.06:
+  zh: "DISCO(折價$20)"
+  en: "DISCO ($20 off)"
+  ja: "DISCO（$20オフ）"
+
+coffee.01:
+  zh: "Hello,謝謝你請我喝咖啡"
+  en: "Hello, thanks for the coffee!"
+  ja: "こんにちは、コーヒーをありがとう！"
+
+coffee.02:
+  zh: "請聯絡Hikari Tsai，並提供你的電子郵件地址，我會寄給你FabFilter的10%折價券。 這個折價券可以用在FabFilter的所有產品上，包含他們的混音、母帶處理、合成器等軟體。 這些軟體都是音樂製作中非常有用的工具，可以幫助你創造出更好的音樂。"
+  en: "Please contact Hikari Tsai with your email address and I'll send you a 10% FabFilter coupon. It works on every FabFilter product, including their mixing, mastering and synth plugins — all very useful tools for music production that can help you make better music."
+  ja: "メールアドレスを添えてHikari Tsaiまでご連絡ください。FabFilterの10%オフクーポンをお送りします。このクーポンはミキシング、マスタリング、シンセなどFabFilterの全製品に使えます。どれも音楽制作にとても役立つツールで、より良い音楽づくりの助けになります。"
+
+footer.02:
+  zh: "Top"
+  en: "Top"
+  ja: "トップ"
+
+footer.03:
+  zh: "Works"
+  en: "Works"
+  ja: "作品"
+
+footer.04:
+  zh: "Services"
+  en: "Services"
+  ja: "サービス"
+
+footer.05:
+  zh: "Blog"
+  en: "Blog"
+  ja: "ブログ"
+
+footer.06:
+  zh: "Contact"
+  en: "Contact"
+  ja: "お問い合わせ"
+
+page.08:
+  zh: "DC帳號 <b>hikari_tsai</b> ，加入後跟我講一下是你是誰我才會知道你不是詐騙集團喔"
+  en: "Discord: <b>hikari_tsai</b> — after adding me, please tell me who you are so I know you're not a scammer!"
+  ja: "Discordアカウント：<b>hikari_tsai</b>。追加したら誰なのか一言教えてください。詐欺じゃないと分かるので！"
+
+works.search_placeholder:
+  zh: "搜尋歌名、作者、器材…"
+  en: "Search title, artist, gear…"
+  ja: "曲名・アーティスト・機材で検索…"
+
+# 以下給 JavaScript 用（{n} 會換成數字）
+ui.load_more:
+  zh: "載入更多（還有 {n} 件）"
+  en: "Load more ({n} remaining)"
+  ja: "もっと見る（残り {n} 件）"
+
+ui.search_label:
+  zh: "搜尋作品"
+  en: "Search works"
+  ja: "作品を検索"
+
+ui.clear_search:
+  zh: "清除搜尋"
+  en: "Clear search"
+  ja: "検索をクリア"
+
+ui.language:
+  zh: "語言"
+  en: "Language"
+  ja: "言語"

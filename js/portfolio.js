@@ -10,7 +10,7 @@
 	if (!grid || !input || !moreBtn) return;
 
 	var items = Array.prototype.slice.call(grid.querySelectorAll(':scope > .entry'));
-	var state = { category: '*', query: '', limit: PAGE_SIZE };
+	var state = { category: '*', categoryLabel: '', query: '', limit: PAGE_SIZE, rest: 0 };
 
 	// 搜尋範圍：標題、作者、工作項目、日期、描述
 	function normalize(s) {
@@ -78,19 +78,36 @@
 		} else {
 			items.forEach(function (el) { el.style.display = shown.has(el) ? '' : 'none'; });
 		}
-		var rest = matched.length - shown.size;
-		moreBtn.hidden = rest <= 0;
-		moreBtn.textContent = '載入更多（還有 ' + rest + ' 件）';
+		state.rest = matched.length - shown.size;
+		moreBtn.hidden = state.rest <= 0;
+		updateTexts();
 		emptyMsg.hidden = matched.length > 0;
 	}
+
+	// 會隨語言切換的文字（翻譯在 data/i18n.yml，由 js/i18n.js 提供）
+	function t(key, vars, fallback) {
+		return window.I18N ? I18N.t(key, vars) : fallback;
+	}
+	var filterBtn = document.getElementById('grid-filter-btn');
+	function updateTexts() {
+		moreBtn.textContent = t('ui.load_more', { n: state.rest }, '載入更多（還有 ' + state.rest + ' 件）');
+		// 選了分類時按鈕顯示分類名稱（英文）；All 時顯示各語言的「作品分類 (ALL)」
+		if (filterBtn && state.category !== '*') filterBtn.textContent = state.categoryLabel;
+		else if (filterBtn && window.I18N) filterBtn.innerHTML = I18N.t('works.02');
+	}
+	document.addEventListener('i18n:change', updateTexts);
 
 	// 分類選單（取代 Canvas 原本的綁定，才能和搜尋、載入更多一起運作）
 	document.querySelectorAll('#dropdown-filter [data-filter]').forEach(function (a) {
 		a.addEventListener('click', function (e) {
 			e.preventDefault();
 			state.category = a.getAttribute('data-filter') || '*';
+			state.categoryLabel = a.textContent.trim();
 			state.limit = PAGE_SIZE;
 			apply();
+			// 點選後收起選單
+			var menu = a.closest('.dropdown');
+			if (menu) menu.querySelectorAll('.show').forEach(function (n) { n.classList.remove('show'); });
 		});
 	});
 

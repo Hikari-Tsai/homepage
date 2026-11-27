@@ -185,7 +185,72 @@ function card(w) {
 	return L;
 }
 
-const template = readFileSync(p('src/index.html'), 'utf8');
+// ---------- 多語系：data/i18n.yml → 頁面文字（中文）＋ 切換用的翻譯資料 ----------
+const i18n = yaml.load(readFileSync(p('data/i18n.yml'), 'utf8')) || {};
+const LANGS = ['zh', 'en', 'ja'];
+
+// 找到 from 之後與開頭標籤配對的結束標籤位置（會處理同名標籤的巢狀）
+function findClose(s, tag, from) {
+	const re = new RegExp(`<(/?)${tag}\\b[^>]*>`, 'gi');
+	re.lastIndex = from;
+	let depth = 1, m;
+	while ((m = re.exec(s))) {
+		if (m[0].endsWith('/>')) continue;
+		depth += m[1] ? -1 : 1;
+		if (depth === 0) return m.index;
+	}
+	return -1;
+}
+
+function applyI18n(tpl) {
+	const used = new Set();
+	const errors = [];
+	// 1) data-i18n="key"：把元素內容換成 i18n.yml 裡的中文
+	let out = '', pos = 0, m;
+	const openRe = /<([a-zA-Z][\w-]*)\b[^>]*?\sdata-i18n="([^"]+)"[^>]*>/g;
+	while ((m = openRe.exec(tpl))) {
+		const [open, tag, key] = m;
+		used.add(key);
+		const zh = i18n[key]?.zh;
+		if (zh == null) { errors.push(`data/i18n.yml 缺少「${key}」的 zh`); continue; }
+		const innerStart = m.index + open.length;
+		const innerEnd = findClose(tpl, tag, innerStart);
+		if (innerEnd < 0) { errors.push(`src/index.html 裡「${key}」的 <${tag}> 找不到結束標籤`); continue; }
+		out += tpl.slice(pos, innerStart) + zh;
+		pos = innerEnd;
+		openRe.lastIndex = innerEnd;
+	}
+	out += tpl.slice(pos);
+	// 2) data-i18n-placeholder / data-i18n-aria-label：換屬性值
+	out = out.replace(/<[^>]*\sdata-i18n-(?:placeholder|aria-label)="[^"]+"[^>]*>/g, (tagStr) => {
+		for (const name of ['placeholder', 'aria-label']) {
+			const km = tagStr.match(new RegExp(`\\sdata-i18n-${name}="([^"]+)"`));
+			if (!km) continue;
+			used.add(km[1]);
+			const zh = i18n[km[1]]?.zh;
+			if (zh == null) { errors.push(`data/i18n.yml 缺少「${km[1]}」的 zh`); continue; }
+			const re = new RegExp(`(\\s${name}=")[^"]*(")`);
+			tagStr = re.test(tagStr) ? tagStr.replace(re, `$1${attr(zh)}$2`) : tagStr.replace(/\s*\/?>$/, (end) => ` ${name}="${attr(zh)}"${end}`);
+		}
+		return tagStr;
+	});
+	return { out, used, errors };
+}
+
+const rawTemplate = readFileSync(p('src/index.html'), 'utf8');
+const { out: template, used: i18nUsed, errors: i18nErrors } = applyI18n(rawTemplate);
+for (const key of Object.keys(i18n)) {
+	if (!i18nUsed.has(key) && !key.startsWith('ui.')) console.warn(`data/i18n.yml 的「${key}」沒有在頁面上使用`);
+	for (const lang of LANGS) if (i18n[key]?.[lang] == null) console.warn(`data/i18n.yml 的「${key}」沒有 ${lang}，會顯示中文`);
+}
+if (i18nErrors.length) {
+	console.error('翻譯資料有問題：\n' + i18nErrors.join('\n'));
+	process.exit(1);
+}
+const i18nData = Object.fromEntries(LANGS.map(lang => [lang,
+	Object.fromEntries(Object.entries(i18n).filter(([, v]) => v?.[lang] != null).map(([k, v]) => [k, String(v[lang])]))]));
+const i18nScript = `<script id="i18n-data" type="application/json">${JSON.stringify(i18nData).replace(/</g, '\\u003c')}</script>`;
+
 const nl = template.includes('\r\n') ? '\r\n' : '\n';
 const marker = template.match(/^([ \t]*)<!-- @works[^\n]*?-->\r?$/m);
 if (!marker) { console.error('src/index.html 裡找不到 <!-- @works --> 標記'); process.exit(1); }
@@ -203,8 +268,13 @@ if (checkOnly) {
 	process.exit(0);
 }
 
-const banner = `<!-- 此檔由 tools/build.mjs 自動產生，請勿直接修改。要改作品請改 data/works.yml，其他內容請改 src/index.html。 -->`;
-const html = template.replace(marker[0], body).replace(/^(<!DOCTYPE html>\r?\n)/i, `$1${banner}${nl}`);
+const i18nMarker = template.match(/^([ \t]*)<!-- @i18n[^\n]*?-->\r?$/m);
+if (!i18nMarker) { console.error('src/index.html 裡找不到 <!-- @i18n --> 標記'); process.exit(1); }
+const banner = `<!-- 此檔由 tools/build.mjs 自動產生，請勿直接修改。作品請改 data/works.yml，文字與翻譯請改 data/i18n.yml，其他內容請改 src/index.html。 -->`;
+const html = template
+	.replace(marker[0], body)
+	.replace(i18nMarker[0], i18nMarker[1] + i18nScript)
+	.replace(/^(<!DOCTYPE html>\r?\n)/i, `$1${banner}${nl}`);
 writeFileSync(p('index.html'), html);
 writeFileSync(datesPath, JSON.stringify(Object.fromEntries(Object.entries(dates).sort()), null, 1) + '\n');
 console.log(`已產生 index.html：${visible.length} 張卡片（另有 ${works.length - visible.length} 張隱藏）`);

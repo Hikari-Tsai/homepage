@@ -131,6 +131,43 @@
 			text-align: center;
 		}
 
+		/* 語言切換 */
+		#lang-switch {
+			display: flex;
+			align-items: center;
+			gap: 2px;
+			margin-left: auto;
+			margin-right: 12px;
+			padding: 2px 8px;
+			border-radius: 999px;
+			background: rgba(255, 255, 255, .88);
+			color: #212529;
+			box-shadow: 0 1px 4px rgba(0, 0, 0, .12);
+			z-index: 2;
+		}
+
+		#lang-switch button {
+			background: none;
+			border: 0;
+			border-bottom: 2px solid transparent;
+			padding: 4px 6px;
+			font-size: 13px;
+			letter-spacing: 1px;
+			color: inherit;
+			opacity: .55;
+			cursor: pointer;
+		}
+
+		#lang-switch button:hover,
+		#lang-switch button.active {
+			opacity: 1;
+		}
+
+		#lang-switch button.active {
+			font-weight: 700;
+			border-bottom-color: currentColor;
+		}
+
 		/* 作品搜尋框 */
 		#works-search-wrap {
 			position: relative;
@@ -259,6 +296,11 @@
 							</a>
 						</div><!-- #logo end -->
 
+						<div id="lang-switch" role="group" aria-label="語言" data-i18n-aria-label="ui.language">
+							<button type="button" data-lang="zh" lang="zh-Hant">中</button>
+							<button type="button" data-lang="en" lang="en">EN</button>
+							<button type="button" data-lang="ja" lang="ja">日</button>
+						</div>
 						<div class="primary-menu-trigger">
 							<button class="cnvs-hamburger" type="button" title="Open Mobile Menu">
 								<span class="cnvs-hamburger-box"><span class="cnvs-hamburger-inner"></span></span>
@@ -271,22 +313,22 @@
 
 							<ul class="one-page-menu menu-container" data-easing="easeInOutExpo" data-speed="1250" data-offset="65">
 								<li class="menu-item">
-									<a href="#" class="menu-link" data-href="#wrapper"><div>Home</div></a>
+									<a href="#" class="menu-link" data-href="#wrapper"><div data-i18n="nav.02">Home</div></a>
 								</li>
 								<li class="menu-item">
-									<a href="#" class="menu-link" data-href="#section-about"><div>About</div></a>
+									<a href="#" class="menu-link" data-href="#section-about"><div data-i18n="nav.03">About</div></a>
 								</li>
 								<li class="menu-item">
-									<a href="#" class="menu-link" data-href="#section-works"><div>Works</div></a>
+									<a href="#" class="menu-link" data-href="#section-works"><div data-i18n="nav.04">Works</div></a>
 								</li>
 								<li class="menu-item">
-									<a href="#" class="menu-link" data-href="#section-services"><div>Services</div></a>
+									<a href="#" class="menu-link" data-href="#section-services"><div data-i18n="nav.05">Services</div></a>
 								</li>
 								<li class="menu-item">
-									<a href="#" class="menu-link" data-href="#section-blog"><div>Blog</div></a>
+									<a href="#" class="menu-link" data-href="#section-blog"><div data-i18n="nav.06">Blog</div></a>
 								</li>
 								<li class="menu-item">
-									<a href="#" class="menu-link" data-href="#section-contact"><div>Contact</div></a>
+									<a href="#" class="menu-link" data-href="#section-contact"><div data-i18n="nav.07">Contact</div></a>
 								</li>
 							</ul>
 
@@ -307,8 +349,8 @@
 					<div class="container py-5">
 						<div class="emphasis-title mb-5">
 							<h1 class="text-uppercase fw-bold" style="font-size: 52px; letter-spacing: 10px; word-spacing: 5px; color: #FFF;">Hikari Tsai</h1>
-							<span class="text-uppercase" style="color: #c5c5c5;letter-spacing:10px; font-size: 18px">Recording, Mixing & ML Engineer </span>
-							<p class="lead mt-5" style="max-width: 600px; line-height: 1.8; color: #FFF">
+							<span data-i18n="hero.02" class="text-uppercase" style="color: #c5c5c5;letter-spacing:10px; font-size: 18px">Recording, Mixing & ML Engineer </span>
+							<p data-i18n="hero.03" class="lead mt-5" style="max-width: 600px; line-height: 1.8; color: #FFF">
 								Hi, 我是Hikari，一個喜歡獨立音樂人、混音師以及軟體工程師。曾與陳芳語(Kimberly)、隕浮流(Verbal)、林鴻鳴(星光二班)以及黃小玫等多位藝人合作，為音樂串流公司訓練芒果醬、黃明志等藝人的演唱模型。同時也是一個鍵盤手，多次參加墾丁春天吶喊、海洋音樂祭以及公共電視演出，並為國外知名金屬樂團如 graveworm, leaves' eyes, Traja（Nightwish主唱）開場演出。設計多種獲獎產品。<br>
 								相較於自己站在舞台上，我更喜歡看著別人成功，如果有音樂的問題，歡迎來找我討論吧！
 							</p>
@@ -617,7 +659,7 @@
 					<div class="section m-0">
 						<div class="container">
 							<div class="mx-auto text-center" style="max-width: 900px;">
-								<h2 class="mb-0 fw-light ls-1">
+								<h2 data-i18n="services.01" class="mb-0 fw-light ls-1">
 									We truly enjoy working on music production—whether it’s Mixing, Recording, or Composing—just as much as you need these services. This allows us to help you achieve your musical goals more effortlessly. Feel free to explore the wide range of music production services we offer.
 								</h2>
 							</div>
@@ -635,7 +677,7 @@
 											<a href="#"><i class="icon-et-lightbulb op-gradient-icon"></i></a>
 										</div>
 										<div class="fbox-content fbox-content-sm">
-											<h3>Composition</h3>
+											<h3 data-i18n="services.02">Composition</h3>
 										</div>
 									</div>
 								</div>
@@ -645,7 +687,7 @@
 											<a href="#"><i class="icon-et-pencil op-gradient-icon"></i></a>
 										</div>
 										<div class="fbox-content fbox-content-sm">
-											<h3>Arrangement</h3>
+											<h3 data-i18n="services.03">Arrangement</h3>
 										</div>
 									</div>
 								</div>
@@ -655,7 +697,7 @@
 											<a href="#"><i class="icon-et-mic op-gradient-icon"></i></a>
 										</div>
 										<div class="fbox-content fbox-content-sm">
-											<h3>Recording</h3>
+											<h3 data-i18n="services.04">Recording</h3>
 										</div>
 									</div>
 								</div>
@@ -665,7 +707,7 @@
 											<a href="#"><i class="icon-et-adjustments op-gradient-icon"></i></a>
 										</div>
 										<div class="fbox-content fbox-content-sm">
-											<h3>Mixing</h3>
+											<h3 data-i18n="services.05">Mixing</h3>
 										</div>
 									</div>
 								</div>
@@ -675,7 +717,7 @@
 											<a href="#"><i class="icon-et-genius op-gradient-icon"></i></a>
 										</div>
 										<div class="fbox-content fbox-content-sm">
-											<h3>Mastering</h3>
+											<h3 data-i18n="services.06">Mastering</h3>
 										</div>
 									</div>
 								</div>
@@ -685,7 +727,7 @@
 											<a href="#"><i class="icon-et-hotairballoon op-gradient-icon"></i></a>
 										</div>
 										<div class="fbox-content fbox-content-sm">
-											<h3>Distribution</h3>
+											<h3 data-i18n="services.07">Distribution</h3>
 										</div>
 									</div>
 								</div>
@@ -696,7 +738,7 @@
 
 					<div class="section dark m-0">
 						<div class="mx-auto text-center" style="max-width: 900px;">
-							<h2 class="mb-0 fw-light ls-1">Like Our Services? Get an <a href="#" data-scrollto="#section-contact" data-offset="140" data-easing="easeInOutExpo" data-speed="1250" class="button button-border button-circle button-light button-large my-0" style="position: relative; top: -3px;">Instant Quote</a></h2>
+							<h2 class="mb-0 fw-light ls-1"><span data-i18n="services.08">Like Our Services? Get an</span> <a data-i18n="services.09" href="#" data-scrollto="#section-contact" data-offset="140" data-easing="easeInOutExpo" data-speed="1250" class="button button-border button-circle button-light button-large my-0" style="position: relative; top: -3px;">Instant Quote</a></h2>
 						</div>
 					</div>
 
@@ -711,7 +753,7 @@
 										<div class="flexslider">
 											<div class="slider-wrap">
 												<div class="slide">
-													<p class="mb-4 fs-4 fw-light ls-1">
+													<p data-i18n="services.10" class="mb-4 fs-4 fw-light ls-1">
 														對於行外人也友善！委託音樂相關的東西的時候，都會因為相關知識匱乏，在溝通的時候會很緊張。但是Hikari都會很詳細的解釋相關的東西！效率高又能符合期望，真的很棒！				
 													</p>
 													<h4 class="h5 mb-0 fw-medium">
@@ -720,7 +762,7 @@
 													<small class="text-muted">咪喵事務所</small>
 												</div>
 												<div class="slide">
-													<p class="mb-4 fs-4 fw-light ls-1">
+													<p data-i18n="services.13" class="mb-4 fs-4 fw-light ls-1">
 														小光老師製作效率很高，也會給出具體的協助與指導，溝通也都很順暢，交給他每次真的都可以順利拿到好作品…！					
 													</p>
 													<h4 class="h5 mb-0 fw-medium">
@@ -729,7 +771,7 @@
 													<small class="text-muted"></small>
 												</div>
 												<div class="slide">
-													<p class="mb-4 fs-4 fw-light ls-1">
+													<p data-i18n="services.15" class="mb-4 fs-4 fw-light ls-1">
 														Hikari老師專業細心！對於第一次宅錄有許多不懂的地方也會耐心溝通，並且會跟進客戶的要求和歌曲本身完成作品！最後成品也十分滿意，非常感謝老師！(*òωó _)						
 													</p>
 													<h4 class="h5 mb-0 fw-medium">
@@ -738,41 +780,41 @@
 													<small class="text-muted">咪喵事務所</small>
 												</div>
 												<div class="slide">
-													<p class="mb-4 fs-4 fw-light ls-1">
+													<p data-i18n="services.18" class="mb-4 fs-4 fw-light ls-1">
 														與Hikari配合過數支商用影片，對於高品質的配樂製作與英文旁白印象深刻，配合度高且容易溝通
 													</p>
-													<h4 class="h5 mb-0 fw-medium">
+													<h4 data-i18n="services.19" class="h5 mb-0 fw-medium">
 														顏小八 導演
 													</h4>
 													<small class="text-muted">有間工作室</small>
 												</div>
 												<div class="slide">
-													<p class="mb-4 fs-4 fw-light ls-1">
+													<p data-i18n="services.21" class="mb-4 fs-4 fw-light ls-1">
 														Hikari在專輯製作上幫我很多忙，非常願意花很多時間和我溝通確定我要什麼，最後也很專業和負責地幫我完成我想要的成品，總之很感謝他們！
 													</p>
-													<h4 class="h5 mb-0 fw-medium"> 蘇育霆 歌手/製作人</h4>
-													<small class="text-muted">華研國際音樂有限公司</small>
+													<h4 data-i18n="services.22" class="h5 mb-0 fw-medium"> 蘇育霆 歌手/製作人</h4>
+													<small data-i18n="services.23" class="text-muted">華研國際音樂有限公司</small>
 												</div>
 												<div class="slide">
-													<p class="mb-4 fs-4 fw-light ls-1">
+													<p data-i18n="services.24" class="mb-4 fs-4 fw-light ls-1">
 														Hikari是業界速度快、且將音樂視為珍貴原創商品的配樂音效公司。無論是合作案的大小或性質，他們都會以相同的敬業態度完成工作。創業的路上總是比較辛苦，我很幸運有這樣能夠相互扶持的夥伴一同前進、慢慢地一同站穩腳步。
 													</p>
-													<h4 class="h5 mb-0 fw-medium">張偉翰(小馬)  導演</h4>
+													<h4 data-i18n="services.25" class="h5 mb-0 fw-medium">張偉翰(小馬)  導演</h4>
 													<small class="text-muted">好年冬影像工作室</small>
 												</div>
 												<div class="slide">
-													<p class="mb-4 fs-4 fw-light ls-1">
+													<p data-i18n="services.27" class="mb-4 fs-4 fw-light ls-1">
 														Hikari在音樂製作上展現了高度的專業，不論是在編曲或是混音方面，總是很精準地完成我要的東西，他們總是很有耐心地詢問你的需求並盡力做到完美一致，對於音樂方面的大小事，我放心把自己交給他們。
 													</p>
-													<h4 class="h5 mb-0 fw-medium">創作歌手 銘鴻</h4>
-													<small class="text-muted">全球傑出華人流行音樂參賽者</small>
+													<h4 data-i18n="services.28" class="h5 mb-0 fw-medium">創作歌手 銘鴻</h4>
+													<small data-i18n="services.29" class="text-muted">全球傑出華人流行音樂參賽者</small>
 												</div>
 												<div class="slide">
-													<p class="mb-4 fs-4 fw-light ls-1">
+													<p data-i18n="services.30" class="mb-4 fs-4 fw-light ls-1">
 														謝謝Hikari的大力支持，協助本計畫將深奧難懂的雲南麗江納西族的東巴經文錄音工作，順利完成。小光老師認真細心的敬業精神，值得推薦給大家～
 													</p>
-													<h4 class="h5 mb-0 fw-medium">胡其瑞 助理研究員</h4>
-													<small class="text-muted">中央研究院歷史語言研究所</small>
+													<h4 data-i18n="services.31" class="h5 mb-0 fw-medium">胡其瑞 助理研究員</h4>
+													<small data-i18n="services.32" class="text-muted">中央研究院歷史語言研究所</small>
 												</div>
 											</div>
 										</div>
@@ -788,18 +830,18 @@
 				<section id="section-works" class="page-section pt-0">
 					<div class="content-wrap">
 						<div class="container">
-							<h2 class="text-center text-uppercase fw-light ls-3 font-body">Recently Music Works</h2>
+							<h2 data-i18n="works.01" class="text-center text-uppercase fw-light ls-3 font-body">Recently Music Works</h2>
 							<!--<div class="grid-filter-wrap justify-content-center">
 								<div id="works-toggle-bar" style="display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin:40px 0;"></div>
 							</div>-->
 							<div class="grid-filter-wrap justify-content-center flex-wrap gap-3 mb-3">
 								<div id="works-search-wrap">
 									<i class="bi-search"></i>
-									<input id="works-search" type="search" class="form-control" placeholder="搜尋歌名、作者、器材…" aria-label="搜尋作品" autocomplete="off">
-									<button id="works-search-clear" type="button" aria-label="清除搜尋" hidden><i class="bi-x-lg"></i></button>
+									<input data-i18n-placeholder="works.search_placeholder" data-i18n-aria-label="ui.search_label" id="works-search" type="search" class="form-control" placeholder="搜尋歌名、作者、器材…" aria-label="搜尋作品" autocomplete="off">
+									<button id="works-search-clear" type="button" aria-label="清除搜尋" data-i18n-aria-label="ui.clear_search" hidden><i class="bi-x-lg"></i></button>
 								</div>
 								<div id="dropdown-filter" class="dropdown border-0">
-									<a id="grid-filter-btn" class="button m-0 bg-color text-white dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+									<a data-i18n="works.02" id="grid-filter-btn" class="button m-0 bg-color text-white dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
 										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;作品分類 (ALL)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 									</a>
 
@@ -828,8 +870,8 @@
 								<!-- @works：作品卡片由 tools/build.mjs 依 data/works.yml 產生 -->
 							</div><!-- #posts end -->
 							<div id="works-more" class="text-center mt-4">
-								<p id="works-empty" class="text-muted" hidden>找不到符合的作品</p>
-								<button id="works-more-btn" type="button" class="button button-border button-rounded m-0" hidden>載入更多</button>
+								<p data-i18n="works.03" id="works-empty" class="text-muted" hidden>找不到符合的作品</p>
+								<button data-i18n="works.04" id="works-more-btn" type="button" class="button button-border button-rounded m-0" hidden>載入更多</button>
 							</div>
 		
 						</div>
@@ -838,7 +880,7 @@
 		
 				<div id="section-blog" class="page-section">
 
-					<h2 class="text-center text-uppercase fw-light ls-3 font-body">Recently From the Blog</h2>
+					<h2 data-i18n="blog.01" class="text-center text-uppercase fw-light ls-3 font-body">Recently From the Blog</h2>
 					
 
 					<div class="section mb-0">
@@ -854,8 +896,8 @@
 											</a>
 											<div class="p-4">
 												<div class="entry-title">
-													<h5 class="fw-medium text-danger mb-3">Production</h5>
-													<h3 class="text-transform-none ls-0 h5"><a href="https://www.youtube.com/playlist?list=PLUD0p5NnO5i4Wg0pl78ZQoPbUhREgWy5F">免費人聲混音製作教學(六集)</a></h3>
+													<h5 data-i18n="blog.02" class="fw-medium text-danger mb-3">Production</h5>
+													<h3 class="text-transform-none ls-0 h5"><a data-i18n="blog.03" href="https://www.youtube.com/playlist?list=PLUD0p5NnO5i4Wg0pl78ZQoPbUhREgWy5F">免費人聲混音製作教學(六集)</a></h3>
 												</div>
 												<!--<div class="entry-meta">
 													<ul>
@@ -864,11 +906,11 @@
 													</ul>
 												</div>-->
 												<div class="entry-content mt-4">
-													<p class="mb-0">完全不藏私，跟著我的步驟就能做出相同品質的商業級混音。</p>
+													<p data-i18n="blog.04" class="mb-0">完全不藏私，跟著我的步驟就能做出相同品質的商業級混音。</p>
 												</div>
 												<div class="entry-image mb-0">
 												<div class="text-center">
-													<a href="https://www.youtube.com/playlist?list=PLUD0p5NnO5i4Wg0pl78ZQoPbUhREgWy5F" class="button button-border button-rounded"><i class="bi-play-circle-fill"></i> Play Video</a>
+													<a href="https://www.youtube.com/playlist?list=PLUD0p5NnO5i4Wg0pl78ZQoPbUhREgWy5F" class="button button-border button-rounded"><i class="bi-play-circle-fill"></i> <span data-i18n="blog.05">Play Video</span></a>
 												</div>
 											</div>
 											</div>
@@ -881,8 +923,8 @@
 											</a>
 											<div class="p-4">
 												<div class="entry-title">
-													<h5 class="fw-medium text-danger mb-3">Production/Translation</h5>
-													<h3 class="text-transform-none ls-0 h5"><a href="https://youtube.com/playlist?list=PLUD0p5NnO5i7KW0jiSBiANR68K4Fjb_H6">ADO的配唱製作(翻譯)</a></h3>
+													<h5 data-i18n="blog.06" class="fw-medium text-danger mb-3">Production/Translation</h5>
+													<h3 class="text-transform-none ls-0 h5"><a data-i18n="blog.07" href="https://youtube.com/playlist?list=PLUD0p5NnO5i7KW0jiSBiANR68K4Fjb_H6">ADO的配唱製作(翻譯)</a></h3>
 												</div>
 												<!--<div class="entry-meta">
 													<ul>
@@ -891,11 +933,11 @@
 													</ul>
 												</div>-->
 												<div class="entry-content mt-4">
-													<p class="mb-0">這主要是翻譯ADO擔任怪忌蝶製作人的錄音配唱側錄，讓大家了解她的配唱風格與技巧，進而學習更多的演唱與詮釋技巧。</p>
+													<p data-i18n="blog.08" class="mb-0">這主要是翻譯ADO擔任怪忌蝶製作人的錄音配唱側錄，讓大家了解她的配唱風格與技巧，進而學習更多的演唱與詮釋技巧。</p>
 												</div>
 												<div class="entry-image mb-0">
 												<div class="text-center">
-													<a href="https://youtube.com/playlist?list=PLUD0p5NnO5i7KW0jiSBiANR68K4Fjb_H6" class="button button-border button-rounded"><i class="bi-play-circle-fill"></i> Play Video</a>
+													<a href="https://youtube.com/playlist?list=PLUD0p5NnO5i7KW0jiSBiANR68K4Fjb_H6" class="button button-border button-rounded"><i class="bi-play-circle-fill"></i> <span data-i18n="blog.09">Play Video</span></a>
 												</div>
 											</div>
 											</div>
@@ -908,8 +950,8 @@
 											</a>
 											<div class="p-4">
 												<div class="entry-title">
-													<h5 class="fw-medium text-info mb-3">Mixing</h5>
-													<h3 class="text-transform-none ls-0 h5"><a href="https://youtube.com/playlist?list=PLUD0p5NnO5i5wEx4W_jsdebfgWAByxn4p">Hikari的Remix二創</a></h3>
+													<h5 data-i18n="blog.10" class="fw-medium text-info mb-3">Mixing</h5>
+													<h3 class="text-transform-none ls-0 h5"><a data-i18n="blog.11" href="https://youtube.com/playlist?list=PLUD0p5NnO5i5wEx4W_jsdebfgWAByxn4p">Hikari的Remix二創</a></h3>
 												</div>
 												<!--<div class="entry-meta">
 													<ul>
@@ -918,11 +960,11 @@
 													</ul>
 												</div>-->
 												<div class="entry-content mt-4">
-													<p class="mb-0">這邊的Remix不是指電音DJ混音，而是擷取實況內容做音訊分離與標準的音樂製作流程後，重製成爲接近發行的水準，基本上都是二創。</p>
+													<p data-i18n="blog.12" class="mb-0">這邊的Remix不是指電音DJ混音，而是擷取實況內容做音訊分離與標準的音樂製作流程後，重製成爲接近發行的水準，基本上都是二創。</p>
 												</div>
 												<div class="entry-image mb-0">
 												<div class="text-center">
-													<a href="https://youtube.com/playlist?list=PLUD0p5NnO5i5wEx4W_jsdebfgWAByxn4p" class="button button-border button-rounded"><i class="bi-play-circle-fill"></i> Play Video</a>
+													<a href="https://youtube.com/playlist?list=PLUD0p5NnO5i5wEx4W_jsdebfgWAByxn4p" class="button button-border button-rounded"><i class="bi-play-circle-fill"></i> <span data-i18n="blog.13">Play Video</span></a>
 												</div>
 											</div>
 											</div>
@@ -935,8 +977,8 @@
 											</a>
 											<div class="p-4">
 												<div class="entry-title">
-													<h5 class="fw-medium text-success mb-3">Strems</h5>
-													<h3 class="text-transform-none ls-0 h5"><a href="https://www.youtube.com/@hikari-tsai/streams">通常是技術台，歡迎來聊天</a></h3>
+													<h5 data-i18n="blog.14" class="fw-medium text-success mb-3">Strems</h5>
+													<h3 class="text-transform-none ls-0 h5"><a data-i18n="blog.15" href="https://www.youtube.com/@hikari-tsai/streams">通常是技術台，歡迎來聊天</a></h3>
 												</div>
 												<!--<div class="entry-meta">
 													<ul>
@@ -945,11 +987,11 @@
 													</ul>
 												</div>-->
 												<div class="entry-content mt-4">
-													<p class="mb-0">可能混音、可能作曲、也可能寫程式，歡迎聊天</p>
+													<p data-i18n="blog.16" class="mb-0">可能混音、可能作曲、也可能寫程式，歡迎聊天</p>
 												</div>
 												<div class="entry-image mb-0">
 												<div class="text-center">
-													<a href="https://www.youtube.com/@hikari-tsai/streams" class="button button-border button-rounded"><i class="bi-play-circle-fill"></i> Play Video</a>
+													<a href="https://www.youtube.com/@hikari-tsai/streams" class="button button-border button-rounded"><i class="bi-play-circle-fill"></i> <span data-i18n="blog.17">Play Video</span></a>
 												</div>
 											</div>
 											</div>
@@ -962,8 +1004,8 @@
 											</a>
 											<div class="p-4">
 												<div class="entry-title">
-													<h5 class="fw-medium text-warning mb-3">Distribution</h5>
-													<h3 class="text-transform-none ls-0 h5"><a href="https://www.notion.so/2226b467a94380348205d399504a619e?source=copy_link">實體發行教學</a></h3>
+													<h5 data-i18n="blog.18" class="fw-medium text-warning mb-3">Distribution</h5>
+													<h3 class="text-transform-none ls-0 h5"><a data-i18n="blog.19" href="https://www.notion.so/2226b467a94380348205d399504a619e?source=copy_link">實體發行教學</a></h3>
 												</div>
 												<!--<div class="entry-meta">
 													<ul>
@@ -972,11 +1014,11 @@
 													</ul>
 												</div>-->
 												<div class="entry-content mt-4">
-													<p class="mb-0">這年頭還有人要實體發行嗎？在很多年前寫了一篇實體發行的教學給大家參考</p>
+													<p data-i18n="blog.20" class="mb-0">這年頭還有人要實體發行嗎？在很多年前寫了一篇實體發行的教學給大家參考</p>
 												</div>
 												<div class="entry-image mb-0">
 												<div class="text-center">
-													<a href="https://www.notion.so/2226b467a94380348205d399504a619e?source=copy_link" class="button button-border button-rounded"><i class="bi-arrow-right-circle-fill"></i> View Blog</a>
+													<a href="https://www.notion.so/2226b467a94380348205d399504a619e?source=copy_link" class="button button-border button-rounded"><i class="bi-arrow-right-circle-fill"></i> <span data-i18n="blog.21">View Blog</span></a>
 												</div>
 											</div>
 											</div>
@@ -989,8 +1031,8 @@
 											</a>
 											<div class="p-4">
 												<div class="entry-title">
-													<h5 class="fw-medium text-warning mb-3">Distribution</h5>
-													<h3 class="text-transform-none ls-0 h5"><a href="https://www.youtube.com/watch?v=IGLVCzBlQGs">數位發行教學</a></h3>
+													<h5 data-i18n="blog.22" class="fw-medium text-warning mb-3">Distribution</h5>
+													<h3 class="text-transform-none ls-0 h5"><a data-i18n="blog.23" href="https://www.youtube.com/watch?v=IGLVCzBlQGs">數位發行教學</a></h3>
 												</div>
 												<!--<div class="entry-meta">
 													<ul>
@@ -999,11 +1041,11 @@
 													</ul>
 												</div>-->
 												<div class="entry-content mt-4">
-													<p class="mb-0">你有製作原創曲嗎？除了YT之外也可以考慮數位發行增加曝光量，也能增加額外的收入</p>
+													<p data-i18n="blog.24" class="mb-0">你有製作原創曲嗎？除了YT之外也可以考慮數位發行增加曝光量，也能增加額外的收入</p>
 												</div>
 												<div class="entry-image mb-0">
 												<div class="text-center">
-													<a href="https://www.youtube.com/watch?v=IGLVCzBlQGs" class="button button-border button-rounded"><i class="bi-play-circle-fill"></i> Play Video</a>
+													<a href="https://www.youtube.com/watch?v=IGLVCzBlQGs" class="button button-border button-rounded"><i class="bi-play-circle-fill"></i> <span data-i18n="blog.25">Play Video</span></a>
 												</div>
 											</div>
 											</div>
@@ -1039,13 +1081,13 @@
 				</div>
 
 				<div id="section-contact" class="row feature-box-border-vertical border-hover-animate col-mb-50 justify-content-center align-items-center my-5">
-					<h2 class="text-center text-uppercase fw-light ls-3 font-body">找Hikari混音</h2>
+					<h2 data-i18n="contact.01" class="text-center text-uppercase fw-light ls-3 font-body">找Hikari混音</h2>
 					<div class="col-lg-9">
 						<div class="card" style="max-width:700px; margin:0 auto; padding: 0 10px;">
 						<!-- Default panel contents -->
-							<div class="card-header"><b>參考價目表  <span class="badge bg-primary rounded-pill">若有活動請以活動價格為主</span></b></div>
+							<div class="card-header"><b><span data-i18n="contact.02">參考價目表</span>  <span data-i18n="contact.03" class="badge bg-primary rounded-pill">若有活動請以活動價格為主</span></b></div>
 							<div class="card-body">
-								<p class="card-text">根據混音形態不同，價格也有不同，大致上可以分為Vocal Mix、Multitrack Full Mix and SSL Full Mixing，所有混音皆贈送母帶後期(Mastering)</p>
+								<p data-i18n="contact.04" class="card-text">根據混音形態不同，價格也有不同，大致上可以分為Vocal Mix、Multitrack Full Mix and SSL Full Mixing，所有混音皆贈送母帶後期(Mastering)</p>
 							</div>
 
 							<!-- Table -->
@@ -1053,39 +1095,39 @@
 								<thead>
 									<tr>
 										<th>#</th>
-										<th>Type</th>
-										<th>Description</th>
-										<th>Review</th>
-										<th>Price</th>
+										<th data-i18n="contact.05">Type</th>
+										<th data-i18n="contact.06">Description</th>
+										<th data-i18n="contact.07">Review</th>
+										<th data-i18n="contact.08">Price</th>
 									</tr>
 								</thead>
 								<tbody>
 									<tr>
 										<td>0</td>
 										<td>Tracking</td>
-										<td>現場錄音，使用汐止強力錄音室錄製</td>
-										<td>現場確認</td>
+										<td data-i18n="contact.10">現場錄音，使用汐止強力錄音室錄製</td>
+										<td data-i18n="contact.11">現場確認</td>
 										<td>NTD. 1,500/hr</td>
 									</tr>
 									<tr>
 										<td>1</td>
 										<td>Vocal Mix</td>
-										<td>僅有一軌卡拉帶加上Vocals，Vocals不限數量與分軌(包含Vocal Edit&Tuning) <span class="badge bg-primary rounded-pill">贈母帶後期</span></td>
-										<td>線上傳檔</td>
-										<td>NTD. 5,000<span class="badge bg-danger rounded-pill">最優惠</span></td>
+										<td data-i18n="contact.14">僅有一軌卡拉帶加上Vocals，Vocals不限數量與分軌(包含Vocal Edit&Tuning) <span class="badge bg-primary rounded-pill">贈母帶後期</span></td>
+										<td data-i18n="contact.15">線上傳檔</td>
+										<td data-i18n="contact.16">NTD. 5,000<span class="badge bg-danger rounded-pill">最優惠</span></td>
 									</tr>
 									<tr>
 										<td>2</td>
 										<td>Multitrack Full Mix</td>
-										<td>多軌道分軌混音，通常是原創曲或是重編曲之作品(包含Vocal Edit&Tuning) <span class="badge bg-primary rounded-pill">贈母帶後期</span></td>
-										<td>線上傳檔、線上同步</td>
+										<td data-i18n="contact.18">多軌道分軌混音，通常是原創曲或是重編曲之作品(包含Vocal Edit&Tuning) <span class="badge bg-primary rounded-pill">贈母帶後期</span></td>
+										<td data-i18n="contact.19">線上傳檔、線上同步</td>
 										<td>NTD. 15,000</td>
 									</tr>
 									<tr>
 										<td>3</td>
 										<td>SSL Multitrack Full Mix</td>
-										<td>使用強力錄音室SSL 4000系列進行硬體混音(<b>不</b>包含Vocal Edit&Tuning) <span class="badge bg-primary rounded-pill">贈母帶後期</span></td>
-										<td>錄音室(現場)、線上傳檔、線上同步</td>
+										<td data-i18n="contact.22">使用強力錄音室SSL 4000系列進行硬體混音(<b>不</b>包含Vocal Edit&Tuning) <span class="badge bg-primary rounded-pill">贈母帶後期</span></td>
+										<td data-i18n="contact.23">錄音室(現場)、線上傳檔、線上同步</td>
 										<td>NTD. 28,000</td>
 									</tr>
 								</tbody>
@@ -1097,12 +1139,12 @@
 							<a href="#"><i>1</i></a>
 						</div>
 						<div class="fbox-content">
-							<h3 class="text-transform-none text-larger mb-2">填寫表單確認需求與報價</h3>
-							<p>根據混音形態不同，價格也有不同，大致上可以分為Vocal Mix、Multitrack Full Mix and SSL Full Mixing</p>
-							<li><b>[Vocal Mix]</b> 僅有一軌卡拉帶加上Vocals，Vocals不限數量與分軌</li>
-							<li><b>[Multitracks Full Mix]</b> 多軌道分軌混音，通常是原創曲或是重編曲之作品(不贈送錄音)</li>
-							<li><b>[SSL Full Mix]</b> 使用強力錄音室SSL 4000系列進行硬體混音，可現場聽咪或是遠端聽咪</li>
-							<a href="https://forms.gle/VbwWArHjdvzsje1W8" class="button button-small button-dark button-rounded border-width-1 ms-0 mt-3">填寫表單<i class="uil uil-angle-right-b me-0"></i></a>
+							<h3 data-i18n="contact.25" class="text-transform-none text-larger mb-2">填寫表單確認需求與報價</h3>
+							<p data-i18n="contact.26">根據混音形態不同，價格也有不同，大致上可以分為Vocal Mix、Multitrack Full Mix and SSL Full Mixing</p>
+							<li data-i18n="contact.27"><b>[Vocal Mix]</b> 僅有一軌卡拉帶加上Vocals，Vocals不限數量與分軌</li>
+							<li data-i18n="contact.28"><b>[Multitracks Full Mix]</b> 多軌道分軌混音，通常是原創曲或是重編曲之作品(不贈送錄音)</li>
+							<li data-i18n="contact.29"><b>[SSL Full Mix]</b> 使用強力錄音室SSL 4000系列進行硬體混音，可現場聽咪或是遠端聽咪</li>
+							<a href="https://forms.gle/VbwWArHjdvzsje1W8" class="button button-small button-dark button-rounded border-width-1 ms-0 mt-3"><span data-i18n="contact.30">填寫表單</span><i class="uil uil-angle-right-b me-0"></i></a>
 						</div>
 					</div>
 	
@@ -1113,11 +1155,11 @@
 							<a href="#"><i>2</i></a>
 						</div>
 						<div class="fbox-content">
-							<h3 class="text-transform-none text-larger mb-2">準備檔案與錄音</h3>
+							<h3 data-i18n="contact.31" class="text-transform-none text-larger mb-2">準備檔案與錄音</h3>
 							<p>
-								<li><b>[Vocal Mix]</b>請提供齊頭卡拉帶與Vocal錄音分軌(若由Hikari錄音則不需提供分軌)</li>
-								<li><b>[Multitracks Full Mix]</b> 請準備24bits, 48kHz的分軌檔案，檔案齊頭，可接受ProTools Session檔案</li>
-								<li><b>[SSL Full Mix]</b> 請準備24bits, 48kHz的分軌檔案，檔案齊頭，可接受ProTools Session檔案</li>
+								<li data-i18n="contact.32"><b>[Vocal Mix]</b>請提供齊頭卡拉帶與Vocal錄音分軌(若由Hikari錄音則不需提供分軌)</li>
+								<li data-i18n="contact.33"><b>[Multitracks Full Mix]</b> 請準備24bits, 48kHz的分軌檔案，檔案齊頭，可接受ProTools Session檔案</li>
+								<li data-i18n="contact.34"><b>[SSL Full Mix]</b> 請準備24bits, 48kHz的分軌檔案，檔案齊頭，可接受ProTools Session檔案</li>
 							</p>
 						</div>
 					</div>
@@ -1129,11 +1171,11 @@
 							<a href="#"><i>3</i></a>
 						</div>
 						<div class="fbox-content">
-							<h3 class="text-transform-none text-larger mb-2">聽咪方式</h3>
+							<h3 data-i18n="contact.35" class="text-transform-none text-larger mb-2">聽咪方式</h3>
 							<p>
-								<li><b>[線上非同步]</b> 標準，所有混音方案都可以使用。</li>
-								<li><b>[線上同步]</b> 提供專用網址遠端高音質同步聽取檔案，現場修改，僅限Multitracks Full Mix方案或是SSL Full Mix方案</li>
-								<li><b>[實體錄音室]</b> 於強力錄音室現場聽咪，僅限SSL Full Mix</li>
+								<li data-i18n="contact.36"><b>[線上非同步]</b> 標準，所有混音方案都可以使用。</li>
+								<li data-i18n="contact.37"><b>[線上同步]</b> 提供專用網址遠端高音質同步聽取檔案，現場修改，僅限Multitracks Full Mix方案或是SSL Full Mix方案</li>
+								<li data-i18n="contact.38"><b>[實體錄音室]</b> 於強力錄音室現場聽咪，僅限SSL Full Mix</li>
 							</p>
 						</div>
 					</div>
@@ -1145,11 +1187,11 @@
 							<a href="#"><i>4</i></a>
 						</div>
 						<div class="fbox-content">
-							<h3 class="text-transform-none text-larger mb-2">檔案交付</h3>
+							<h3 data-i18n="contact.39" class="text-transform-none text-larger mb-2">檔案交付</h3>
 							<p>
-								<li><b>[Vocal Mix]</b>交付MMM(混音)檔案，若有和聲則會另外交付MMO(含有和聲的卡拉帶)，並提供MP3, Wavs, AIFF三種格式下載。</li>
-								<li><b>[Multitracks Full Mix]</b> 交付標準MMM, MMA以及MMO三種檔案，並提供MP3, Wavs, AIFF三種格式下載。</li>
-								在此希望能與您約定，我會全力完成委託，若有任何問題或是需要修改的地方，也請在一週內提出修改需求，若超過一週則會視為確認結案(有任何執行上的困難都可以討論但不要放半年一年都不結案)。</li>
+								<li data-i18n="contact.40"><b>[Vocal Mix]</b>交付MMM(混音)檔案，若有和聲則會另外交付MMO(含有和聲的卡拉帶)，並提供MP3, Wavs, AIFF三種格式下載。</li>
+								<li data-i18n="contact.41"><b>[Multitracks Full Mix]</b> 交付標準MMM, MMA以及MMO三種檔案，並提供MP3, Wavs, AIFF三種格式下載。</li>
+								<span data-i18n="contact.42">在此希望能與您約定，我會全力完成委託，若有任何問題或是需要修改的地方，也請在一週內提出修改需求，若超過一週則會視為確認結案(有任何執行上的困難都可以討論但不要放半年一年都不結案)。</span></li>
 							</p>
 						</div>
 					</div>
@@ -1161,47 +1203,47 @@
 							<a href="#"><i>5</i></a>
 						</div>
 						<div class="fbox-content">
-							<h3 class="text-transform-none text-larger mb-2">付款</h3>
-							<p>結案後請於一週內支付全部款項</p>
+							<h3 data-i18n="contact.43" class="text-transform-none text-larger mb-2">付款</h3>
+							<p data-i18n="contact.44">結案後請於一週內支付全部款項</p>
 						</div>
 					</div>
 	
 				</div>
 				<div id="section-zzz" class="page-section pt-0" style="max-width:700px; margin:0 auto; padding: 0 10px;">
 					<div class="col">
-						<h4>音樂/音訊獎項</h4>
+						<h4 data-i18n="profile.01">音樂/音訊獎項</h4>
 						<ul class="iconlist iconlist-lg">
-							<li><i class="bi-check-lg"></i> <span>2023 第一屆文策院文化創業加速器獲獎</span></li>
-							<li><i class="bi-check-lg"></i> <span>2022 美國消費性電子展(CES)創新獎</span></li>
-							<li><i class="bi-check-lg"></i> <span>2021 台灣精品獎</span></li>
-							<li><i class="bi-check-lg"></i> <span>2014 公共電視音樂創世紀總冠軍賽第五名 </span></li>
-							<li><i class="bi-check-lg"></i> <span>2014 搖滾台中 前六強 </span></li>
-							<li><i class="bi-check-lg"></i> <span>2013 貢寮海洋音樂祭人氣獎前十強、大舞台30強 </span></li>
-							<li><i class="bi-check-lg"></i> <span>2013 客委會桐花歌曲創作大賽舞曲組佳作  </span></li>
-							<li><i class="bi-check-lg"></i> <span>2012 桃園鐵玫瑰音樂大賽決賽  </span></li>
-							<li><i class="bi-check-lg"></i> <span>2012 紅黑搖滾大賽第二名  </span></li>
-							<li><i class="bi-check-lg"></i> <span>2012 世貿樂器展 XM搖滾一夏冠軍  </span></li>
-							<li><i class="bi-check-lg"></i> <span>2011 年漢光基金會舊愛新歡古典詩詞譜曲競賽(新歡組)優選獎 </span></li>
-							<li><i class="bi-check-lg"></i> <span>2010 年漢光基金會舊愛新歡古典詩詞譜曲競賽(新歡組)優選獎 </span></li>
+							<li><i class="bi-check-lg"></i> <span data-i18n="profile.02">2023 第一屆文策院文化創業加速器獲獎</span></li>
+							<li><i class="bi-check-lg"></i> <span data-i18n="profile.03">2022 美國消費性電子展(CES)創新獎</span></li>
+							<li><i class="bi-check-lg"></i> <span data-i18n="profile.04">2021 台灣精品獎</span></li>
+							<li><i class="bi-check-lg"></i> <span data-i18n="profile.05">2014 公共電視音樂創世紀總冠軍賽第五名 </span></li>
+							<li><i class="bi-check-lg"></i> <span data-i18n="profile.06">2014 搖滾台中 前六強 </span></li>
+							<li><i class="bi-check-lg"></i> <span data-i18n="profile.07">2013 貢寮海洋音樂祭人氣獎前十強、大舞台30強 </span></li>
+							<li><i class="bi-check-lg"></i> <span data-i18n="profile.08">2013 客委會桐花歌曲創作大賽舞曲組佳作  </span></li>
+							<li><i class="bi-check-lg"></i> <span data-i18n="profile.09">2012 桃園鐵玫瑰音樂大賽決賽  </span></li>
+							<li><i class="bi-check-lg"></i> <span data-i18n="profile.10">2012 紅黑搖滾大賽第二名  </span></li>
+							<li><i class="bi-check-lg"></i> <span data-i18n="profile.11">2012 世貿樂器展 XM搖滾一夏冠軍  </span></li>
+							<li><i class="bi-check-lg"></i> <span data-i18n="profile.12">2011 年漢光基金會舊愛新歡古典詩詞譜曲競賽(新歡組)優選獎 </span></li>
+							<li><i class="bi-check-lg"></i> <span data-i18n="profile.13">2010 年漢光基金會舊愛新歡古典詩詞譜曲競賽(新歡組)優選獎 </span></li>
 						</ul>
 					</div>
 					<div class="col">
-						<h4>音樂／工程類重要證書</h4>
+						<h4 data-i18n="profile.14">音樂／工程類重要證書</h4>
 						<ul class="iconlist iconlist-lg">
 
-							<li><i class="bi-check-lg"></i> <span>大禾音樂X強力錄音室 混音大師班第二期、第六期結業(指導老師：K哥)</span></li>
+							<li><i class="bi-check-lg"></i> <span data-i18n="profile.15">大禾音樂X強力錄音室 混音大師班第二期、第六期結業(指導老師：K哥)</span></li>
 							<li><i class="bi-check-lg"></i> <span>AWS Certified Data Analytics – Specialty</span></li>
 							<li><i class="bi-check-lg"></i> <span>AWS Certified Machine Learning – Specialty</span></li>
 							<li><i class="bi-check-lg"></i> <span>AWS Certified Solutions Architect – Associate</span></li>
 							<li><i class="bi-check-lg"></i> <span>Stanford Machine Learning (Online) </span></li>
 							<!--<li><i class="bi-check-lg"></i> <span>Berklee Modern Musician (Online)</span></li>-->
-							<li><i class="bi-check-lg"></i> <span>Write Like Mozart: An Introduction to Classical Music Composition, National University of Singapore. (新加坡大學)</span></li>
-							<li><i class="bi-check-lg"></i> <span>Songwriting, Berklee College of Music (伯克利音樂學院)</span></li>
-							<li><i class="bi-check-lg"></i> <span>Developing Your Musicianship, Berklee College of Music   (伯克利音樂學院)</span></li>
-							<li><i class="bi-check-lg"></i> <span>Introduction to Music Production, Berklee College of Music   (伯克利音樂學院)</span></li>
-							<li><i class="bi-check-lg"></i> <span>Modern Musician Capstone, Berklee College of Music   (伯克利音樂學院)</span></li>
-							<li><i class="bi-check-lg"></i> <span>Modern Musician Specialization, Berklee College of Music   (伯克利音樂學院)</span></li>
-							<li><i class="bi-check-lg"></i> <span>2024 當選東華大學傑出校友</span></li>
+							<li><i class="bi-check-lg"></i> <span data-i18n="profile.20">Write Like Mozart: An Introduction to Classical Music Composition, National University of Singapore. (新加坡大學)</span></li>
+							<li><i class="bi-check-lg"></i> <span data-i18n="profile.21">Songwriting, Berklee College of Music (伯克利音樂學院)</span></li>
+							<li><i class="bi-check-lg"></i> <span data-i18n="profile.22">Developing Your Musicianship, Berklee College of Music   (伯克利音樂學院)</span></li>
+							<li><i class="bi-check-lg"></i> <span data-i18n="profile.23">Introduction to Music Production, Berklee College of Music   (伯克利音樂學院)</span></li>
+							<li><i class="bi-check-lg"></i> <span data-i18n="profile.24">Modern Musician Capstone, Berklee College of Music   (伯克利音樂學院)</span></li>
+							<li><i class="bi-check-lg"></i> <span data-i18n="profile.25">Modern Musician Specialization, Berklee College of Music   (伯克利音樂學院)</span></li>
+							<li><i class="bi-check-lg"></i> <span data-i18n="profile.26">2024 當選東華大學傑出校友</span></li>
 						</ul>
 					</div>
 				</div>
@@ -1215,9 +1257,9 @@
 			<h2 class="text-center text-uppercase fw-light ls-3 font-body"></h2>
 			<div class="col-lg-9">
 				<div class="fancy-title title-border">
-					<h4>贊助Hikari喝咖啡</h4>
+					<h4 data-i18n="page.02">贊助Hikari喝咖啡</h4>
 				</div>
-				用這些連結買軟體，廠商爸爸會請Hikari喝咖啡，Hikari會繼續努力做更多的音樂與混音給大家聽。
+				<span data-i18n="page.03">用這些連結買軟體，廠商爸爸會請Hikari喝咖啡，Hikari會繼續努力做更多的音樂與混音給大家聽。</span>
 
 				<div class="d-flex align-items-center">
 					<!--<a href="#" class="button button-rounded px-5 button-3d button-text-effect button-text-flip-x">Flip X</a>
@@ -1225,14 +1267,14 @@
 					<!--<a href="https://disco.ac/signup?b=64902&u=2387921" class="button button-rounded px-5 button-text-effect button-text-flip-y">DISCO</a>
 					<a href="https://isenselabs.com/?pa=60163" class="button button-rounded px-5 button-text-effect button-text-flip-y">iSenseLab</a>-->
 					<a href="https://pluginboutique.com/?a_aid=685edf1958653" class="button button-border button-rounded button-amber button-icon-effect button-icon-flip-y"><i class="fa-solid uil-coffee"></i>Plugin Boutique</a>
-					<a href="#" data-fancybox data-src="#dialog-fabfilter" class="button button-border button-rounded button-amber button-icon-effect button-icon-flip-y"><i class="fa-solid uil-coffee"></i>FabFilter(10%折價券)</a>
-					<a href="https://disco.ac/signup?b=64902&u=2387921" class="button button-border button-rounded button-amber button-icon-effect button-icon-flip-y"><i class="fa-solid uil-coffee"></i>DISCO(折價$20)</a>
+					<a href="#" data-fancybox data-src="#dialog-fabfilter" class="button button-border button-rounded button-amber button-icon-effect button-icon-flip-y"><i class="fa-solid uil-coffee"></i><span data-i18n="page.05">FabFilter(10%折價券)</span></a>
+					<a href="https://disco.ac/signup?b=64902&u=2387921" class="button button-border button-rounded button-amber button-icon-effect button-icon-flip-y"><i class="fa-solid uil-coffee"></i><span data-i18n="page.06">DISCO(折價$20)</span></a>
 					<a href="https://isenselabs.com/?pa=60163" class="button button-border button-rounded button-amber button-icon-effect button-icon-flip-y"><i class="fa-solid uil-coffee"></i>iSenseLab</a>
 				</div>
 			</div>
 			<div id="dialog-fabfilter" style="display:none;max-width:500px;">
-				<h2>Hello,謝謝你請我喝咖啡</h2>
-				<p>
+				<h2 data-i18n="coffee.01">Hello,謝謝你請我喝咖啡</h2>
+				<p data-i18n="coffee.02">
 					請聯絡Hikari Tsai，並提供你的電子郵件地址，我會寄給你FabFilter的10%折價券。
 					這個折價券可以用在FabFilter的所有產品上，包含他們的混音、母帶處理、合成器等軟體。
 					這些軟體都是音樂製作中非常有用的工具，可以幫助你創造出更好的音樂。
@@ -1338,7 +1380,7 @@
 
 					<div class="row justify-content-between col-mb-30">
 						<div class="col-12 col-lg-auto text-center text-lg-start">
-							Copyrights &copy; 2025 All Rights Reserved by Hikari Tsai.
+							<span>Copyrights &copy; 2025 All Rights Reserved by Hikari Tsai.</span>
 							<div class="d-flex justify-content-center mt-4">
 
 									<a href="https://x.com/hikari_tsai" class="social-icon si-small bg-transparent h-bg-x-twitter" title="Twitter">
@@ -1362,11 +1404,11 @@
 
 						<div class="col-12 col-lg-auto text-center text-lg-end">
 							<div class="copyrights-menu copyright-links">
-								<a href="#" data-scrollto="#wrapper" data-easing="easeInOutExpo" data-speed="1250" data-offset="70" class="text-contrast-600">Top</a>/
-								<a href="#" data-scrollto="#section-works" data-easing="easeInOutExpo" data-speed="1250" data-offset="70" class="text-contrast-600">Works</a>/
-								<a href="#" data-scrollto="#section-services" data-easing="easeInOutExpo" data-speed="1250" data-offset="70" class="text-contrast-600">Services</a>/
-								<a href="#" data-scrollto="#section-blog" data-easing="easeInOutExpo" data-speed="1250" data-offset="70" class="text-contrast-600">Blog</a>/
-								<a href="#" data-scrollto="#section-contact" data-easing="easeInOutExpo" data-speed="1250" data-offset="70" class="text-contrast-600">Contact</a>
+								<a data-i18n="footer.02" href="#" data-scrollto="#wrapper" data-easing="easeInOutExpo" data-speed="1250" data-offset="70" class="text-contrast-600">Top</a>/
+								<a data-i18n="footer.03" href="#" data-scrollto="#section-works" data-easing="easeInOutExpo" data-speed="1250" data-offset="70" class="text-contrast-600">Works</a>/
+								<a data-i18n="footer.04" href="#" data-scrollto="#section-services" data-easing="easeInOutExpo" data-speed="1250" data-offset="70" class="text-contrast-600">Services</a>/
+								<a data-i18n="footer.05" href="#" data-scrollto="#section-blog" data-easing="easeInOutExpo" data-speed="1250" data-offset="70" class="text-contrast-600">Blog</a>/
+								<a data-i18n="footer.06" href="#" data-scrollto="#section-contact" data-easing="easeInOutExpo" data-speed="1250" data-offset="70" class="text-contrast-600">Contact</a>
 							</div>
 						</div>
 					</div>
@@ -1380,7 +1422,7 @@
 		</div><!-- #wrapper end -->
 			<div id="dialog-discord" style="display:none;max-width:500px;">
 				<h2></h2>
-				<p>
+				<p data-i18n="page.08">
 					DC帳號 <b>hikari_tsai</b> ，加入後跟我講一下是你是誰我才會知道你不是詐騙集團喔
 				</p>
 
@@ -1392,18 +1434,11 @@
 
 	<!-- JavaScripts
 	============================================= -->
+	<!-- @i18n：tools/build.mjs 會在這裡放入 data/i18n.yml 的翻譯資料 -->
+	<script src="js/i18n.js"></script>
 	<script src="js/plugins.min.js"></script>
 	<script src="js/functions.bundle.js"></script>
 	<script src="js/portfolio.js"></script>
-	<script>
-		jQuery(document).ready( function(){
-			jQuery(".dropdown-item span").on( 'click', function(){
-				var displayText = jQuery(this).text();
-				jQuery("#grid-filter-btn").html(displayText);
-				jQuery(this).parents('.dropdown').find('.show').toggleClass('show', false);
-			});
-		});
-	</script>
 
 </body>
 </html>
