@@ -79,6 +79,53 @@ https://themeforest.net/item/canvas-the-multipurpose-html5-template/9228123
 
 圖片可以放在 `images/albums/` 資料夾用相對路徑，也可以直接貼圖片網址。
 
+### `roles` 可以識別的寫法（決定作品分類篩選）
+
+`roles` 會顯示在卡片上（♫ 那一行），同時自動決定這張卡片的分類 class，
+讓上方「作品分類」下拉選單可以篩選到它。**只認得下表左欄的寫法**：
+
+| `roles` 寫法 | 卡片上的 class | 「作品分類」選單中的項目 |
+|---|---|---|
+| `Vocal Recording` | `vocal-recording` | Vocal Recording |
+| `Vocal Recording(Remote)` | `vocal-recording-remote` | Vocal Recording(Remote) |
+| `Vocal Mixing` | `vocal-mixing` | Vocal Mixing |
+| `Vocal Remixing` | `vocal-mixing` | Vocal Mixing |
+| `Full Mixing` | `full-mixing` | Full Mixing |
+| `Arrangement` | `arrange` | Arrangement |
+| `Re-Arrangement` | `arrange` | Arrangement |
+| `Composition` | `compose` | Composition |
+| `BGM` | `bgm` | BGM |
+| `SFX` | `sfx` | SFX |
+| `Foley` | `foley` | Foley |
+| `SynthV Tune` | `synthv-tune` | SynthV Tune |
+| `MIDI Mockup` | `mockup` | MIDI Mockup |
+| `Mastering` | `mastering` | Mastering |
+| `Recording` | `recording` | （選單沒有這項） |
+| `Live Recording` | `recording` | （選單沒有這項） |
+| `Producter` | `producter` | （選單沒有這項） |
+| `Piano` | `piano` | （選單沒有這項） |
+| `Rough Mixing` | （不加 class） | （只顯示在卡片上，篩選不到） |
+
+規則：
+
+- **大小寫、空白、括號都要完全一樣**。例如 `vocal mixing`、`Vocal  Mixing`、`Vocal Recording (Remote)` 都認不得。
+- 可以寫多個，用逗號分開：`roles: [Vocal Recording, Vocal Mixing, Mastering]`。
+  卡片上會依你寫的順序顯示，分類則是每一項的 class 全部加上去。
+- **寫了表上沒有的工作項目，產生頁面時會報錯**（GitHub Actions 會顯示紅色叉叉並指出是哪一筆），不會默默漏掉分類。
+  例外：那一筆有寫 `filters` 時，分類以 `filters` 為準，`roles` 可以寫任何文字。
+- 想讓分類和顯示的文字不同（例如顯示 `Composition, Arrangement, Full Mixing`，但也要能被 Vocal Recording 篩到），
+  可以另外寫 `filters` 覆寫，這時 `roles` 只負責顯示：
+
+  ```yaml
+  roles: [Composition, Arrangement, Full Mixing]
+  filters: [compose, arrange, full-mixing, vocal-recording]
+  ```
+
+- 想新增一種工作項目：
+  1. 在 `tools/build.mjs` 的 `ROLE_FILTER` 加一行對照，例如 `'Sound Design': 'sound-design',`
+  2. 想讓選單也能篩選它，在 `src/index.html` 的作品分類選單加一個項目：
+     `<li><a href="#" class="dropdown-item" data-filter=".sound-design"><span>Sound Design</span></a></li>`
+
 ### 步驟 2：作者（第一次合作的人才需要）
 
 `authors` 裡寫的名字，如果在 `data/authors.yml` 找得到，就會自動連到他的 YouTube 頻道。
@@ -139,31 +186,6 @@ node tools/build.mjs         # 產生 index.html，並補抓新作品的日期
 - **暫時不顯示**：在那一段加一行 `hidden: true`。
 - **刪除**：把整段（從 `- title:` 到下一個空行）刪掉。
 
-## 可以用的工作項目（roles）
-
-`roles` 決定卡片上顯示的工作項目，也決定「作品分類」下拉選單篩選得到哪些作品：
-
-| roles 寫法 | 對應的分類 |
-|---|---|
-| `Vocal Recording` | Vocal Recording |
-| `Vocal Recording(Remote)` | Vocal Recording(Remote) |
-| `Vocal Mixing`、`Vocal Remixing` | Vocal Mixing |
-| `Full Mixing` | Full Mixing |
-| `Arrangement`、`Re-Arrangement` | Arrangement |
-| `Composition` | Composition |
-| `BGM` | BGM |
-| `SFX` | SFX |
-| `Foley` | Foley |
-| `SynthV Tune` | SynthV Tune |
-| `MIDI Mockup` | MIDI Mockup |
-| `Mastering` | Mastering |
-| `Recording`、`Live Recording` | （無對應選單項目，class 為 `recording`） |
-| `Producter` | （無對應選單項目，class 為 `producter`） |
-| `Piano` | （無對應選單項目，class 為 `piano`） |
-
-大小寫和空白要完全一樣。想用新的工作項目，要在 `tools/build.mjs` 的 `ROLE_FILTER` 加上對照；
-否則產生頁面時會報錯提醒。
-
 ## 所有欄位
 
 | 欄位 | 必填 | 說明 |
@@ -171,7 +193,7 @@ node tools/build.mjs         # 產生 index.html，並補抓新作品的日期
 | `title` | ✓ | 卡片標題，可以用 HTML |
 | `youtube` / `spotify` / `disco` / `image` / `media_html` | 擇一 | 卡片上方的媒體。`disco` 是 disco.ac 嵌入網址；`media_html` 給特殊情況直接寫 HTML |
 | `authors` | | 作者名字列表。要連到特定網址可寫 `{name: 名字, url: 網址}` |
-| `roles` | ✓ | 工作項目，見上表 |
+| `roles` | ✓ | 工作項目，寫法見「`roles` 可以識別的寫法」 |
 | `note` | | 卡片下方的描述，可以用 HTML（例如 `<br>` 換行） |
 | `link` | | 標題的連結。YouTube 作品不用寫，預設連到影片 |
 | `date` | | 手動指定日期（`2025-03-01`，也可以只寫 `2025`）。YouTube、Spotify 會自動抓，不用寫 |

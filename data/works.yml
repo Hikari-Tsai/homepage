@@ -1,6 +1,12 @@
 # 作品集資料：每個「- 」開頭的區塊是一張卡片。頁面上依日期由新到舊排列，沒有日期的排最後。
 # 欄位說明見 README.md。改完執行 node tools/build.mjs 產生 index.html（push 後也會自動產生）。
 
+- title: 【COVER】恋するフォーチュンクッキー
+  youtube: 22n1D68guEk
+  authors: [魷魷]
+  roles: [Vocal Recording, Vocal Mixing]
+  note: Ensemble Music Studio，Austrian Audio OC818 + SSL BIG SIX
+
 - title: 【ORIGINAL】多魚的我們
   youtube: c7NPbpB5eZc
   authors: [魷魷, 多帕]
